@@ -1,0 +1,251 @@
+[00:00:01.379] Server  LOG      ✓ Ready in 1061ms
+[00:00:07.286] Server  LOG      ○ Compiling / ...
+[00:00:15.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:16.134] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="ibm_plex_s..." suppressHydrationWarning={true}>
+                          <head>
+                          <body
+-                           __processed_b1c22bb3-0292-4dec-a36b-7067ceedc2e3__="true"
+                          >
+                  ...
+
+[00:00:17.169] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+        <SegmentViewNode type="page" pagePath="(app)/(roo...">
+          <SegmentTrieNode>
+          <Page>
+            <script>
+            <Page>
+              <div className="mx-auto md...">
+                <BrandContextMenu>
+                <div>
+                <div>
+                <section>
+                <div>
+                <section>
+                <div>
+                <section>
+                <div>
+                <GitHubContributions>
+                  <Panel>
+                    <section data-slot="panel" className="screen-lin...">
+                      <h2>
+                      ...
+                        <GitHubContributionGraph contributions={Promise}>
+                          <ContributionGraph className="mx-auto py-2" data={[...]} blockSize={11} blockMargin={3} ...>
+                            <div className="flex w-max..." style={{fontSize:14}}>
+                              <ContributionGraphCalendar className="no-scrollb..." title="GitHub Con...">
+                                <div
+                                  className="max-w-full overflow-x-auto overflow-y-hidden no-scrollbar px-2"
+-                                 bis_skin_checked="1"
+                                >
+                              <ContributionGraphFooter className="px-2">
+                                <div
+                                  className="flex flex-wrap gap-1 whitespace-nowrap sm:gap-x-4 px-2"
+-                                 bis_skin_checked="1"
+                                >
+                                  <ContributionGraphTotalCount>
+                                    <div
+                                      className="text-muted-foreground"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <ContributionGraphLegend>
+                                    <div
+                                      className="ml-auto flex items-center gap-[3px]"
+-                                     bis_skin_checked="1"
+                                    >
+                ...
+        ...
+      ...
+
+[00:00:17.356] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:17.356] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:17.356] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:1408/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1762950214783}
+[00:00:17.356] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:18.417] Browser LOG     %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {"metrics":[{"href":"http://localhost:1408/","id":"v3-1762950214785-6386277061504","route":"/","type":"FCP","value":11032},{"href":"http://localhost:1408/","id":"v3-1762950214785-3032850536944","route":"/","type":"TTFB","value":10525},{"attribution":{"eventTarget":"img.size-32.rounded-full.ring-1.ring-border.ring-offset-2.ring-offset-background.select-none.sm:size-40"},"href":"http://localhost:1408/","id":"v3-1762950214785-6548202753998","route":"/","type":"LCP","value":11032},{"attribution":{"eventTarget":""},"href":"http://localhost:1408/","id":"v3-1762950214785-2969507082066","route":"/","type":"CLS","value":0}],"scriptVersion":"0.1.3","sdkName":"@vercel/speed-insights/next","sdkVersion":"1.2.0","speed":"3g"}
+[00:03:45.705] Browser LOG     %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {"metrics":[{"attribution":{"eventTarget":"body>script>nextjs-portal","eventType":"pointerdown"},"href":"http://localhost:1408/","id":"v3-1762950214785-6871954889495","route":"/","type":"INP","value":64}],"scriptVersion":"0.1.3","sdkName":"@vercel/speed-insights/next","sdkVersion":"1.2.0","speed":"4g"}
+[00:04:20.129] Server  LOG      ✓ Compiled in 614ms
+[00:06:45.578] Browser LOG     %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {"metrics":[{"attribution":{"eventTarget":"#certs>div>a.group/cert.flex.items-center.pr-2.border-b.border-edge","eventType":"click"},"href":"http://localhost:1408/","id":"v3-1762950214785-6871954889495","route":"/","type":"INP","value":88}],"scriptVersion":"0.1.3","sdkName":"@vercel/speed-insights/next","sdkVersion":"1.2.0","speed":"4g"}
+[00:10:23.040] Server  LOG      ○ Compiling /blog/[slug] ...
+[00:10:25.061] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog/chanhdai-brand color: rgb(120, 120, 120) color: inherit {"dp":"/blog/[slug]","o":"http://localhost:1408/blog/chanhdai-brand","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1762950822475}
+[00:14:07.021] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:08.937] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+            <SegmentViewNode type="page" pagePath="(app)/(roo...">
+              <SegmentTrieNode>
+              <Page>
+                <script>
+                <Page>
+                  <div className="mx-auto md...">
+                    <BrandContextMenu>
+                    <div>
+                    <div>
+                    <section>
+                    <div>
+                    <section>
+                    <div>
+                    <section>
+                    <div>
+                    <GitHubContributions>
+                      <Panel>
+                        <section data-slot="panel" className="screen-lin...">
+                          <h2>
+                          ...
+                            <GitHubContributionGraph contributions={Promise}>
+                              <ContributionGraph className="mx-auto py-2" data={[...]} blockSize={11} blockMargin={3} ...>
+                                <div
+                                  className="flex w-max max-w-full flex-col gap-2 mx-auto py-2"
+                                  style={{fontSize:14}}
+-                                 bis_skin_checked="1"
+                                >
+                                  <ContributionGraphCalendar className="no-scrollb..." title="GitHub Con...">
+                                    <div
+                                      className="max-w-full overflow-x-auto overflow-y-hidden no-scrollbar px-2"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <ContributionGraphFooter className="px-2">
+                                    <div
+                                      className="flex flex-wrap gap-1 whitespace-nowrap sm:gap-x-4 px-2"
+-                                     bis_skin_checked="1"
+                                    >
+                                      <ContributionGraphTotalCount>
+                                        <div
+                                          className="text-muted-foreground"
+-                                         bis_skin_checked="1"
+                                        >
+                                      <ContributionGraphLegend>
+                                        <div
+                                          className="ml-auto flex items-center gap-[3px]"
+-                                         bis_skin_checked="1"
+                                        >
+                    ...
+            ...
+          ...
+
+[00:14:09.163] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:09.163] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:14:09.163] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:1408/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1762951046593}
+[00:14:09.163] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:10.447] Server  LOG      ○ Compiling /_not-found/page ...
+[00:14:10.950] Browser LOG     Failed to load click sound from /audio/chanhdai.mp3: {}
+[00:14:18.565] Browser LOG     %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {"metrics":[{"href":"http://localhost:1408/","id":"v3-1762951046594-3279998514049","route":"/","type":"FCP","value":2912},{"attribution":{"eventTarget":"img.size-32.rounded-full.ring-1.ring-border.ring-offset-2.ring-offset-background.select-none.sm:size-40"},"href":"http://localhost:1408/","id":"v3-1762951046594-9597236042216","route":"/","type":"LCP","value":2912},{"attribution":{"eventTarget":"body>script>nextjs-portal","eventType":"pointerdown"},"href":"http://localhost:1408/","id":"v3-1762951046594-1565104610837","route":"/","type":"FID","value":17.5},{"attribution":{"eventTarget":"body>script>nextjs-portal","eventType":"keydown"},"href":"http://localhost:1408/","id":"v3-1762951046594-6760569671102","route":"/","type":"INP","value":72},{"attribution":{},"href":"http://localhost:1408/","id":"v3-1762951046594-6967859187688","route":"/","type":"CLS","value":0}],"scriptVersion":"0.1.3","sdkName":"@vercel/speed-insights/next","sdkVersion":"1.2.0","speed":"4g"}
+[00:14:55.460] Server  LOG      ✓ Compiled in 365ms
+[00:15:56.629] Browser LOG     %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {"metrics":[{"attribution":{"eventTarget":"#js-cover-mark>path","eventType":"pointerdown"},"href":"http://localhost:1408/","id":"v3-1762951046594-6760569671102","route":"/","type":"INP","value":160}],"scriptVersion":"0.1.3","sdkName":"@vercel/speed-insights/next","sdkVersion":"1.2.0","speed":"3g"}
+[00:16:26.947] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:28.163] Browser LOG     Failed to load click sound from /audio/chanhdai.mp3: {}
+[00:16:28.504] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <SegmentViewNode type="page" pagePath="(app)/(roo...">
+      <SegmentTrieNode>
+      <Page>
+        <script>
+        <Page>
+          <div className="mx-auto md...">
+            <BrandContextMenu>
+            <div>
+            <div>
+            <section>
+            <div>
+            <section>
+            <div>
+            <section>
+            <div>
+            <GitHubContributions>
+              <Panel>
+                <section data-slot="panel" className="screen-lin...">
+                  <h2>
+                  ...
+                    <GitHubContributionGraph contributions={Promise}>
+                      <ContributionGraph className="mx-auto py-2" data={[...]} blockSize={11} blockMargin={3} ...>
+                        <div className="flex w-max..." style={{fontSize:14}} suppressHydrationWarning={true}>
+                          <ContributionGraphCalendar>
+                          <ContributionGraphFooter className="px-2">
+                            <div className="flex flex-..." suppressHydrationWarning={true}>
+                              <ContributionGraphTotalCount>
+                                <div
+                                  className="text-muted-foreground"
+-                                 bis_skin_checked="1"
+                                >
+                              <ContributionGraphLegend>
+                                <div
+                                  className="ml-auto flex items-center gap-[3px]"
+-                                 bis_skin_checked="1"
+                                >
+            ...
+    ...
+
+[00:16:28.606] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:16:28.606] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:16:28.606] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:16:28.606] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:1408/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1762951186037}
+[00:16:36.579] Browser LOG     %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {"metrics":[{"href":"http://localhost:1408/","id":"v3-1762951186036-5372682686894","route":"/","type":"FCP","value":4276},{"href":"http://localhost:1408/","id":"v3-1762951186036-4071113055163","route":"/","type":"TTFB","value":3946},{"attribution":{"eventTarget":"img.size-32.rounded-full.ring-1.ring-border.ring-offset-2.ring-offset-background.select-none.sm:size-40"},"href":"http://localhost:1408/","id":"v3-1762951186036-7682422624381","route":"/","type":"LCP","value":4276},{"attribution":{"eventTarget":"body>script>nextjs-portal","eventType":"pointerdown"},"href":"http://localhost:1408/","id":"v3-1762951186036-4786505694287","route":"/","type":"FID","value":13},{"attribution":{"eventTarget":"body>script>nextjs-portal","eventType":"keydown"},"href":"http://localhost:1408/","id":"v3-1762951186036-9917904286943","route":"/","type":"INP","value":120},{"attribution":{},"href":"http://localhost:1408/","id":"v3-1762951186043-9194551156434","route":"/","type":"CLS","value":0}],"scriptVersion":"0.1.3","sdkName":"@vercel/speed-insights/next","sdkVersion":"1.2.0","speed":"3g"}
+[00:17:08.437] Server  LOG      ✓ Compiled in 252ms

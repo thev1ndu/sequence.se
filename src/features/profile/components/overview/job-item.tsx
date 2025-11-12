@@ -1,6 +1,6 @@
 import {
-  BriefcaseBusinessIcon,
   CodeXmlIcon,
+  GraduationCap,
   LightbulbIcon,
 } from "lucide-react";
 
@@ -18,7 +18,7 @@ function getJobIcon(title: string) {
     return LightbulbIcon;
   }
 
-  return BriefcaseBusinessIcon;
+  return GraduationCap;
 }
 
 export function JobItem({

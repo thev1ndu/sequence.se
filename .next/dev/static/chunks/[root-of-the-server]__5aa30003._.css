@@ -148,7 +148,6 @@
     --radius-lg: .5rem;
     --radius-xl: .75rem;
     --radius-2xl: 1rem;
-    --animate-spin: spin 1s linear infinite;
     --animate-ping: ping 1s cubic-bezier(0, 0, .2, 1) infinite;
     --blur-md: 12px;
     --aspect-video: 16 / 9;
@@ -1762,15 +1761,6 @@
     overflow: hidden;
   }
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
   .block {
     display: block;
   }
@@ -1956,10 +1946,6 @@
 
   .h-28 {
     height: calc(var(--spacing) * 28);
-  }
-
-  .h-\[162px\] {
-    height: 162px;
   }
 
   .h-\[calc\(100svh-5\.5rem\)\] {
@@ -2196,10 +2182,6 @@
 
   .animate-ping {
     animation: var(--animate-ping);
-  }
-
-  .animate-spin {
-    animation: var(--animate-spin);
   }
 
   .cursor-default {
@@ -3171,10 +3153,6 @@
     color: var(--color-zinc-950);
   }
 
-  .underline {
-    text-decoration-line: underline;
-  }
-
   .underline-offset-2 {
     text-underline-offset: 2px;
   }
@@ -3363,12 +3341,6 @@
 
   .transition-\[color\,box-shadow\] {
     transition-property: color, box-shadow;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-
-  .transition-\[color\,scale\] {
-    transition-property: color, scale;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -3814,11 +3786,6 @@
     position: absolute;
   }
 
-  .after\:-inset-1:after {
-    content: var(--tw-content);
-    inset: calc(var(--spacing) * -1);
-  }
-
   .after\:-inset-2:after {
     content: var(--tw-content);
     inset: calc(var(--spacing) * -2);
@@ -4056,10 +4023,6 @@
 
   .focus-visible\:outline-ring:focus-visible {
     outline-color: var(--ring);
-  }
-
-  .active\:scale-\[0\.9\]:active {
-    scale: .9;
   }
 
   .active\:scale-\[0\.98\]:active {
@@ -4490,12 +4453,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:h-9 {
-      height: calc(var(--spacing) * 9);
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:h-10 {
       height: calc(var(--spacing) * 10);
     }
@@ -4802,6 +4759,11 @@
     color: var(--color-zinc-800);
   }
 
+  .dark\:inset-shadow-\[1px_1px_1px\,0px_0px_2px\]:where(.dark, .dark *) {
+    --tw-inset-shadow: inset 1px 1px 1px var(--tw-inset-shadow-color, currentcolor), inset 0px 0px 2px var(--tw-inset-shadow-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
   .dark\:shadow-white\/10:where(.dark, .dark *) {
     --tw-shadow-color: #ffffff1a;
   }
@@ -4824,6 +4786,16 @@
 
   .dark\:ring-zinc-700:where(.dark, .dark *) {
     --tw-ring-color: var(--color-zinc-700);
+  }
+
+  .dark\:inset-shadow-white\/15:where(.dark, .dark *) {
+    --tw-inset-shadow-color: #ffffff26;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .dark\:inset-shadow-white\/15:where(.dark, .dark *) {
+      --tw-inset-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-white) 15%, transparent) var(--tw-inset-shadow-alpha), transparent);
+    }
   }
 
   .dark\:prose-invert:where(.dark, .dark *) {
@@ -5849,12 +5821,6 @@
 @property --tw-backdrop-sepia {
   syntax: "*";
   inherits: false
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes ping {

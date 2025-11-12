@@ -9,25 +9,20 @@ export const USER: User = {
   pronouns: "he/him",
   bio: "Creating with code. Small details matter.",
   flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer",
-    "Open Source Contributor",
+    "Software Developer",
+    "Web Developer",
+    "Full Stack Developer",
   ],
   address: "Colombo, Sri Lanka",
   phoneNumber: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
   website: "https://chanhdai.com",
   jobTitle: "Design Engineer",
-  jobs: [
+   jobs: [
     {
-      title: "Senior Frontend Developer & UI Design Lead",
-      company: "Simplamo",
-      website: "https://simplamo.com?ref=IN-926722",
-    },
-    {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
+      title: "Computer Science Undergraduate",
+      company: "University of Westminster",
+      website: "https://www.westminster.ac.uk/",
     },
   ],
   about: `
@@ -41,10 +36,9 @@ I'm also the creator of [React Wheel Picker](https://react-wheel-picker.chanhdai
 
 Let's connect and collaborate!
   `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
-  ogImage:
-    "https://assets.chanhdai.com/images/screenshot-og-image-light.png?t=1759581475",
-  namePronunciationUrl: "/audio/chanhdai.mp3",
+  avatar: "https://i.postimg.cc/FFC05vqp/Firefly-20250222195436.png",
+  ogImage: "https://i.postimg.cc/FFC05vqp/Firefly-20250222195436.png",
+  namePronunciationUrl: "",
   keywords: [
     "ncdai",
     "nguyenchanhdai",

@@ -2262,8 +2262,8 @@ const DAIFOLIO_LINKS = [
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$icons$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Icons"].ts
     },
     {
-        title: "Experience",
-        href: "/#experience",
+        title: "Education",
+        href: "/#education",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2d$business$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BriefcaseBusinessIcon$3e$__["BriefcaseBusinessIcon"]
     },
     {

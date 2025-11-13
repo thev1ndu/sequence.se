@@ -1881,71 +1881,35 @@ __turbopack_context__.s([
 const EXPERIENCES = [
     {
         id: "simplamo",
-        companyName: "Simplamo Enterprise JSC",
-        companyLogo: "https://assets.chanhdai.com/images/companies/simplamo.webp",
+        companyName: "University of Westminster",
+        companyLogo: "https://i.postimg.cc/3rFrrK0T/Westminster-University-05.png",
         positions: [
             {
                 id: "20f8bfe5-b6a3-4b0d-ac2f-6fccd50d417e",
-                title: "Senior Frontend Developer",
+                title: "Computer Science Undergraduate",
                 employmentPeriod: {
-                    start: "10.2022"
+                    start: "01.2025",
+                    end: "11.2027"
                 },
                 employmentType: "Full-time",
                 icon: "code",
-                description: `- Develop [AI Chat](https://help.simplamo.com/features/simplamo-ai/ai-chat/guide_simplamo_ai_chat?ref=IN-926722) and [AI Assistant](https://help.simplamo.com/features/simplamo-ai/ai-expert/aiexpert-rockdiscribe?ref=IN-926722) features.
-- Develop [Whiteboards](https://help.simplamo.com/features/whiteboard/overview?ref=IN-926722) with real-time collaboration.
-- Build and maintain the [Zalo Mini App](https://zalo.me/s/1736112917405511258/) for Simplamo with seamless integration.
-- Develop interactive chart and analytics widgets for the [Dashboard](https://help.simplamo.com/features/dashboard/overview) to enhance data visualization.
-- Develop and maintain core features to enhance functionality and user experience.
-- Ensure UI/UX consistency and adherence to standards.
-- Implement robust frontend solutions for web and mobile platforms.
-- Analyze technical capabilities and provide optimal solutions.`,
-                skills: [
-                    "TypeScript",
-                    "Next.js",
-                    "React Native",
-                    "MobX",
-                    "MobX-State-Tree",
-                    "Tailwind CSS",
-                    "Dify",
-                    "Zalo Mini App",
-                    "Agile",
-                    "Teamwork",
-                    "Research",
-                    "Problem-solving"
-                ],
+                description: ``,
                 isExpanded: true
-            },
-            {
-                id: "cedd7adb-4118-4085-9983-ae00530b49e2",
-                title: "UI Design Lead",
-                employmentPeriod: {
-                    start: "10.2022"
-                },
-                employmentType: "Full-time",
-                icon: "design",
-                description: `- Ensure UI/UX consistency and high-quality standards.
-- Design intuitive, user-focused interfaces aligned with business goals.
-- Define and establish a cohesive UI style for Simplamo.`,
-                skills: [
-                    "Creativity",
-                    "UI/UX Design",
-                    "Figma"
-                ]
             }
         ],
         isCurrentEmployer: true
     },
     {
         id: "quaric",
-        companyName: "Quaric Co., Ltd.",
-        companyLogo: "https://assets.chanhdai.com/images/companies/quaric.svg",
+        companyName: "Thurstan College Colombo 07",
+        companyLogo: "https://i.postimg.cc/RVmRfT0d/logo.png",
         positions: [
             {
                 id: "30d3a9fb-021d-452a-9d27-83655369b4b9",
                 title: "Design Engineer",
                 employmentPeriod: {
-                    start: "03.2024"
+                    start: "01.2025",
+                    end: "11.2027"
                 },
                 employmentType: "Part-time",
                 icon: "code",
@@ -2660,11 +2624,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2
 ;
 function Experiences() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$components$2f$panel$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Panel"], {
-        id: "experience",
+        id: "education",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$components$2f$panel$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["PanelHeader"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$components$2f$panel$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["PanelTitle"], {
-                    children: "Experience"
+                    children: "Education"
                 }, void 0, false, {
                     fileName: "[project]/src/features/profile/components/experiences/index.tsx",
                     lineNumber: 11,

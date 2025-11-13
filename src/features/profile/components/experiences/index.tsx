@@ -6,9 +6,9 @@ import { ExperienceItem } from "./experience-item";
 
 export function Experiences() {
   return (
-    <Panel id="experience">
+    <Panel id="education">
       <PanelHeader>
-        <PanelTitle>Experience</PanelTitle>
+        <PanelTitle>Education</PanelTitle>
       </PanelHeader>
 
       <div className="pr-2 pl-4">

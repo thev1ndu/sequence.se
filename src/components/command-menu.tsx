@@ -78,8 +78,8 @@ const DAIFOLIO_LINKS: CommandLinkItem[] = [
     icon: Icons.ts,
   },
   {
-    title: "Experience",
-    href: "/#experience",
+    title: "Education",
+    href: "/#education",
     icon: BriefcaseBusinessIcon,
   },
   {

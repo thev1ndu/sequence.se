@@ -56,9 +56,9 @@ const USER = {
         "Full Stack Developer"
     ],
     address: "Colombo, Sri Lanka",
-    phoneNumber: "Kzg0Nzc3ODg4MTQ4",
-    email: "ZGFpQGNoYW5oZGFpLmNvbQ==",
-    website: "https://chanhdai.com",
+    phoneNumber: "Kzk0IDc3IDMzOCAxMDM5",
+    email: "aGFzYWxkaGFybWFndW5hd2FyZGFuYUBnbWFpbC5jb20KCg",
+    website: "https://hasal.de",
     jobTitle: "Design Engineer",
     jobs: [
         {
@@ -68,13 +68,11 @@ const USER = {
         }
     ],
     about: `
-Hello, World! I am Chánh Đại — a Design Engineer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
-
-With 5+ years of experience, I specialize in building high-quality web and mobile applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
-
-One of my key projects, [ZaDark](https://zadark.com), launched in 2022, enhances the Zalo experience on PC and Web, surpassing 80k+ downloads on [SourceForge](https://sourceforge.net/projects/zadark) and reaching 20k+ active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob) (as of Sep 2025).
-
-I'm also the creator of [React Wheel Picker](https://react-wheel-picker.chanhdai.com) — iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. It has earned 4k+ weekly downloads on [npm](https://www.npmjs.com/package/@ncdai/react-wheel-picker) and was selected for [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort.
+A 20-year-old computer science student developing breadth across full-stack engineering, cloud infrastructure,
+ and applied AI. Strong grounding in frontend work with React, Next.js, Tailwind CSS, and ShadCN, paired with backend capability in
+  Node.js, Spring Boot, and Appwrite. Active in DevOps through CI/CD pipelines, Docker, Kubernetes, and deployments on GCP and AWS.
+   Integrated experience across machine learning, UI/UX design, and digital media. Focused on building scalable systems, leading effective project teams,
+    and delivering solutions with clear technical impact.
 
 Let's connect and collaborate!
   `,
@@ -82,16 +80,15 @@ Let's connect and collaborate!
     ogImage: "https://i.postimg.cc/FFC05vqp/Firefly-20250222195436.png",
     namePronunciationUrl: "",
     keywords: [
-        "ncdai",
-        "nguyenchanhdai",
-        "nguyen chanh dai",
-        "chanhdai",
-        "chanh dai",
-        "iamncdai",
-        "quaric",
-        "zadark",
-        "nguyễn chánh đại",
-        "chánh đại"
+        "Hasal",
+        "Dharmagunawardana",
+        "Hasal Hansada Dharmagunawardana",
+        "Hansada",
+        "hesxo",
+        "thurstan",
+        "it",
+        "cricketer",
+        "Welikanna"
     ],
     dateCreated: "2023-10-20"
 };
@@ -328,16 +325,16 @@ const metadata = {
     icons: {
         icon: [
             {
-                url: "https://assets.chanhdai.com/images/favicon.ico",
+                url: "https://i.postimg.cc/YqFC7XHk/HD-logo.jpg",
                 sizes: "any"
             },
             {
-                url: "https://assets.chanhdai.com/images/favicon.svg",
+                url: "https://i.postimg.cc/YqFC7XHk/HD-logo.jpg",
                 type: "image/svg+xml"
             }
         ],
         apple: {
-            url: "https://assets.chanhdai.com/images/apple-touch-icon.png",
+            url: "https://i.postimg.cc/YqFC7XHk/HD-logo.jpg",
             type: "image/png",
             sizes: "180x180"
         }

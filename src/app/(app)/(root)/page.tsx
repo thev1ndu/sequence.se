@@ -25,7 +25,7 @@ export default function Page() {
         }}
       />
 
-      <div className="mx-auto md:max-w-3xl">
+      <div className="mx-auto md:max-w-3xl" suppressHydrationWarning>
         <ProfileCover />
         <ProfileHeader />
         <Separator />
@@ -42,13 +42,13 @@ export default function Page() {
         <TeckStack />
         <Separator />
 
-        <Blog />
-        <Separator />
+    <Blog />
+    <Separator />
 
-        <Experiences />
-        <Separator />
+    <Experiences />
+    <Separator />
 
-        <Projects />
+    <Projects />
         <Separator />
 
         <Awards />

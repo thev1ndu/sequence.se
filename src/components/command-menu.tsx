@@ -55,11 +55,6 @@ type CommandLinkItem = {
 
 const MENU_LINKS: CommandLinkItem[] = [
   {
-    title: "Daifolio",
-    href: "/",
-    icon: ChanhDaiMark,
-  },
-  {
     title: "Components",
     href: "/components",
     icon: Icons.react,
@@ -212,7 +207,7 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
         onClick={() => setOpen(true)}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://i.postimg.cc/7YkN1WXQ/HD-logowhite.jpg"
           fill="none"
           viewBox="0 0 16 16"
           aria-hidden

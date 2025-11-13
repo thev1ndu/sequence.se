@@ -1,13 +1,16 @@
-import dynamic from "next/dynamic";
-
 import { ChanhDaiMark } from "@/components/chanhdai-mark";
 import { ChanhDaiWordmark } from "@/components/chanhdai-wordmark";
 
 import { Panel, PanelHeader, PanelTitle } from "./panel";
 
-const BrandContextMenu = dynamic(() =>
-  import("@/components/brand-context-menu").then((mod) => mod.BrandContextMenu)
-);
+type BrandContextMenuProps = {
+  children: React.ReactNode;
+};
+
+function BrandContextMenu({ children }: BrandContextMenuProps) {
+  // Simple local wrapper to avoid relying on a missing external module.
+  return <>{children}</>;
+}
 
 export function Brand() {
   return (

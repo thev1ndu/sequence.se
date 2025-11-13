@@ -236,6 +236,7 @@ In-house Project: [ZaDark](https://zadark.com)
   {
     id: "education",
     companyName: "Education",
+    isCurrentEmployer: true,
     positions: [
       {
         id: "c47f5903-88ae-4512-8a50-0b91b0cf99b6",

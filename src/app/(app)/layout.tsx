@@ -11,7 +11,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <SiteHeader />
-      <main className="max-w-screen overflow-x-hidden px-2">{children}</main>
+      <main className="max-w-screen overflow-x-hidden px-2" suppressHydrationWarning>{children}</main>
       <SiteFooter />
       <ScrollTop />
     </>

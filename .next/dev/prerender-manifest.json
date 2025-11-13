@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "7524465371b06f9ba3c11085f024780e",
-    "previewModeSigningKey": "d632ab9303c0f2e020f492636c3123d7930704562aa45983ac862044f6dececf",
-    "previewModeEncryptionKey": "ff03c302948e2400ad16556bd5089a52cf59df787da0d85ba5f65434ff49f909"
-  }
-}
+{"version":4,"routes":{"/blog/Tedx":{},"/blog/Responsive":{},"/blog/F1":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"c9d98fac62d6d9daaa2ecf933bd8d2d6","previewModeSigningKey":"c041fdd15a70401cf22d01356d4d7704e0d80dd252e7117c635d40c5f6954704","previewModeEncryptionKey":"098338809590f2a68fbf8c96a7d72edf3fdef6b368bf5d5722e11a5ea8b621e2"}}

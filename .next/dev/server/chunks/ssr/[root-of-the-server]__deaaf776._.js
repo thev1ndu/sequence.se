@@ -270,7 +270,8 @@ function getWebSiteJsonLd() {
 const darkModeScript = String.raw`
   try {
     if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["META_THEME_COLORS"].dark}')
+      // Use a literal here to avoid circular import issues during module evaluation
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#09090b')
     }
   } catch (_) {}
 
@@ -367,7 +368,8 @@ const viewport = {
     width: "device-width",
     initialScale: 1,
     viewportFit: "cover",
-    themeColor: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["META_THEME_COLORS"].light
+    // Avoid referencing META_THEME_COLORS at module eval time (prevents circular import issues)
+    themeColor: '#ffffff'
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -384,14 +386,14 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/app/layout.tsx",
-                        lineNumber: 139,
+                        lineNumber: 140,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                         src: `data:text/javascript;base64,${btoa(darkModeScript)}`
                     }, void 0, false, {
                         fileName: "[project]/src/app/layout.tsx",
-                        lineNumber: 147,
+                        lineNumber: 148,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -399,27 +401,66 @@ function RootLayout({ children }) {
                         strategy: "beforeInteractive",
                         dangerouslySetInnerHTML: {
                             __html: String.raw`
-            try {
-              // Remove any attributes starting with "bis_" which some browser
-              // extensions inject and cause hydration mismatches.
-              const all = document.getElementsByTagName('*');
-              for (let i = 0; i < all.length; i++) {
-                const el = all[i];
-                // Copy attributes because NamedNodeMap is live
-                const attrs = Array.from(el.attributes || []);
-                for (let j = 0; j < attrs.length; j++) {
-                  const name = attrs[j] && attrs[j].name;
-                  if (name && name.startsWith('bis_')) {
-                    el.removeAttribute(name);
+            (function(){
+              try {
+                function stripAttrs(root) {
+                  const els = root.getElementsByTagName ? root.getElementsByTagName('*') : [];
+                  for (let i = 0; i < els.length; i++) {
+                    const el = els[i];
+                    const attrs = Array.from(el.attributes || []);
+                    for (let j = 0; j < attrs.length; j++) {
+                      const name = attrs[j] && attrs[j].name;
+                      if (!name) continue;
+                      if (name.startsWith('bis_') || name.startsWith('data-bis') || name === 'bis_skin_checked') {
+                        try { el.removeAttribute(name); } catch (e) {}
+                      }
+                    }
                   }
                 }
-              }
-            } catch (_) {}
+
+                stripAttrs(document);
+                const extScripts = document.querySelectorAll('script[src^="chrome-extension://"], script[src^="moz-extension://"], script[src^="safari-extension://"]');
+                for (let k = 0; k < extScripts.length; k++) {
+                  try { extScripts[k].remove(); } catch (e) {}
+                }
+
+                const observer = new MutationObserver((mutations) => {
+                  for (let m = 0; m < mutations.length; m++) {
+                    const mu = mutations[m];
+                    if (mu.type === 'attributes' && mu.target && mu.target.removeAttribute) {
+                      const name = mu.attributeName;
+                      if (name && (name.startsWith('bis_') || name.startsWith('data-bis') || name === 'bis_skin_checked')) {
+                        try { mu.target.removeAttribute(name); } catch (e) {}
+                      }
+                    }
+                    if (mu.type === 'childList' && mu.addedNodes && mu.addedNodes.length) {
+                      for (let i = 0; i < mu.addedNodes.length; i++) {
+                        const node = mu.addedNodes[i];
+                        try {
+                          if (node.nodeType === 1) {
+                            stripAttrs(node);
+                            if (node.tagName === 'SCRIPT') {
+                              const src = node.getAttribute && node.getAttribute('src');
+                              if (src && (src.indexOf('chrome-extension://') === 0 || src.indexOf('moz-extension://') === 0 || src.indexOf('safari-extension://') === 0)) {
+                                node.remove();
+                              }
+                            }
+                          }
+                        } catch (e) {}
+                      }
+                    }
+                  }
+                });
+
+                observer.observe(document, { attributes: true, childList: true, subtree: true });
+                setTimeout(() => { try { observer.disconnect(); } catch (e) {} }, 3000);
+              } catch (_) {}
+            })();
           `
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/app/layout.tsx",
-                        lineNumber: 151,
+                        lineNumber: 152,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
@@ -430,13 +471,13 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/app/layout.tsx",
-                        lineNumber: 173,
+                        lineNumber: 213,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/layout.tsx",
-                lineNumber: 138,
+                lineNumber: 139,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
@@ -445,18 +486,18 @@ function RootLayout({ children }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/src/app/layout.tsx",
-                    lineNumber: 183,
+                    lineNumber: 223,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/layout.tsx",
-                lineNumber: 182,
+                lineNumber: 222,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 133,
+        lineNumber: 134,
         columnNumber: 5
     }, this);
 }

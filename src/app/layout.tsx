@@ -18,12 +18,12 @@ function getWebSiteJsonLd(): WithContext<WebSite> {
     alternateName: [USER.username],
   };
 }
-
 // Thanks @shadcn-ui, @tailwindcss
 const darkModeScript = String.raw`
   try {
     if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
+      // Use a literal here to avoid circular import issues during module evaluation
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#09090b')
     }
   } catch (_) {}
 
@@ -121,7 +121,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: META_THEME_COLORS.light,
+  // Avoid referencing META_THEME_COLORS at module eval time (prevents circular import issues)
+  themeColor: '#ffffff',
 };
 
 export default function RootLayout({
@@ -152,22 +153,61 @@ export default function RootLayout({
           id="strip-bis-attributes"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: String.raw`
-            try {
-              // Remove any attributes starting with "bis_" which some browser
-              // extensions inject and cause hydration mismatches.
-              const all = document.getElementsByTagName('*');
-              for (let i = 0; i < all.length; i++) {
-                const el = all[i];
-                // Copy attributes because NamedNodeMap is live
-                const attrs = Array.from(el.attributes || []);
-                for (let j = 0; j < attrs.length; j++) {
-                  const name = attrs[j] && attrs[j].name;
-                  if (name && name.startsWith('bis_')) {
-                    el.removeAttribute(name);
+            (function(){
+              try {
+                function stripAttrs(root) {
+                  const els = root.getElementsByTagName ? root.getElementsByTagName('*') : [];
+                  for (let i = 0; i < els.length; i++) {
+                    const el = els[i];
+                    const attrs = Array.from(el.attributes || []);
+                    for (let j = 0; j < attrs.length; j++) {
+                      const name = attrs[j] && attrs[j].name;
+                      if (!name) continue;
+                      if (name.startsWith('bis_') || name.startsWith('data-bis') || name === 'bis_skin_checked') {
+                        try { el.removeAttribute(name); } catch (e) {}
+                      }
+                    }
                   }
                 }
-              }
-            } catch (_) {}
+
+                stripAttrs(document);
+                const extScripts = document.querySelectorAll('script[src^="chrome-extension://"], script[src^="moz-extension://"], script[src^="safari-extension://"]');
+                for (let k = 0; k < extScripts.length; k++) {
+                  try { extScripts[k].remove(); } catch (e) {}
+                }
+
+                const observer = new MutationObserver((mutations) => {
+                  for (let m = 0; m < mutations.length; m++) {
+                    const mu = mutations[m];
+                    if (mu.type === 'attributes' && mu.target && mu.target.removeAttribute) {
+                      const name = mu.attributeName;
+                      if (name && (name.startsWith('bis_') || name.startsWith('data-bis') || name === 'bis_skin_checked')) {
+                        try { mu.target.removeAttribute(name); } catch (e) {}
+                      }
+                    }
+                    if (mu.type === 'childList' && mu.addedNodes && mu.addedNodes.length) {
+                      for (let i = 0; i < mu.addedNodes.length; i++) {
+                        const node = mu.addedNodes[i];
+                        try {
+                          if (node.nodeType === 1) {
+                            stripAttrs(node);
+                            if (node.tagName === 'SCRIPT') {
+                              const src = node.getAttribute && node.getAttribute('src');
+                              if (src && (src.indexOf('chrome-extension://') === 0 || src.indexOf('moz-extension://') === 0 || src.indexOf('safari-extension://') === 0)) {
+                                node.remove();
+                              }
+                            }
+                          }
+                        } catch (e) {}
+                      }
+                    }
+                  }
+                });
+
+                observer.observe(document, { attributes: true, childList: true, subtree: true });
+                setTimeout(() => { try { observer.disconnect(); } catch (e) {} }, 3000);
+              } catch (_) {}
+            })();
           ` }}
         />
         <script

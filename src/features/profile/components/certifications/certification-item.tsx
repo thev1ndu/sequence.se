@@ -69,9 +69,22 @@ export function CertificationItem({
           <dl>
             <dt className="sr-only">Issued on</dt>
             <dd>
-              <time dateTime={dayjs(certification.issueDate).toISOString()}>
-                {dayjs(certification.issueDate).format("DD.MM.YYYY")}
-              </time>
+              {certification.issueDate ? (
+                (() => {
+                  const issued = dayjs(certification.issueDate);
+                  if (issued.isValid()) {
+                    return (
+                      <time dateTime={issued.toISOString()}>
+                        {issued.format("DD.MM.YYYY")}
+                      </time>
+                    );
+                  }
+
+                  return <span>—</span>;
+                })()
+              ) : (
+                <span>—</span>
+              )}
             </dd>
           </dl>
         </div>

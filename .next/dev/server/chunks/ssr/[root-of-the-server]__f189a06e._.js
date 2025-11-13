@@ -1256,148 +1256,263 @@ __turbopack_context__.s([
     ()=>CERTIFICATIONS
 ]);
 const CERTIFICATIONS = [
+    // University certificates moved up
     {
-        title: "Animations on the Web",
-        issuer: "animations.dev",
-        issuerIconName: "animationsdev",
-        issueDate: "2025-11-03",
-        credentialID: "dfb419c8-5ed7-43f2-b60c-446bc50a39b1",
-        credentialURL: "https://animations.dev/certificate/dfb419c8-5ed7-43f2-b60c-446bc50a39b1"
-    },
-    {
-        title: "Certificate of Trademark Registration No. 565092",
-        issuer: "Intellectual Property Office of Viet Nam",
-        issuerLogoURL: "https://assets.chanhdai.com/images/companies/ipvietnam.webp",
-        issueDate: "2025-08-18",
-        credentialID: "565092",
-        credentialURL: "https://drive.google.com/file/d/1NgRp81ZAAUKEtuI9RefG0e8yni6JkoE8/view?usp=sharing"
-    },
-    {
-        title: "Certificate of Trademark Registration No. 543682",
-        issuer: "Intellectual Property Office of Viet Nam",
-        issuerLogoURL: "https://assets.chanhdai.com/images/companies/ipvietnam.webp",
-        issueDate: "2025-05-08",
-        credentialID: "543682",
-        credentialURL: "https://drive.google.com/file/d/1x7YzlK1kyz16h28ux9k3KAwnZFAabsvq/view?usp=sharing"
-    },
-    {
-        title: "Next.js SEO Fundamentals",
-        issuer: "Vercel",
-        issuerIconName: "vercel",
-        issueDate: "2025-04-26",
-        credentialID: "seo-47463-1745634751873",
-        credentialURL: "https://nextjs.org/learn/certificate?course=seo&user=47463&certId=seo-47463-1745634751873"
-    },
-    {
-        title: "Next.js App Router Fundamentals",
-        issuer: "Vercel",
-        issuerIconName: "vercel",
-        issueDate: "2025-04-26",
-        credentialID: "dashboard-app-47463-1745633258744",
-        credentialURL: "https://nextjs.org/learn/certificate?course=dashboard-app&user=47463&certId=dashboard-app-47463-1745633258744"
-    },
-    {
-        title: "React Foundations for Next.js",
-        issuer: "Vercel",
-        issuerIconName: "vercel",
-        issueDate: "2025-04-26",
-        credentialID: "react-foundations-47463-1745634245158",
-        credentialURL: "https://nextjs.org/learn/certificate?course=react-foundations&user=47463&certId=react-foundations-47463-1745634245158"
-    },
-    {
-        title: "Certificate of Copyright Registration No. 0040/2025/QTG",
-        issuer: "Copyright Office of Viet Nam",
-        issuerLogoURL: "https://assets.chanhdai.com/images/companies/cov.webp",
-        issueDate: "2025-01-02",
-        credentialID: "0040/2025/QTG",
-        credentialURL: "https://drive.google.com/file/d/1kVBByVLlYPyyUJvxKga670wvVPNmZ2nV/view?usp=sharing"
-    },
-    {
-        title: "Vietnamese Standardized Test of English Proficiency (CEFR B1)",
-        issuer: "USSH-VNUHCM",
-        issuerLogoURL: "https://assets.chanhdai.com/images/companies/ussh-vnuhcm.webp",
-        issueDate: "2024-12-17",
-        credentialID: "QH58202305187",
-        credentialURL: "https://vbcc.hcmussh.edu.vn/?type=11&certificateType=7&no=QH58202305187&fullName=Nguy%E1%BB%85n+Ch%C3%A1nh+%C4%90%E1%BA%A1i&dob=2000-08-14"
-    },
-    {
-        title: "Certificate of Copyright Registration No. 7994/2024/QTG",
-        issuer: "Copyright Office of Viet Nam",
-        issuerLogoURL: "https://assets.chanhdai.com/images/companies/cov.webp",
-        issueDate: "2024-09-18",
-        credentialID: "7994/2024/QTG",
-        credentialURL: "https://drive.google.com/file/d/1otjV4GNOLFj4JD2tHWLuZpUIVyITYNUy/view?usp=sharing"
-    },
-    {
-        title: "Engaging in Persuasive and Credible Communication",
-        issuer: "National University of Singapore",
+        title: "C for Everyone: Programming Fundamentals",
+        issuer: "University of California, Santa Cruz",
         issuerIconName: "coursera",
-        issueDate: "2022-09-13",
-        credentialID: "C6DHB9A5XQHV",
-        credentialURL: "https://coursera.org/verify/C6DHB9A5XQHV"
+        issueDate: "2025-01-01",
+        credentialID: "30YFNDZWWZN5",
+        credentialURL: "https://www.coursera.org/account/accomplishments/verify/30YFNDZWWZN5"
     },
     {
-        title: "Introduction to Databases",
-        issuer: "Meta",
-        issuerIconName: "meta",
-        issueDate: "2022-08-28",
-        credentialID: "YV5VQ5MXZ5YH",
-        credentialURL: "https://coursera.org/verify/YV5VQ5MXZ5YH"
-    },
-    {
-        title: "Solving Problems with Creative and Critical Thinking",
-        issuer: "IBM Skills Network",
+        title: "Financial Markets (with Honors)",
+        issuer: "Yale University",
         issuerIconName: "coursera",
-        issueDate: "2022-08-27",
-        credentialID: "4UKZQJGM2932",
-        credentialURL: "https://coursera.org/verify/4UKZQJGM2932"
+        issueDate: "2025-01-01",
+        credentialID: "GSNFNYBBM3PE",
+        credentialURL: "https://www.coursera.org/account/accomplishments/verify/GSNFNYBBM3PE"
     },
     {
-        title: "Digital Skills: Social Media",
-        issuer: "Accenture",
-        issuerIconName: "accenture",
-        issueDate: "2022-08-27",
-        credentialID: "pc4345i",
-        credentialURL: "https://www.futurelearn.com/certificates/pc4345i"
+        title: "Machine Learning for All",
+        issuer: "University of London",
+        issuerIconName: "coursera",
+        issueDate: "2025-01-01",
+        credentialID: "867SU26BQ0S5",
+        credentialURL: "https://www.coursera.org/account/accomplishments/verify/867SU26BQ0S5"
     },
     {
-        title: "The Fundamentals of Digital Marketing",
-        issuer: "Google Digital Garage",
-        issuerIconName: "google",
-        issueDate: "2022-08-22",
-        credentialID: "3T8-F9N-LKQ",
-        credentialURL: "https://drive.google.com/file/d/14laAMWmVKhCfgKwVEgJyWse7o0sZDD4N/view?usp=sharing"
+        title: "Python for Beginners",
+        issuer: "University of Moratuwa",
+        issuerIconName: "uom",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: "https://www.linkedin.com/in/hasal/details/certifications/1737699131335/single-media-viewer/?profileId=ACoAADvcZ1kB4UtZGY3ym2AlcO_zDHCQck3Zwxw"
+    },
+    // Remaining certifications (original order, universities removed from their previous positions)
+    {
+        title: "Generative AI in Action: Real-World Use Cases",
+        issuer: "Amazon Web Services (AWS)",
+        issuerIconName: "aws",
+        issueDate: "2025-05-01",
+        credentialID: "",
+        credentialURL: "https://www.linkedin.com/in/hasal/details/certifications/1747490827614/single-media-viewer/?profileId=ACoAADvcZ1kB4UtZGY3ym2AlcO_zDHCQck3Zwxw"
     },
     {
-        title: "Microsoft Office Specialist: Microsoft Office PowerPoint® 2013",
+        title: "GitHub Foundations",
+        issuer: "GitHub",
+        issuerIconName: "github",
+        issueDate: "2025-05-01",
+        credentialID: "",
+        credentialURL: "http://credly.com/badges/a03ff322-0798-4b2f-812f-7fc346f1289d/linked_in_profile"
+    },
+    {
+        title: "Microsoft Certified: Azure AI Fundamentals",
         issuer: "Microsoft",
         issuerIconName: "microsoft",
-        issueDate: "2017-04-16",
-        credentialID: "wXTm3-4SHG",
-        credentialURL: "https://drive.google.com/file/d/117DE6bMkHvRqXbED2tmSMNkbx9s7OahM/view?usp=sharing"
+        issueDate: "2025-05-01",
+        credentialID: "",
+        credentialURL: "https://www.credly.com/badges/9b84ba19-86b5-4c74-baa4-14c30aac9edf/linked_in_profile"
     },
     {
-        title: "Google Code-in 2016",
+        title: "No-code Machine Learning and Generative AI on AWS",
+        issuer: "Amazon Web Services (AWS)",
+        issuerIconName: "aws",
+        issueDate: "2025-05-01",
+        credentialID: "",
+        credentialURL: "https://www.linkedin.com/in/hasal/details/certifications/1747238136014/single-media-viewer/?profileId=ACoAADvcZ1kB4UtZGY3ym2AlcO_zDHCQck3Zwxw"
+    },
+    {
+        title: "Advanced Python (2018)",
+        issuer: "LinkedIn",
+        issuerIconName: "linkedin",
+        issueDate: "2025-03-01",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "Python Statistics Essential Training",
+        issuer: "LinkedIn",
+        issuerIconName: "linkedin",
+        issueDate: "2025-03-01",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "Learning Python (2021)",
+        issuer: "LinkedIn",
+        issuerIconName: "linkedin",
+        issueDate: "2025-02-01",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "Python Essential Training",
+        issuer: "LinkedIn",
+        issuerIconName: "linkedin",
+        issueDate: "2025-02-01",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "Data Science 101",
+        issuer: "IBM",
+        issuerIconName: "ibm",
+        issueDate: "2025-01-01",
+        credentialID: "",
+        credentialURL: "https://courses.cognitiveclass.ai/certificates/f18cd6c7ffd0469e9a99b4f1b8b9bad6"
+    },
+    {
+        title: "Foundations of Cybersecurity",
         issuer: "Google",
         issuerIconName: "google",
-        issueDate: "2017-01-16",
-        credentialID: "",
-        credentialURL: "https://drive.google.com/file/d/162RXtAVIZEvfx6LvP3xeBj-cSI9ZpPUX/view?usp=sharing"
+        issueDate: "2025-01-01",
+        credentialID: "57CC3BB80X8A",
+        credentialURL: "https://www.coursera.org/account/accomplishments/verify/57CC3BB80X8A"
     },
     {
-        title: "HSGS Olympiad 2016",
-        issuer: "HUS High School for Gifted Students",
-        issueDate: "2016-05-08",
-        credentialID: "",
-        credentialURL: "https://drive.google.com/file/d/1eKv-2ldfw8-hF27sKfKWXL8MmwcSkzPq/view?usp=sharing"
+        title: "Introduction to Game Design",
+        issuer: "Epic Games",
+        issuerIconName: "epicgames",
+        issueDate: "2025-01-01",
+        credentialID: "09NR2Y61RIC9",
+        credentialURL: "https://www.coursera.org/account/accomplishments/verify/09NR2Y61RIC9"
     },
     {
-        title: "Microsoft Office Specialist: Microsoft Office Word 2013",
+        title: "SQL and Relational Databases 101",
+        issuer: "IBM",
+        issuerIconName: "ibm",
+        issueDate: "2025-01-01",
+        credentialID: "",
+        credentialURL: "https://courses.cognitiveclass.ai/certificates/7faf830dfef04f1ba37c108435e2122a"
+    },
+    {
+        title: "Python (Basic)",
+        issuer: "HackerRank",
+        issuerIconName: "hackerrank",
+        issueDate: "2024-06-01",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "Attract and Engage Customers with Digital Marketing",
+        issuer: "Google",
+        issuerIconName: "google",
+        issueDate: "2023-11-01",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "Foundations of Coding Full-Stack",
         issuer: "Microsoft",
         issuerIconName: "microsoft",
-        issueDate: "2016-04-24",
-        credentialID: "w9YXr-FMR8",
-        credentialURL: "https://drive.google.com/file/d/1-NHhjKlQbhlcO7bpRue1XzDgDaudOf2N/view?usp=sharing"
+        issueDate: "",
+        credentialID: "",
+        credentialURL: "https://www.coursera.org/account/accomplishments/verify/0A5NWVW5E7ED?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
+    },
+    {
+        title: "Angular (Basic)",
+        issuer: "HackerRank",
+        issuerIconName: "hackerrank",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "C# (Basic)",
+        issuer: "HackerRank",
+        issuerIconName: "hackerrank",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "Dynamics of Information Security Management System (ISMS)",
+        issuer: "Alison",
+        issuerIconName: "alison",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "Foundations of Coding Front-End",
+        issuer: "Microsoft",
+        issuerIconName: "microsoft",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: "https://www.coursera.org/account/accomplishments/verify/VL95K32BJHV8?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course"
+    },
+    {
+        title: "Fundamentals of Analytics on AWS",
+        issuer: "Amazon Web Services (AWS)",
+        issuerIconName: "aws",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "Introduction to Data Analytics",
+        issuer: "IBM",
+        issuerIconName: "ibm",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: "https://www.coursera.org/account/accomplishments/verify/KYTEQTROCGTE?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button"
+    },
+    {
+        title: "Introduction to Front-End Development",
+        issuer: "Meta",
+        issuerIconName: "meta",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: "https://www.coursera.org/account/accomplishments/verify/91X8YDBI088L?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button"
+    },
+    {
+        title: "Introduction to Programming With C#",
+        issuer: "Microsoft",
+        issuerIconName: "microsoft",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "JavaScript (Intermediate)",
+        issuer: "HackerRank",
+        issuerIconName: "hackerrank",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "React (Basic)",
+        issuer: "HackerRank",
+        issuerIconName: "hackerrank",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "SQL (Advanced)",
+        issuer: "HackerRank",
+        issuerIconName: "hackerrank",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "SQL (Basic)",
+        issuer: "HackerRank",
+        issuerIconName: "hackerrank",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
+    },
+    {
+        title: "IET Cipher",
+        issuer: "Institution of Engineering and Technology (IET)",
+        issuerIconName: "iet",
+        issueDate: "",
+        credentialID: "",
+        credentialURL: ""
     }
 ];
 }),
@@ -1528,13 +1643,31 @@ function CertificationItem({ className, certification }) {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("time", {
-                                            dateTime: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$dayjs$2f$dayjs$2e$min$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(certification.issueDate).toISOString(),
-                                            children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$dayjs$2f$dayjs$2e$min$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(certification.issueDate).format("DD.MM.YYYY")
+                                        children: certification.issueDate ? (()=>{
+                                            const issued = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$dayjs$2f$dayjs$2e$min$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(certification.issueDate);
+                                            if (issued.isValid()) {
+                                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("time", {
+                                                    dateTime: issued.toISOString(),
+                                                    children: issued.format("DD.MM.YYYY")
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/features/profile/components/certifications/certification-item.tsx",
+                                                    lineNumber: 77,
+                                                    columnNumber: 23
+                                                }, this);
+                                            }
+                                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "—"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/features/profile/components/certifications/certification-item.tsx",
+                                                lineNumber: 83,
+                                                columnNumber: 26
+                                            }, this);
+                                        })() : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "—"
                                         }, void 0, false, {
                                             fileName: "[project]/src/features/profile/components/certifications/certification-item.tsx",
-                                            lineNumber: 72,
-                                            columnNumber: 15
+                                            lineNumber: 86,
+                                            columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/features/profile/components/certifications/certification-item.tsx",
@@ -1564,7 +1697,7 @@ function CertificationItem({ className, certification }) {
                 "aria-hidden": true
             }, void 0, false, {
                 fileName: "[project]/src/features/profile/components/certifications/certification-item.tsx",
-                lineNumber: 81,
+                lineNumber: 94,
                 columnNumber: 9
             }, this)
         ]

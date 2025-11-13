@@ -1883,10 +1883,6 @@
     height: calc(var(--spacing) * .5);
   }
 
-  .h-2 {
-    height: calc(var(--spacing) * 2);
-  }
-
   .h-2\.5 {
     height: calc(var(--spacing) * 2.5);
   }
@@ -1913,10 +1909,6 @@
 
   .h-10 {
     height: calc(var(--spacing) * 10);
-  }
-
-  .h-11 {
-    height: calc(var(--spacing) * 11);
   }
 
   .h-12 {
@@ -2546,10 +2538,6 @@
     background-color: var(--destructive);
   }
 
-  .bg-edge {
-    background-color: var(--edge);
-  }
-
   .bg-foreground {
     background-color: var(--foreground);
   }
@@ -2915,10 +2903,6 @@
 
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
-  }
-
-  .pb-\[env\(safe-area-inset-bottom\,0px\)\] {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
   .pb-px {
@@ -3703,11 +3687,6 @@
     z-index: calc(1 * -1);
   }
 
-  .before\:z-1:before {
-    content: var(--tw-content);
-    z-index: 1;
-  }
-
   .before\:z-11:before {
     content: var(--tw-content);
     z-index: 11;
@@ -4199,16 +4178,8 @@
     --tw-enter-translate-y: calc(2 * var(--spacing));
   }
 
-  :is(.\*\*\:data-\[slot\=buttons\]\:pr-4 *)[data-slot="buttons"] {
-    padding-right: calc(var(--spacing) * 4);
-  }
-
   :is(.\*\*\:data-\[slot\=command-input-wrapper\]\:h-12 *)[data-slot="command-input-wrapper"] {
     height: calc(var(--spacing) * 12);
-  }
-
-  :is(.\*\*\:data-\[slot\=preview\]\:px-0 *)[data-slot="preview"] {
-    padding-inline: calc(var(--spacing) * 0);
   }
 
   .data-\[state\=active\]\:border-foreground[data-state="active"] {

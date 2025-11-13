@@ -1,24 +1,24 @@
 {
-  "name": "chanhdai.com",
+  "name": "hasal.de",
   "version": "0.1.0",
   "description": "A minimal, pixel-perfect dev portfolio, component registry, and blog.",
-  "homepage": "https://chanhdai.com",
+  "homepage": "https://hasal.de",
   "license": "UNLICENSED",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "Hasal Dharmagunawardana",
+    "email": "hasaldharmagunwardana@gmail.com",
+    "url": "https://github.com/hesxo"
   },
   "contributors": [
     {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
+      "name": "Hasal Dharmagunawardana",
+      "email": "hasaldharmagunwardana@gmail.com",
+      "url": "https://github.com/hesxo/portfolio.git"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": ""
   },
   "scripts": {
     "dev": "next dev -p 1408",

@@ -2618,41 +2618,413 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 ;
-function ChanhDaiMark(props) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        viewBox: "0 0 150 150",
-        role: "img",
-        "aria-hidden": props["aria-hidden"] ?? true,
-        ...props,
+function ChanhDaiMark({ className, id, ...rest }) {
+    // Render the exact SVGs you attached: a white-logotype (light) and a
+    // black-mark (dark). We render both SVG elements and toggle visibility
+    // with Tailwind's `dark:` utilities so the correct one appears for the
+    // active theme. Pass through props to both SVGs; if an `id` is present
+    // we suffix it to avoid duplicate ids in the DOM.
+    const svgClass = className ? className : "";
+    const lightId = id ? `${id}-light` : undefined;
+    const darkId = id ? `${id}-dark` : undefined;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
                 width: "150",
                 height: "150",
-                fill: "white"
-            }, void 0, false, {
+                viewBox: "0 0 150 150",
+                role: "img",
+                "aria-hidden": rest["aria-hidden"] ?? true,
+                className: `block dark:hidden ${svgClass}`,
+                id: lightId,
+                ...rest,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                        width: "150",
+                        height: "150",
+                        fill: "white"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/chanhdai-mark.tsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        d: "M20 40H30V50H20V40ZM20 50H30V60H20V50ZM20 60H30V70H20V60ZM20 70H30V80H20V70ZM20 80H30V90H20V80ZM20 90H30V100H20V90ZM30 70H40V80H30V70ZM40 70H50V80H40V70ZM50 40H60V50H50V40ZM50 50H60V60H50V50ZM50 60H60V70H50V60ZM50 70H60V80H50V70ZM50 80H60V90H50V80ZM50 90H60V100H50V90ZM80 40H90V50H80V40ZM80 50H90V60H80V50ZM80 60H90V70H80V60ZM80 70H90V80H80V70ZM80 80H90V90H80V80ZM80 90H90V100H80V90ZM90 40H100V50H90V40ZM100 40H110V50H100V40ZM110 50H120V60H110V50ZM110 60H120V70H110V60ZM110 70H120V80H110V70ZM110 80H120V90H110V80ZM90 90H100V100H90V90ZM100 90H110V100H100V90Z",
+                        fill: "black"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/chanhdai-mark.tsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/components/chanhdai-mark.tsx",
-                lineNumber: 10,
+                lineNumber: 14,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M20 40H30V50H20V40ZM20 50H30V60H20V50ZM20 60H30V70H20V60ZM20 70H30V80H20V70ZM20 80H30V90H20V80ZM20 90H30V100H20V90ZM30 70H40V80H30V70ZM40 70H50V80H40V70ZM50 40H60V50H50V40ZM50 50H60V60H50V50ZM50 60H60V70H50V60ZM50 70H60V80H50V70ZM50 80H60V90H50V80ZM50 90H60V100H50V90ZM80 40H90V50H80V40ZM80 50H90V60H80V50ZM80 60H90V70H80V60ZM80 70H90V80H80V70ZM80 80H90V90H80V80ZM80 90H90V100H80V90ZM90 40H100V50H90V40ZM100 40H110V50H100V40ZM110 50H120V60H110V50ZM110 60H120V70H110V60ZM110 70H120V80H110V70ZM110 80H120V90H110V80ZM90 90H100V100H90V90ZM100 90H110V100H100V90Z",
-                fill: "black"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                xmlns: "http://www.w3.org/2000/svg",
+                width: "150",
+                height: "150",
+                viewBox: "0 0 150 150",
+                role: "img",
+                "aria-hidden": rest["aria-hidden"] ?? true,
+                className: `hidden dark:block ${svgClass}`,
+                id: darkId,
+                ...rest,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                        width: "150",
+                        height: "150",
+                        fill: "black"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/chanhdai-mark.tsx",
+                        lineNumber: 41,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "20",
+                                y: "40",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 43,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "20",
+                                y: "50",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 44,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "20",
+                                y: "60",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 45,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "20",
+                                y: "70",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 46,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "20",
+                                y: "80",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 47,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "20",
+                                y: "90",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 48,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "30",
+                                y: "70",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 49,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "40",
+                                y: "70",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 50,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "50",
+                                y: "40",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 51,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "50",
+                                y: "50",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 52,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "50",
+                                y: "60",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 53,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "50",
+                                y: "70",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 54,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "50",
+                                y: "80",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 55,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "50",
+                                y: "90",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 56,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/chanhdai-mark.tsx",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "80",
+                                y: "40",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 59,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "80",
+                                y: "50",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 60,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "80",
+                                y: "60",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 61,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "80",
+                                y: "70",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 62,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "80",
+                                y: "80",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 63,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "80",
+                                y: "90",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 64,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "90",
+                                y: "40",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 65,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "100",
+                                y: "40",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 66,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "110",
+                                y: "50",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 67,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "110",
+                                y: "60",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 68,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "110",
+                                y: "70",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 69,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "110",
+                                y: "80",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 70,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "90",
+                                y: "90",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 71,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                x: "100",
+                                y: "90",
+                                width: "10",
+                                height: "10",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/chanhdai-mark.tsx",
+                                lineNumber: 72,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/chanhdai-mark.tsx",
+                        lineNumber: 58,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/components/chanhdai-mark.tsx",
-                lineNumber: 12,
+                lineNumber: 30,
                 columnNumber: 7
             }, this)
         ]
-    }, void 0, true, {
-        fileName: "[project]/src/components/chanhdai-mark.tsx",
-        lineNumber: 3,
-        columnNumber: 5
-    }, this);
+    }, void 0, true);
 }
-function getMarkSVG(color) {
-    const bg = color ?? "white";
-    return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">\n  <rect width="150" height="150" fill="${bg}"/>\n  <path d=\"M20 40H30V50H20V40ZM20 50H30V60H20V50ZM20 60H30V70H20V60ZM20 70H30V80H20V70ZM20 80H30V90H20V80ZM20 90H30V100H20V90ZM30 70H40V80H30V70ZM40 70H50V80H40V70ZM50 40H60V50H50V40ZM50 50H60V60H50V50ZM50 60H60V70H50V60ZM50 70H60V80H50V70ZM50 80H60V90H50V80ZM50 90H60V100H50V90ZM80 40H90V50H80V40ZM80 50H90V60H80V50ZM80 60H90V70H80V60ZM80 70H90V80H80V70ZM80 80H90V90H80V80ZM80 90H90V100H80V90ZM90 40H100V50H90V40ZM100 40H110V50H100V40ZM110 50H120V60H110V50ZM110 60H120V70H110V60ZM110 70H120V80H110V70ZM110 80H120V90H110V80ZM90 90H100V100H90V90ZM100 90H110V100H100V90Z\" fill=\"black\"/>\n</svg>`;
+function getMarkSVG(color, fg) {
+    // If caller passed a foreground color of white, return the dark SVG
+    // (black bg with white blocks). Otherwise return the light svg.
+    const fgColor = fg ?? color;
+    const wantDark = fgColor === "#fff" || fgColor === "white" || fgColor === "white";
+    if (wantDark) {
+        return `<?xml version="1.0" encoding="UTF-8"?>\n<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">\n  <rect width="150" height="150" fill="black"/>\n  <g>\n    <rect x="20" y="40" width="10" height="10" fill="white" />\n    <rect x="20" y="50" width="10" height="10" fill="white" />\n    <rect x="20" y="60" width="10" height="10" fill="white" />\n    <rect x="20" y="70" width="10" height="10" fill="white" />\n    <rect x="20" y="80" width="10" height="10" fill="white" />\n    <rect x="20" y="90" width="10" height="10" fill="white" />\n    <rect x="30" y="70" width="10" height="10" fill="white" />\n    <rect x="40" y="70" width="10" height="10" fill="white" />\n    <rect x="50" y="40" width="10" height="10" fill="white" />\n    <rect x="50" y="50" width="10" height="10" fill="white" />\n    <rect x="50" y="60" width="10" height="10" fill="white" />\n    <rect x="50" y="70" width="10" height="10" fill="white" />\n    <rect x="50" y="80" width="10" height="10" fill="white" />\n    <rect x="50" y="90" width="10" height="10" fill="white" />\n  </g>\n  <g>\n    <rect x="80" y="40" width="10" height="10" fill="white" />\n    <rect x="80" y="50" width="10" height="10" fill="white" />\n    <rect x="80" y="60" width="10" height="10" fill="white" />\n    <rect x="80" y="70" width="10" height="10" fill="white" />\n    <rect x="80" y="80" width="10" height="10" fill="white" />\n    <rect x="80" y="90" width="10" height="10" fill="white" />\n    <rect x="90" y="40" width="10" height="10" fill="white" />\n    <rect x="100" y="40" width="10" height="10" fill="white" />\n    <rect x="110" y="50" width="10" height="10" fill="white" />\n    <rect x="110" y="60" width="10" height="10" fill="white" />\n    <rect x="110" y="70" width="10" height="10" fill="white" />\n    <rect x="110" y="80" width="10" height="10" fill="white" />\n    <rect x="90" y="90" width="10" height="10" fill="white" />\n    <rect x="100" y="90" width="10" height="10" fill="white" />\n  </g>\n</svg>`;
+    }
+    return `<?xml version="1.0" encoding="UTF-8"?>\n<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">\n  <rect width="150" height="150" fill="white"/>\n  <path d="M20 40H30V50H20V40ZM20 50H30V60H20V50ZM20 60H30V70H20V60ZM20 70H30V80H20V70ZM20 80H30V90H20V80ZM20 90H30V100H20V90ZM30 70H40V80H30V70ZM40 70H50V80H40V70ZM50 40H60V50H50V40ZM50 50H60V60H50V50ZM50 60H60V70H50V60ZM50 70H60V80H50V70ZM50 80H60V90H50V80ZM50 90H60V100H50V90ZM80 40H90V50H80V40ZM80 50H90V60H80V50ZM80 60H90V70H80V60ZM80 70H90V80H80V70ZM80 80H90V90H80V80ZM80 90H90V100H80V90ZM90 40H100V50H90V40ZM100 40H110V50H100V40ZM110 50H120V60H110V50ZM110 60H120V70H110V60ZM110 70H120V80H110V70ZM110 80H120V90H110V80ZM90 90H100V100H90V90ZM100 90H110V100H100V90Z" fill="black"/>\n</svg>`;
 }
 }),
 "[project]/src/features/profile/components/profile-cover.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
@@ -2784,11 +3156,11 @@ function ProfileHeader() {
         className: "screen-line-after flex border-x border-edge",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "shrink-0 border-r border-edge",
+                className: "shrink-0 border-r border-edge pr-3",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "mx-0.5 my-[3px]",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                        className: "size-32 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40",
+                        className: "size-16 sm:size-28 md:size-40 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none",
                         alt: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$data$2f$user$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["USER"].displayName}'s avatar`,
                         src: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$data$2f$user$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["USER"].avatar,
                         fetchPriority: "high"
@@ -2848,14 +3220,27 @@ function ProfileHeader() {
                         className: "border-t border-edge",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "flex items-center flex-wrap pl-4 text-2xl sm:text-3xl font-semibold w-full gap-2 leading-tight break-words",
+                                className: "flex sm:flex-row flex-col sm:items-center items-start pl-4 text-2xl sm:text-3xl font-semibold w-full gap-2 leading-tight",
                                 children: [
-                                    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$data$2f$user$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["USER"].displayName,
-                                    " ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SimpleTooltip"], {
-                                        content: "Verified",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$components$2f$verified$2d$icon$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["VerifiedIcon"], {
-                                            className: "size-[0.6em] translate-y-px text-info select-none"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "break-words w-full",
+                                        children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$data$2f$user$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["USER"].displayName
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/features/profile/components/profile-header.tsx",
+                                        lineNumber: 34,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mt-1 sm:mt-0",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SimpleTooltip"], {
+                                            content: "Verified",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$components$2f$verified$2d$icon$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["VerifiedIcon"], {
+                                                className: "size-[0.6em] translate-y-px text-info select-none"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/features/profile/components/profile-header.tsx",
+                                                lineNumber: 38,
+                                                columnNumber: 17
+                                            }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/features/profile/components/profile-header.tsx",
                                             lineNumber: 37,
@@ -2879,12 +3264,12 @@ function ProfileHeader() {
                                     children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$data$2f$user$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["USER"].flipSentences
                                 }, void 0, false, {
                                     fileName: "[project]/src/features/profile/components/profile-header.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 44,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/features/profile/components/profile-header.tsx",
-                                lineNumber: 41,
+                                lineNumber: 43,
                                 columnNumber: 11
                             }, this)
                         ]

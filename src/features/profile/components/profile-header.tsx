@@ -2,7 +2,7 @@ import { SimpleTooltip } from "@/components/ui/tooltip";
 import { USER } from "@/features/profile/data/user";
 import { FlipSentences } from "@/registry/flip-sentences";
 
-import { VerifiedIcon } from "./verified-icon";
+import { VerifiedIcon as VerifiedIconNew } from "./verified-icon2";
 
 export function ProfileHeader() {
   return (
@@ -10,7 +10,7 @@ export function ProfileHeader() {
       <div className="shrink-0 border-r border-edge pr-3">
         <div className="mx-0.5 my-[3px]">
           <img
-            className="size-16 sm:size-28 md:size-40 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none"
+            className="size-40 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none"
             alt={`${USER.displayName}'s avatar`}
             src={USER.avatar}
             fetchPriority="high"
@@ -35,7 +35,7 @@ export function ProfileHeader() {
 
             <div className="mt-1 sm:mt-0">
               <SimpleTooltip content="Verified">
-                <VerifiedIcon className="size-[0.6em] translate-y-px text-info select-none" />
+                <VerifiedIconNew className="size-[0.6em] translate-y-px text-info select-none" />
               </SimpleTooltip>
             </div>
           </h1>

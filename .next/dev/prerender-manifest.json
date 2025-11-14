@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/blog/Tedx":{},"/blog/Responsive":{},"/blog/F1":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"c9d98fac62d6d9daaa2ecf933bd8d2d6","previewModeSigningKey":"c041fdd15a70401cf22d01356d4d7704e0d80dd252e7117c635d40c5f6954704","previewModeEncryptionKey":"098338809590f2a68fbf8c96a7d72edf3fdef6b368bf5d5722e11a5ea8b621e2"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "4ac7326fa02666161127a86a558099d0",
+    "previewModeSigningKey": "03c900119d23c84e42200909f3cccd901c2e79c1b003572d8b0435bcd1d64af1",
+    "previewModeEncryptionKey": "ddcfc7ce4535dc0fd179895da3afa162680006a8a7e9d89f1958e82d515d1188"
+  }
+}

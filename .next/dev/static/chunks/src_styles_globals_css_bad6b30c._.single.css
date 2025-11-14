@@ -1870,9 +1870,9 @@
     height: calc(var(--spacing) * 16);
   }
 
-  .size-32 {
-    width: calc(var(--spacing) * 32);
-    height: calc(var(--spacing) * 32);
+  .size-40 {
+    width: calc(var(--spacing) * 40);
+    height: calc(var(--spacing) * 40);
   }
 
   .size-\[0\.6em\] {
@@ -4412,13 +4412,6 @@
     .sm\:size-28 {
       width: calc(var(--spacing) * 28);
       height: calc(var(--spacing) * 28);
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:size-40 {
-      width: calc(var(--spacing) * 40);
-      height: calc(var(--spacing) * 40);
     }
   }
 

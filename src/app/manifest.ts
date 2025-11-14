@@ -9,26 +9,16 @@ export default function manifest(): MetadataRoute.Manifest {
     description: SITE_INFO.description,
     icons: [
       {
-        src: "https://assets.chanhdai.com/images/icon-vector.svg",
+        // Local vector icon (serves as the PWA vector icon)
+        src: "/icons/icon-vector.svg",
         type: "image/svg+xml",
         sizes: "any",
         purpose: "any",
       },
       {
-        src: "https://assets.chanhdai.com/images/icon-192x192.png",
-        type: "image/png",
-        sizes: "192x192",
-        purpose: "any",
-      },
-      {
-        src: "https://assets.chanhdai.com/images/icon-512x512.png",
-        type: "image/png",
-        sizes: "512x512",
-        purpose: "any",
-      },
-      {
-        src: "https://assets.chanhdai.com/images/maskable-icon.png",
-        type: "image/png",
+        // Provide a maskable SVG (same artwork) for platforms that prefer maskable icons
+        src: "/icons/maskable-icon.svg",
+        type: "image/svg+xml",
         sizes: "512x512",
         purpose: "maskable",
       },

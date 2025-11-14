@@ -19,7 +19,7 @@ export function ProfileHeader() {
 
       </div>
 
-      <div className="flex flex-1 flex-col">
+  <div className="flex flex-1 flex-col min-w-0">
         <div className="flex grow items-end pb-1 pl-4">
           <div className="line-clamp-1 font-mono text-xs text-zinc-300 select-none max-sm:hidden dark:text-zinc-800">
             {"text-3xl "}
@@ -30,7 +30,7 @@ export function ProfileHeader() {
         </div>
 
         <div className="border-t border-edge">
-          <h1 className="flex items-center pl-4 text-3xl font-semibold">
+          <h1 className="flex items-center flex-wrap pl-4 text-2xl sm:text-3xl font-semibold">
             {USER.displayName}
             &nbsp;
             <SimpleTooltip content="Verified">

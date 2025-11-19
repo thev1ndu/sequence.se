@@ -243,6 +243,13 @@ export default function RootLayout({
         />
       </head>
 
+        {/* Explicit favicons: some crawlers and older browsers expect /favicon.* links
+            and may not read Next's metadata/icons. Provide explicit links to local
+            files so search engines pick up the correct icon. */}
+        <link rel="icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/icons/icon-vector.svg" />
+        <link rel="mask-icon" href="/icons/maskable-icon.svg" color="#000000" />
+
       <body suppressHydrationWarning>
         <Providers>{children}</Providers>
       </body>

@@ -64,7 +64,7 @@ const USER = {
     address: "Colombo, Sri Lanka",
     phoneNumber: "Kzk0IDc3IDMzOCAxMDM5",
     email: "aGFzYWxkaGFybWFndW5hd2FyZGFuYUBnbWFpbC5jb20KCg",
-    website: "https://hasal.de",
+    website: "https://hasal.me",
     jobTitle: "Design Engineer",
     jobs: [
         {
@@ -94,7 +94,49 @@ Let's connect and collaborate!
         "thurstan",
         "it",
         "cricketer",
-        "Welikanna"
+        "Welikanna",
+        "Hasal Dharmagunawardana",
+        "Hasal Hansada Dharmagunawardana",
+        "Hasal",
+        "Hansada",
+        "hansada",
+        "hasal",
+        "hesxo",
+        "software developer",
+        "web developer",
+        "full stack developer",
+        "computer science student",
+        "university of westminster",
+        "westminster",
+        "uk",
+        "sri lanka",
+        "colombo",
+        "lk",
+        "sri lankan",
+        "sri lankan software developer",
+        "sri lankan web developer",
+        "sri lankan full stack developer",
+        "sri lankan computer science student",
+        "sri lankan university of westminster",
+        "sri lankan westminster",
+        "iit",
+        "iit university",
+        "iit university of westminster",
+        "iit university of westminster computer science student",
+        "iit university of westminster web developer",
+        "iit university of westminster full stack developer",
+        "iit university of westminster software developer",
+        "iit university of westminster computer science",
+        "iit university of westminster computer science student",
+        "iit university of westminster web developer",
+        "iit university of westminster full stack developer",
+        "iit university of westminster software developer",
+        "iit university of westminster computer science",
+        "iit university of westminster computer science student",
+        "iit university of westminster web developer",
+        "iit university of westminster full stack developer",
+        "iit university of westminster software developer",
+        "iit university of westminster computer science"
     ],
     dateCreated: "2023-10-20"
 };
@@ -122,7 +164,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2
 ;
 const SITE_INFO = {
     name: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$data$2f$user$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["USER"].displayName,
-    url: process.env.APP_URL || "https://hasal.de",
+    url: process.env.APP_URL || "https://hasal.me",
     ogImage: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$data$2f$user$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["USER"].ogImage,
     description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$data$2f$user$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["USER"].bio,
     keywords: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$features$2f$profile$2f$data$2f$user$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["USER"].keywords
@@ -145,7 +187,7 @@ const GITHUB_USERNAME = "hesxo";
 const SOURCE_CODE_GITHUB_REPO = "hesxo/portfolio";
 const SOURCE_CODE_GITHUB_URL = "https://github.com/hesxo/portfolio";
 const UTM_PARAMS = {
-    utm_source: "hasal.de",
+    utm_source: "hasal.me",
     utm_medium: "portfolio_website",
     utm_campaign: "referral"
 };

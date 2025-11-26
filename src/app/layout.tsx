@@ -115,19 +115,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icons/icon-vector.svg",
+        url: "/favicon.ico",
         sizes: "any",
       },
       {
-        url: "/icons/icon-vector.svg",
+        url: "/favicon.svg",
         type: "image/svg+xml",
       },
     ],
     apple: {
-      // Use the local SVG icon for apple/manifest; consider adding a
-      // 180x180 PNG at `public/icons/apple-touch-icon.png` for best
-      // compatibility with older devices.
-      url: "/icons/icon-vector.svg",
+      url: "/favicon.svg",
       type: "image/svg+xml",
       sizes: "180x180",
     },
@@ -169,7 +166,8 @@ export default function RootLayout({
         <Script
           id="strip-bis-attributes"
           strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: String.raw`
+          dangerouslySetInnerHTML={{
+            __html: String.raw`
             (function(){
               try {
                 function stripAttrs(root) {
@@ -241,16 +239,6 @@ export default function RootLayout({
             __html: JSON.stringify(getPersonJsonLd()).replace(/</g, "\\u003c"),
           }}
         />
-        {/* Explicit favicons: some crawlers and older browsers expect /favicon.* links
-            and may not read Next's metadata/icons. Provide explicit links to local
-            files so search engines pick up the correct icon. */}
-        {/* Fallback order: .ico (legacy), .png (broad support), .svg (scalable) */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="icon" href="/favicon.svg" />
-        <link rel="apple-touch-icon" href="/icons/icon-vector.svg" />
-        <link rel="mask-icon" href="/icons/maskable-icon.svg" color="#000000" />
-
       </head>
       <body suppressHydrationWarning>
         <Providers>{children}</Providers>

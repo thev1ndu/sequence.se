@@ -22,7 +22,7 @@ export function NavMenu() {
   React.useEffect(() => {
     // Initialize with first nav item
     const firstItem = ref.current?.querySelector(
-      `[href="#${navs[0].href.substring(1)}"]`,
+      `[href="#${navs[0].href.substring(1)}"]`
     )?.parentElement;
     if (firstItem) {
       const rect = firstItem.getBoundingClientRect();
@@ -58,7 +58,7 @@ export function NavMenu() {
       // Update active section and nav indicator
       setActiveSection(closestSection);
       const navItem = ref.current?.querySelector(
-        `[href="#${closestSection}"]`,
+        `[href="#${closestSection}"]`
       )?.parentElement;
       if (navItem) {
         const rect = navItem.getBoundingClientRect();
@@ -74,7 +74,7 @@ export function NavMenu() {
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    item: NavItem,
+    item: NavItem
   ) => {
     e.preventDefault();
 
@@ -120,7 +120,7 @@ export function NavMenu() {
         {navs.map((item) => (
           <li
             key={item.name}
-            className={`z-10 cursor-pointer h-full flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+            className={`z-10 cursor-pointer h-full flex items-center justify-center px-4 py-2 text-sm font-medium uppercase transition-colors duration-200 ${
               activeSection === item.href.substring(1)
                 ? "text-primary"
                 : "text-primary/60 hover:text-primary"

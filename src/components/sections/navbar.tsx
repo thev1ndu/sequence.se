@@ -169,7 +169,8 @@ export function Navbar() {
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <Link href="/" className="flex items-center gap-3">
-                    <Icons.logo className="size-7 md:size-10" />
+                    {/* <Icons.logo className="size-7 md:size-10" /> */}
+                    <img src="./Q.svg" className="size-6 md:size-7" />
                     <p className="text-lg font-semibold text-primary">
                       Sequence3
                     </p>
@@ -190,7 +191,7 @@ export function Navbar() {
                     {siteConfig.nav.links.map((item) => (
                       <motion.li
                         key={item.id}
-                        className="p-2.5 border-b border-border last:border-b-0"
+                        className="p-2.5 border-b border-border uppercase last:border-b-0"
                         variants={drawerMenuVariants}
                       >
                         <a

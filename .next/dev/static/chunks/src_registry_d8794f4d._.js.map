@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/hasaldharmagunwardana/Desktop/portfolio/src/registry/theme-switcher/index.ts"],"sourcesContent":["export * from \"./theme-switcher\";\n"],"names":[],"mappings":";AAAA","debugId":null}},
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/hasaldharmagunwardana/Desktop/portfolio/src/registry/examples/theme-switcher-demo.tsx"],"sourcesContent":["import { ThemeSwitcher } from \"@/registry/theme-switcher\";\n\nexport default function ThemeSwitcherDemo() {\n  return <ThemeSwitcher />;\n}\n"],"names":[],"mappings":";;;;;AAAA;AAAA;;;AAEe,SAAS;IACtB,qBAAO,6LAAC,8KAAa;;;;;AACvB;KAFwB","debugId":null}}]
-}

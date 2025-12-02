@@ -1,4 +1,4 @@
-import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
+// Removed unused import
 
 export function SiteFooter() {
   return (

@@ -2,6 +2,7 @@ module.exports = [
 "[project]/src/components/site-footer.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// Removed unused import
 __turbopack_context__.s([
     "SiteFooter",
     ()=>SiteFooter

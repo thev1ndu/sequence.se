@@ -69,10 +69,10 @@ export const siteConfig = {
         <path d="M2.37845 10.5993L2.57045 10.4893L6.88445 12.9533C7.22435 13.1474 7.60901 13.2496 8.00045 13.2496C8.39189 13.2496 8.77656 13.1474 9.11645 12.9533L13.4305 10.4883L13.6225 10.5983C13.7374 10.6638 13.833 10.7586 13.8994 10.8731C13.9659 10.9875 14.0009 11.1175 14.0009 11.2498C14.0009 11.3821 13.9659 11.5121 13.8994 11.6265C13.833 11.7409 13.7374 11.8357 13.6225 11.9013L8.37245 14.9013C8.25915 14.966 8.13093 15 8.00045 15C7.86997 15 7.74175 14.966 7.62845 14.9013L2.37845 11.9013C2.2635 11.8357 2.16795 11.7409 2.10148 11.6265C2.03501 11.5121 2 11.3821 2 11.2498C2 11.1175 2.03501 10.9875 2.10148 10.8731C2.16795 10.7586 2.2635 10.6638 2.37845 10.5983V10.5993Z" />
       </svg>
     ),
-    badge: "Introducing custom automations",
-    title: "Meet your AI Agent Streamline your workflow",
+    badge: "Introducing AI-assisted Business Conversations",
+    title: "Meet your AI Conversation Agent",
     description:
-      "AI assistant designed to streamline your digital workflows and handle mundane tasks, so you can focus on what truly matters",
+      "Smart assistant that unifies messages, drafts replies, and manages customer workflows instantly.",
     cta: {
       primary: {
         text: "Try for Free",

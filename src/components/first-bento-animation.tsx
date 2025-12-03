@@ -84,7 +84,7 @@ export function FirstBentoAnimation() {
         </div>
         <div className="flex items-start gap-2">
           <div className="flex items-center bg-background rounded-full size-10 flex-shrink-0 justify-center shadow-[0_0_10px_rgba(0,0,0,0.05)] border border-border">
-            <Icons.logo className="size-4" />
+            <img src="./purple.svg" alt="Q"className="size-6" />
           </div>
 
           <div className="relative">

@@ -8,7 +8,7 @@ export function SecondBentoAnimation() {
       <div className="pointer-events-none absolute top-0 left-0 h-20 w-full bg-gradient-to-b from-background to-transparent z-20"></div>
 
       <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 size-16 bg-secondary p-2 rounded-full z-30 md:bottom-0 md:top-auto">
-        <Icons.logo className="fill-white size-10" />
+        <img src="./Q-white.svg" className="fill-white size-10" />
       </div>
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
         <div className="relative flex h-full w-full items-center justify-center translate-y-0 md:translate-y-32">

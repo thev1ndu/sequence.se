@@ -734,6 +734,7 @@ export const siteConfig = {
           "AI safety & bias filtering",
           "Multi-user workspace",
           "Knowledge base retrieval",
+          "Conversation-based customer segmentation",
         ],
         description: "Ideal for fast-growing SMEs and small teams",
         buttonText: "Coming Soon",

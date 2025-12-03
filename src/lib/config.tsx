@@ -51,7 +51,7 @@ export const siteConfig = {
       { id: 1, name: "Home", href: "#hero" },
       { id: 2, name: "Features", href: "#bento" },
       // { id: 3, name: "Features", href: "#features" },
-      { id: 4, name: "Pricing", href: "#pricing" },
+      { id: 3, name: "Pricing", href: "#pricing" },
     ],
   },
   hero: {
@@ -391,7 +391,7 @@ export const siteConfig = {
   growthSection: {
     title: "Built for Secure Growth",
     description:
-      "Where advanced security meets seamless scalability—designed to protect your data and empower your growth.",
+      "Where advanced security meets seamless scalability—protecting your data while keeping humans in full control of AI decisions.",
     items: [
       {
         id: 1,
@@ -671,9 +671,9 @@ export const siteConfig = {
           </div>
         ),
 
-        title: "Advanced Task Security",
+        title: "Ethical AI & Human-in-the-Loop",
         description:
-          "Safeguard your tasks with state-of-art encryption and secure access to your workflow data.",
+          "AI assists with transparency, while humans control sensitive decisions for safe, fair communication.",
       },
       {
         id: 2,
@@ -685,7 +685,7 @@ export const siteConfig = {
 
         title: "Scalable for Teams",
         description:
-          "Grow with your team. Track tasks across multiple workspaces and all team members.",
+          "Effortlessly grow with multiple users and workspaces while AI scales performance automatically.",
       },
     ],
   },

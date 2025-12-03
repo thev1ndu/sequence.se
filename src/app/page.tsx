@@ -15,7 +15,7 @@ export default function LandingPage() {
     <main className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full">
       <HeroSection />
       <CompanyShowcase />
-      <BentoSection />
+      {/* <BentoSection /> */}
       <QuoteSection />
       <GrowthSection />
       <PricingSection />

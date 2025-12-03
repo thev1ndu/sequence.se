@@ -412,14 +412,14 @@ export const siteConfig = {
         content: <FirstBentoAnimation />,
         title: "Real-time AI Collaboration",
         description:
-          "Experience real-time assistance. Ask your AI Agent to coordinate tasks, answer questions, and maintain team alignment.",
+          "Enable your team to collaborate with AI instantly—ensuring consistent, fast, and accurate customer communication.",
       },
       {
         id: 2,
         content: <SecondBentoAnimation />,
         title: "Seamless Integrations",
         description:
-          "Integrate channels, data sources, and tools into one unified system optimized for AI automation.",
+          "Bring all your channels, data, and tools together into a unified workspace built for AI-driven performance.",
       },
       {
         id: 3,
@@ -433,15 +433,15 @@ export const siteConfig = {
         ),
         title: "Instant Insight Reporting",
         description:
-          "Transform raw data into clear insights in seconds. Empower smarter decisions with real-time, always-learning intelligence.",
+          "See what customers ask, feel, and buy—instantly. Sequence3 reveals patterns that help you improve service and grow faster.",
       },
       {
         id: 4,
         content: <FourthBentoAnimation once={false} />,
-        title: "Smart Automation",
+        title: "Intelligent Customer Grouping",
         description:
-          "Set it, forget it. Your AI Agent tackles repetitive tasks so you can focus on strategy, innovation, and growth.",
-      },
+          "Automatically group customers by intent, sentiment, and behavior—helping you personalize responses and drive smarter engagement."
+        },
     ],
   },
   benefits: [

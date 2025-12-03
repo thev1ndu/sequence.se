@@ -9,7 +9,9 @@ import { AnimatePresence, motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 export function ReasoningBasic() {
-  const reasoningText = `Based on your calendar patterns and preferences, I recommend scheduling the team meeting for Tuesday at 2pm. This time slot has historically had the highest attendance rate, and it avoids conflicts with other recurring meetings.`;
+  const reasoningText = `Based on recent intent signals, sentiment scores, and response delays, 
+I recommend prioritizing customers showing strong purchase intent and unresolved issues. 
+These conversations have the highest likelihood of converting or escalating if left unattended.`;
 
   return (
     <Reasoning>
@@ -68,8 +70,8 @@ export function FirstBentoAnimation() {
             }}
           >
             <p className="text-sm">
-              Hey, I need help scheduling a team meeting that works well for
-              everyone. Any suggestions for finding an optimal time slot?
+              Hey, can you help me understand which customers I should follow up with first?
+              I want to prioritize the conversations that matter most.
             </p>
           </motion.div>
           <div className="flex items-center bg-background rounded-full w-fit border border-border flex-shrink-0">

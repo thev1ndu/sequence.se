@@ -325,9 +325,9 @@ export const siteConfig = {
     ],
   },
   bentoSection: {
-    title: "Empower Your Workflow with AI",
+    title: "Empower Your Conversations with AI",
     description:
-      "Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insights to streamline your operations.",
+      "Ask your Sequence3 Agent for real-time assistance, unified channel handling, and clear insights that help your team respond faster and work smarter.",
     items: [
       {
         id: 1,

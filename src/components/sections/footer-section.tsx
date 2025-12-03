@@ -67,7 +67,7 @@ export function FooterSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
         <div className="absolute inset-0 mx-6">
           <FlickeringGrid
-            text={tablet ? "Sequence3" : "Streamline your workflow"}
+            text={tablet ? "Sequence3" : "Sequence3 for SMEs"}
             fontSize={tablet ? 70 : 90}
             className="h-full w-full"
             squareSize={2}

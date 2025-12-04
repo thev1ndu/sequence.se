@@ -354,7 +354,10 @@ export const metadata: Metadata = {
     "European",
     "Nordic",
     "Scandinavian",
-    
+    "Sri Lanka",
+    "Sri Lankan",
+    "Colombo",
+    "Asia",    
     // Performance & Quality
     "Real-Time Processing",
     "Instant Response",
@@ -401,7 +404,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    alternateLocale: ["en_GB", "en_AU"],
     url: siteUrl,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -451,5 +453,27 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  other: {
+    "application-name": "Sequence3",
+    "apple-mobile-web-app-title": "Sequence3",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "mobile-web-app-capable": "yes",
+    "msapplication-TileColor": "#000000",
+    "msapplication-config": "/browserconfig.xml",
+    "geo.region": "LK",
+    "geo.placename": "Sri Lanka",
+    "language": "English",
+    "rating": "general",
+    "author": "Sequence3",
+    "twitter:label1": "Price",
+    "twitter:data1": "Free to Start",
+    "twitter:label2": "Category",
+    "twitter:data2": "Business Software",
+    // Note: Add verification tags when available:
+    // "google-site-verification": "your-verification-code",
+    // "yandex-verification": "your-verification-code",
+    // "msvalidate.01": "your-verification-code",
   },
 };

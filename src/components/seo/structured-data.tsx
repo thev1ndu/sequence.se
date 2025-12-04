@@ -32,14 +32,6 @@ export function StructuredData({ type = "homepage" }: StructuredDataProps) {
       "@type": "Organization",
       name: siteConfig.name,
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${baseUrl}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   const productSchema = {
@@ -53,11 +45,6 @@ export function StructuredData({ type = "homepage" }: StructuredDataProps) {
       price: "0",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "127",
     },
     description: siteConfig.description,
     url: baseUrl,

@@ -12,10 +12,6 @@ Disallow: /api/
 
 # Allow all important pages
 Allow: /
-Allow: /#hero
-Allow: /#bento
-Allow: /#pricing
-Allow: /#faq
 
 # Crawl-delay for well-behaved bots
 User-agent: Googlebot

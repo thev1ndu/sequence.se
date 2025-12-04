@@ -344,7 +344,7 @@ function WaitlistForm({
               </span>
             </div>
             <span className="text-xs font-mono text-ex-foreground/80 uppercase tracking-wider flex items-center gap-1">
-              JOIN TO ILLUMINATE.
+              ILLUMINATE.
             </span>
           </div>
         </div>

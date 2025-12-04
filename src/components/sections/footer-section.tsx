@@ -103,20 +103,22 @@ export function FooterSection() {
         </div>
       </div>
       <div className="absolute bottom-4 left-6 right-6 z-20 text-center">
-          <div className="text-xs text-muted-foreground mb-[2vh] bg-background p-0.5 flex items-center justify-center gap-2">
+          <div className="text-xs text-muted-foreground mb-[2vh] bg-background p-1 flex items-center justify-center gap-2">
             <span>© {new Date().getFullYear()} Sequence3 // CS-22</span>
-          </div>
-          <div
-              className="flex items-center justify-center px-3 py-0.6 border border-white/[0.07] transition-colors duration-700"
+            <div className="flex items-center justify-center bg-background">
+            <div
+              className="w-fit px-3 py-[1/2rem] border border-white/[0.07] transition-colors duration-700"
               style={{ backgroundColor: bgColor }}
             >
               <span
-                className="font-mono text-sm transition-colors duration-700 flex items-center justify-center"
+                className="font-mono text-sm transition-colors duration-700"
                 style={{ color: textColor }}
               >
                 {bgColor.toUpperCase()}
               </span>
             </div>
+          </div>
+          </div>
       </div>
       <div className="w-full h-48 md:h-64 relative mt-24 z-0">
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />

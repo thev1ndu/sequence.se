@@ -998,7 +998,7 @@ export const siteConfig = {
         { id: 5, title: "About", url: "#" },
         { id: 6, title: "Contact", url: "#" },
         { id: 7, title: "Blog", url: "#" },
-        { id: 8, title: "Story", url: "#" },
+        { id: 8, title: "Docs", url: "https://sq3.us/docs" },
       ],
     },
     {

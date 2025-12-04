@@ -52,6 +52,36 @@ export function HeroSection() {
             >
               {verifiedDomains[1]}
             </div>
+            <div 
+              className="absolute top-72 left-[18%] text-xs md:text-sm font-mono text-muted-foreground/12 animate-pulse"
+              style={{ animationDelay: '2s' }}
+            >
+              {verifiedDomains[2]}
+            </div>
+            <div 
+              className="absolute top-28 right-[22%] text-xs md:text-sm font-mono text-muted-foreground/18 animate-pulse"
+              style={{ animationDelay: '0.3s' }}
+            >
+              {verifiedDomains[3]}
+            </div>
+            <div 
+              className="absolute top-44 left-[8%] text-xs md:text-sm font-mono text-muted-foreground/14 animate-pulse"
+              style={{ animationDelay: '1.8s' }}
+            >
+              {verifiedDomains[0]}
+            </div>
+            <div 
+              className="absolute top-60 right-[18%] text-xs md:text-sm font-mono text-muted-foreground/16 animate-pulse"
+              style={{ animationDelay: '0.9s' }}
+            >
+              {verifiedDomains[1]}
+            </div>
+            <div 
+              className="absolute top-36 left-[25%] text-xs md:text-sm font-mono text-muted-foreground/13 animate-pulse"
+              style={{ animationDelay: '1.6s' }}
+            >
+              {verifiedDomains[2]}
+            </div>
           </div>
         </div>
         <div className="relative z-10 pt-32 max-w-3xl mx-auto h-full w-full flex flex-col gap-10 items-center justify-center">

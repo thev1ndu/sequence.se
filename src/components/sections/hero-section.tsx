@@ -5,12 +5,54 @@ import Link from "next/link";
 
 export function HeroSection() {
   const { hero } = siteConfig;
+  
+  const verifiedDomains = ["sq3.io", "sq3.us", "sq3.one", "sequence3.se"];
 
   return (
     <section id="hero" className="w-full relative">
       <div className="relative flex flex-col items-center w-full px-6">
         <div className="absolute inset-0">
           <div className="absolute inset-0 -z-10 h-[600px] md:h-[800px] w-full [background:radial-gradient(125%_125%_at_50%_10%,var(--background)_40%,var(--secondary)_100%)] rounded-b-xl"></div>
+          
+          {/* Verified Domains Background */}
+          <div className="absolute inset-0 -z-10 h-[600px] md:h-[800px] w-full overflow-hidden pointer-events-none">
+            <div 
+              className="absolute top-20 left-[10%] text-xs md:text-sm font-mono text-muted-foreground/20 animate-pulse"
+              style={{ animationDelay: '0s' }}
+            >
+              {verifiedDomains[0]}
+            </div>
+            <div 
+              className="absolute top-32 right-[15%] text-xs md:text-sm font-mono text-muted-foreground/15 animate-pulse"
+              style={{ animationDelay: '0.5s' }}
+            >
+              {verifiedDomains[1]}
+            </div>
+            <div 
+              className="absolute top-48 left-[20%] text-xs md:text-sm font-mono text-muted-foreground/20 animate-pulse"
+              style={{ animationDelay: '1s' }}
+            >
+              {verifiedDomains[2]}
+            </div>
+            <div 
+              className="absolute top-40 right-[8%] text-xs md:text-sm font-mono text-muted-foreground/15 animate-pulse"
+              style={{ animationDelay: '1.5s' }}
+            >
+              {verifiedDomains[3]}
+            </div>
+            <div 
+              className="absolute top-56 left-[12%] text-xs md:text-sm font-mono text-muted-foreground/10 animate-pulse"
+              style={{ animationDelay: '0.75s' }}
+            >
+              {verifiedDomains[0]}
+            </div>
+            <div 
+              className="absolute top-64 right-[25%] text-xs md:text-sm font-mono text-muted-foreground/15 animate-pulse"
+              style={{ animationDelay: '1.25s' }}
+            >
+              {verifiedDomains[1]}
+            </div>
+          </div>
         </div>
         <div className="relative z-10 pt-32 max-w-3xl mx-auto h-full w-full flex flex-col gap-10 items-center justify-center">
           <p className="border border-border bg-accent rounded-full text-sm h-8 px-3 flex items-center gap-2">

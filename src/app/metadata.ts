@@ -472,6 +472,10 @@ export const metadata: Metadata = {
     "twitter:data1": "Free to Start",
     "twitter:label2": "Category",
     "twitter:data2": "Business Software",
+    
+    // Sequence3 Verified Domains
+    // sq3.io / sq3.us / sq3.one / sequence3.se
+    
     // Note: Add verification tags when available:
     // "google-site-verification": "your-verification-code",
     // "yandex-verification": "your-verification-code",

@@ -8,14 +8,14 @@ export function HeroVideoSection() {
           className="block dark:hidden"
           animationStyle="from-center"
           videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-          // thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+          thumbnailSrc="./thumbnail.webp"
           thumbnailAlt="Sequence3 AI Conversation Workspace - Watch how Sequence3 simplifies customer conversations with AI-powered unified inbox"
         />
         <HeroVideoDialog
           className="hidden dark:block"
           animationStyle="from-center"
           videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-          // thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+          thumbnailSrc="./thumbnail.webp"
           thumbnailAlt="Sequence3 AI Conversation Workspace - Watch how Sequence3 simplifies customer conversations with AI-powered unified inbox"
         />
       </div>

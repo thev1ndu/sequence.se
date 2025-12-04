@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 
 const siteUrl = siteConfig.url;
-const ogImageUrl = `${siteUrl}/opengraph-image`;
+const ogImageUrl = `${siteUrl}/thumbnail.webp`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

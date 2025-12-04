@@ -77,9 +77,21 @@ export function WaitlistExpandable({
     }
 
     if (expanded) {
+      // Disable scroll when opening
+      const scrollY = window.scrollY
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.width = '100%'
       setNavHidden(true)
       return
     }
+
+    // Re-enable scroll when closing
+    const scrollY = document.body.style.top
+    document.body.style.position = ''
+    document.body.style.top = ''
+    document.body.style.width = ''
+    window.scrollTo(0, parseInt(scrollY || '0') * -1)
 
     setNavHidden(true)
     navTimeoutRef.current = window.setTimeout(() => {
@@ -232,7 +244,7 @@ function WaitlistForm({
           name="name"
           required
           autoComplete="off"
-          className="w-full px-4 py-2.5 rounded-lg bg-[oklch(1_0_0)] text-xs h-10"
+          className="w-full px-4 py-2.5 text-ex font-medium rounded-lg bg-[oklch(1_0_0)] text-xs h-10"
         />
       </div>
 
@@ -246,7 +258,7 @@ function WaitlistForm({
           name="email"
           required
           autoComplete="off"
-          className="w-full px-4 py-2.5 rounded-lg bg-[oklch(1_0_0)] text-xs h-10"
+          className="w-full px-4 py-2.5 text-ex font-medium rounded-lg bg-[oklch(1_0_0)] text-xs h-10"
         />
       </div>
 
@@ -261,7 +273,7 @@ function WaitlistForm({
             name="use-case"
             placeholder="e.g., Instagram store, clinic bookings"
             autoComplete="off"
-            className="w-full px-4 py-2.5 rounded-lg bg-[oklch(1_0_0)] text-xs h-10"
+            className="w-full px-4 py-2.5 rounded-lg font-medium text-ex bg-[oklch(1_0_0)] text-xs h-10"
           />
         </div>
 
@@ -272,7 +284,7 @@ function WaitlistForm({
           <select
             id={companySizeId}
             name="team-size"
-            className="w-full px-4 py-2.5 rounded-lg bg-[oklch(1_0_0)] text-xs h-10"
+            className="w-full px-4 py-2.5 rounded-lg team-size-select text-ex font-medium bg-[oklch(1_0_0)] text-xs h-10"
             defaultValue=""
           >
             <option value="" disabled>Select</option>
@@ -294,7 +306,7 @@ function WaitlistForm({
           name="excited-about"
           rows={3}
           autoComplete="off"
-          className="w-full px-4 py-3 rounded-lg bg-[oklch(1_0_0)] text-xs"
+          className="w-full px-4 py-3 rounded-lg font-medium text-ex bg-[oklch(1_0_0)] text-xs"
         />
       </div>
 

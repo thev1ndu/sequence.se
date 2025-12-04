@@ -88,10 +88,20 @@ export function WaitlistExpandable({
 
     // Re-enable scroll when closing
     const scrollY = document.body.style.top
+    const scrollPosition = parseInt(scrollY || '0') * -1
+    
+    // Clear styles first
     document.body.style.position = ''
     document.body.style.top = ''
     document.body.style.width = ''
-    window.scrollTo(0, parseInt(scrollY || '0') * -1)
+    
+    // Restore scroll position without smooth scrolling to prevent jumps
+    requestAnimationFrame(() => {
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'instant'
+      })
+    })
 
     setNavHidden(true)
     navTimeoutRef.current = window.setTimeout(() => {

@@ -4,6 +4,7 @@ import {
   useEffect,
   useId,
   useRef,
+  useState,
   type FormEvent,
 } from "react"
 
@@ -15,6 +16,7 @@ import {
   useExpandableScreen,
 } from "@/components/ui/expandable-card"
 import { cn } from "@/lib/utils"
+import NumberFlow from "@number-flow/react"
 
 interface WaitlistExpandableProps {
   label: string
@@ -32,6 +34,7 @@ export function WaitlistExpandable({
   const messageId = useId()
   const screenLayoutId = useId().replace(/:/g, "-")
   const navTimeoutRef = useRef<number | null>(null)
+  const [waitlistCount, setWaitlistCount] = useState<number | null>(null)
 
   const setNavHidden = (hidden: boolean) => {
     if (hidden) {
@@ -48,6 +51,24 @@ export function WaitlistExpandable({
       }
       delete document.body.dataset.navHidden
     }
+  }, [])
+
+  useEffect(() => {
+    const fetchWaitlistCount = async () => {
+      try {
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbyzG-gebmuiUeknVhtT10Ytnnc4cBdIXxsFVYiWjvIlSqeBKgZxLeTQFnaTjJImebNe_w/exec"
+        )
+        const data = await response.json()
+        if (data.status === "ok" && typeof data.count === "number") {
+          setWaitlistCount(data.count)
+        }
+      } catch (error) {
+        console.error("Failed to fetch waitlist count", error)
+      }
+    }
+
+    fetchWaitlistCount()
   }, [])
 
   const handleExpandChange = (expanded: boolean) => {
@@ -90,10 +111,12 @@ export function WaitlistExpandable({
       <ExpandableScreenContent className="bg-[#4F39F6]">
         <div className="relative z-10 flex flex-col lg:flex-row h-full w-full max-w-[1100px] mx-auto items-center p-6 sm:p-10 lg:p-16 gap-8 lg:gap-16">
           {/* LEFT SIDE */}
-          <div className="flex-1 flex flex-col justify-center space-y-3 w-full">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-ex-foreground leading-none tracking-[-0.03em]">
-              Reserve your spot
-            </h2>
+          <div className="flex-1 flex flex-col justify-center space-y-3 mt-1 w-full">
+            <div className="space-y-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-ex-foreground leading-none tracking-[-0.03em]">
+                Reserve your spot
+              </h2>
+            </div>
             <div className="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-ex-foreground/20">
               <p className="text-lg sm:text-xl lg:text-2xl text-ex-foreground leading-[150%] mb-4">
                 The waitlist has been a game-changer for our workflow. Highly
@@ -110,6 +133,12 @@ export function WaitlistExpandable({
               websiteId={websiteId}
               companySizeId={companySizeId}
               messageId={messageId}
+              waitlistCount={waitlistCount}
+              onSubmitSuccess={() => {
+                if (waitlistCount !== null) {
+                  setWaitlistCount(waitlistCount + 1)
+                }
+              }}
             />
           </div>
         </div>
@@ -124,6 +153,8 @@ interface WaitlistFormProps {
   websiteId: string
   companySizeId: string
   messageId: string
+  onSubmitSuccess?: () => void
+  waitlistCount?: number | null
 }
 
 function WaitlistForm({
@@ -132,6 +163,8 @@ function WaitlistForm({
   websiteId,
   companySizeId,
   messageId,
+  onSubmitSuccess,
+  waitlistCount,
 }: WaitlistFormProps) {
   const { collapse } = useExpandableScreen()
 
@@ -150,7 +183,7 @@ function WaitlistForm({
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbzqJA1iJms1tqCG2MB6H_4uKR252VCSmGKvcgfWP_gxWQnuRGLPn3FH1d5SUsWz827eRw/exec",
+        "https://script.google.com/macros/s/AKfycbyzG-gebmuiUeknVhtT10Ytnnc4cBdIXxsFVYiWjvIlSqeBKgZxLeTQFnaTjJImebNe_w/exec",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -158,6 +191,7 @@ function WaitlistForm({
           mode: "no-cors",
         }
       )
+      onSubmitSuccess?.()
     } catch (error) {
       console.error("Failed to submit waitlist form", error)
     }
@@ -269,6 +303,25 @@ function WaitlistForm({
       >
         Join Waitlist
       </Button>
+       <div className="flex items-center justify-center w-full mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full backdrop-blur-sm">
+            <span className="text-xs font-mono text-ex-foreground/80 uppercase tracking-wider flex items-center gap-1">
+              <NumberFlow
+                value={waitlistCount ?? 0}
+                className="font-mono"
+                transformTiming={{
+                  duration: 700,
+                  easing: "ease-out",
+                }}
+                format={{
+                  useGrouping: true,
+                  minimumIntegerDigits: 1,
+                }}
+              />
+              {(waitlistCount ?? 0) === 1 ? 'person' : 'people'} joined
+            </span>
+          </div>
+        </div>
     </form>
   )
 }

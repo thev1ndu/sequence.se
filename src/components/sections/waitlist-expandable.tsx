@@ -119,7 +119,7 @@ export function WaitlistExpandable({
         </button>
       </ExpandableScreenTrigger>
 
-      <ExpandableScreenContent className="bg-[#4F39F6]">
+      <ExpandableScreenContent className="bg-[#4F39FF]">
         <div className="relative z-10 flex flex-col lg:flex-row h-full w-full max-w-[1100px] mx-auto items-center p-6 sm:p-10 lg:p-16 gap-8 lg:gap-16">
 
           {/* LEFT */}

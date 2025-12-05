@@ -6,7 +6,7 @@ import {
   ReasoningResponse,
 } from "@/components/ui/reasoning";
 import { AnimatePresence, motion, useInView } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 
 export function ReasoningBasic() {
   const reasoningText = `Based on recent intent signals, sentiment scores, and response delays, 
@@ -22,7 +22,7 @@ These conversations have the highest likelihood of converting or escalating if l
   );
 }
 
-export function FirstBentoAnimation() {
+const FirstBentoAnimationComponent = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -142,4 +142,6 @@ export function FirstBentoAnimation() {
       </motion.div>
     </div>
   );
-}
+};
+
+export const FirstBentoAnimation = memo(FirstBentoAnimationComponent);

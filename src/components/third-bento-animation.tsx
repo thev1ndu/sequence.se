@@ -3,7 +3,7 @@
 import { colorWithOpacity, getRGBA } from "@/lib/utils";
 import NumberFlow from "@number-flow/react";
 import { motion, useInView } from "motion/react";
-import { CSSProperties, useCallback, useEffect, useRef, useState } from "react";
+import { CSSProperties, useCallback, useEffect, useRef, useState, memo } from "react";
 
 interface LineChartProps {
   data: number[];
@@ -255,7 +255,7 @@ export function NumberFlowCounter({
   );
 }
 
-export function ThirdBentoAnimation({
+const ThirdBentoAnimationComponent = ({
   data,
   toolTipValues,
   color = "var(--secondary)",
@@ -267,7 +267,7 @@ export function ThirdBentoAnimation({
   color?: string;
   startAnimationDelay?: number;
   once?: boolean;
-}) {
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once });
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -320,4 +320,6 @@ export function ThirdBentoAnimation({
       />
     </div>
   );
-}
+};
+
+export const ThirdBentoAnimation = memo(ThirdBentoAnimationComponent);

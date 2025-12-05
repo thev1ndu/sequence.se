@@ -2,7 +2,7 @@
 
 import createGlobe, { COBEOptions } from "cobe";
 import { useMotionValue, useSpring } from "motion/react";
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo, memo } from "react";
 import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
@@ -18,7 +18,7 @@ const GLOBE_CONFIG: COBEOptions = {
   theta: 0.3,
   dark: 0,
   diffuse: 0.4,
-  mapSamples: 16000,
+  mapSamples: 6000, // Reduced from 16000 for better performance
   mapBrightness: 1.2,
   baseColor: [1, 1, 1],
   markerColor: [251 / 255, 100 / 255, 21 / 255],
@@ -51,13 +51,13 @@ const COLORS = {
   },
 };
 
-export function Globe({
+const GlobeComponent = ({
   className,
   config = GLOBE_CONFIG,
 }: {
   className?: string;
   config?: COBEOptions;
-}) {
+}) => {
   const { theme } = useTheme();
   const isDarkMode = theme === "dark";
 
@@ -156,4 +156,7 @@ export function Globe({
       />
     </div>
   );
-}
+};
+
+// Memoize the Globe component to prevent unnecessary re-renders
+export const Globe = memo(GlobeComponent);

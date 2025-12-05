@@ -7,7 +7,7 @@ import {
   useMotionValue,
   useSpring,
 } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 
 interface BoxConfig {
   title: string;
@@ -35,10 +35,10 @@ interface FourthBentoAnimationProps {
   once?: boolean;
 }
 
-export function FourthBentoAnimation({
+const FourthBentoAnimationComponent = ({
   once = false,
   startAnimationDelay = 0,
-}: FourthBentoAnimationProps) {
+}: FourthBentoAnimationProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(containerRef, { once });
   const [translateXValues, setTranslateXValues] = useState<number[]>([]);
@@ -264,4 +264,6 @@ export function FourthBentoAnimation({
       </div>
     </div>
   );
-}
+};
+
+export const FourthBentoAnimation = memo(FourthBentoAnimationComponent);

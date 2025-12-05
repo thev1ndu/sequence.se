@@ -4,6 +4,7 @@
 import { Play, XIcon } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
@@ -85,11 +86,13 @@ export function HeroVideoDialog({
         onClick={() => setIsVideoOpen(true)}
       >
         {thumbnailSrc ? (
-          <img
+          <Image
             src={thumbnailSrc}
             alt={thumbnailAlt}
             width={1920}
             height={1080}
+            priority
+            quality={85}
             className="w-full transition-all duration-200 ease-out group-hover:brightness-[0.8] isolate"
           />
         ) : (

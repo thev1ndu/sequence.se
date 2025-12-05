@@ -7,6 +7,7 @@ import React, {
   useMemo,
   useRef,
   useState,
+  memo,
 } from "react";
 
 interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -24,10 +25,10 @@ interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
   fontWeight?: number | string;
 }
 
-export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
+const FlickeringGridComponent: React.FC<FlickeringGridProps> = ({
   squareSize = 3,
   gridGap = 3,
-  flickerChance = 0.2,
+  flickerChance = 0.15, // Reduced from 0.2 for better performance
   color = "#B4B4B4",
   width,
   height,
@@ -162,22 +163,28 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     updateCanvasSize();
 
     let lastTime = 0;
+    let frameCount = 0;
     const animate = (time: number) => {
       if (!isInView) return;
 
       const deltaTime = (time - lastTime) / 1000;
       lastTime = time;
 
-      updateSquares(gridParams.squares, deltaTime);
-      drawGrid(
-        ctx,
-        canvas.width,
-        canvas.height,
-        gridParams.cols,
-        gridParams.rows,
-        gridParams.squares,
-        gridParams.dpr,
-      );
+      // Throttle to ~30fps instead of 60fps for better performance
+      frameCount++;
+      if (frameCount % 2 === 0) {
+        updateSquares(gridParams.squares, deltaTime);
+        drawGrid(
+          ctx,
+          canvas.width,
+          canvas.height,
+          gridParams.cols,
+          gridParams.rows,
+          gridParams.squares,
+          gridParams.dpr,
+        );
+      }
+      
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -224,3 +231,6 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     </div>
   );
 };
+
+// Memoize the component to prevent unnecessary re-renders
+export const FlickeringGrid = memo(FlickeringGridComponent);

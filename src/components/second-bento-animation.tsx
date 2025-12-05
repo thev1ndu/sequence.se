@@ -1,8 +1,9 @@
 import { Icons } from "@/components/icons";
 import { OrbitingCircles } from "@/components/ui/orbiting-circle";
 import Image from "next/image";
+import { memo } from "react";
 
-export function SecondBentoAnimation() {
+const SecondBentoAnimationComponent = () => {
   return (
     <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
       <div className="pointer-events-none absolute bottom-0 left-0 h-20 w-full bg-gradient-to-t from-background to-transparent z-20"></div>
@@ -26,11 +27,12 @@ export function SecondBentoAnimation() {
             radius={100}
             reverse
             speed={1}
+            once={true}
           >
             <Icons.whatsapp />
           </OrbitingCircles>
 
-          <OrbitingCircles index={1} iconSize={60} speed={0.5}>
+          <OrbitingCircles index={1} iconSize={60} speed={0.5} once={true}>
             <Icons.messenger />
             <Icons.telegram />
           </OrbitingCircles>
@@ -41,6 +43,7 @@ export function SecondBentoAnimation() {
             radius={230}
             reverse
             speed={0.5}
+            once={true}
           >
             <Icons.facebook />
             <Icons.instagram />
@@ -49,4 +52,6 @@ export function SecondBentoAnimation() {
       </div>
     </div>
   );
-}
+};
+
+export const SecondBentoAnimation = memo(SecondBentoAnimationComponent);

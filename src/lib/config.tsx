@@ -4,7 +4,6 @@ import { SecondBentoAnimation } from "@/components/second-bento-animation";
 import { ThirdBentoAnimation } from "@/components/third-bento-animation";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { DottedMap } from "@/components/ui/svg-map";
-// import { Globe } from "@/components/ui/globe";
 import { cn } from "@/lib/utils";
 import { socialLinks } from "@/lib/site";
 import Image from "next/image";

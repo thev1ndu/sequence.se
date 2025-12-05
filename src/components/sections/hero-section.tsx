@@ -59,12 +59,6 @@ export function HeroSection() {
               {verifiedDomains[2]}
             </div>
             <div 
-              className="absolute top-44 left-[8%] text-xs md:text-sm font-mono text-muted-foreground/14 animate-pulse"
-              style={{ animationDelay: '1.8s' }}
-            >
-              {verifiedDomains[0]}
-            </div>
-            <div 
               className="absolute top-60 right-[18%] text-xs md:text-sm font-mono text-muted-foreground/16 animate-pulse"
               style={{ animationDelay: '0.9s' }}
             >

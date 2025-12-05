@@ -17,12 +17,6 @@ export function HeroSection() {
           {/* Verified Domains Background */}
           <div className="absolute inset-0 -z-10 h-[600px] md:h-[800px] w-full overflow-hidden pointer-events-none">
             <div 
-              className="absolute top-20 left-[10%] text-xs md:text-sm font-mono text-muted-foreground/20 animate-pulse"
-              style={{ animationDelay: '0s' }}
-            >
-              {verifiedDomains[0]}
-            </div>
-            <div 
               className="absolute top-32 right-[15%] text-xs md:text-sm font-mono text-muted-foreground/15 animate-pulse"
               style={{ animationDelay: '0.5s' }}
             >

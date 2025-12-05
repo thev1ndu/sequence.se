@@ -102,7 +102,7 @@ export function FooterSection() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-4 left-6 right-6 z-20 text-center">
+      <div className="absolute bottom-4 left-6 right-6 z-1 text-center">
           <div className="text-xs text-muted-foreground mb-[2vh] bg-background p-1 flex items-center justify-center gap-2">
             <span>© {new Date().getFullYear()} Sequence3 // CS-22</span>
             <div className="flex items-center justify-center bg-background">

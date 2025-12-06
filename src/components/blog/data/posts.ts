@@ -65,8 +65,11 @@ function getMDXFiles(dir: string) {
       console.warn(`Blog content directory not found: ${dir}`);
       return [];
     }
-    return fs.readdirSync(dir).filter(
+    const files = fs.readdirSync(dir);
+    return files.filter(
       (file) => {
+        // Skip hidden files and directories
+        if (file.startsWith('.')) return false;
         const ext = path.extname(file).toLowerCase();
         const fileName = file.toUpperCase();
         return ext === ".mdx" && !fileName.includes("TEMPLATE");
@@ -113,7 +116,15 @@ function getMDXData(dir: string) {
     .filter((post): post is Post => post !== null);
 }
 
-export function getAllPosts() {
+// Cache posts to avoid multiple file system reads during build
+let postsCache: Post[] | null = null;
+
+export function getAllPosts(): Post[] {
+  // Return cached posts if available (useful during build)
+  if (postsCache !== null) {
+    return postsCache;
+  }
+
   try {
     // Use absolute path resolution for better Vercel compatibility
     const contentDir = path.join(process.cwd(), "src/components/blog/content");
@@ -121,17 +132,22 @@ export function getAllPosts() {
     // Ensure directory exists before reading
     if (!fs.existsSync(contentDir)) {
       console.warn(`Blog content directory does not exist: ${contentDir}`);
+      postsCache = [];
       return [];
     }
     
     const posts = getMDXData(contentDir);
     
     if (posts.length === 0) {
-      console.warn("No blog posts found in directory:", contentDir);
+      // Don't warn in production to avoid build noise
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn("No blog posts found in directory:", contentDir);
+      }
+      postsCache = [];
       return [];
     }
     
-    return posts.sort((a, b) => {
+    const sortedPosts = posts.sort((a, b) => {
       if (a.metadata.pinned && !b.metadata.pinned) return -1;
       if (!a.metadata.pinned && b.metadata.pinned) return 1;
 
@@ -141,9 +157,14 @@ export function getAllPosts() {
         new Date(a.metadata.createdAt).getTime()
       );
     });
+
+    // Cache the sorted posts
+    postsCache = sortedPosts;
+    return sortedPosts;
   } catch (error) {
     console.error("Error getting all posts:", error);
     // Return empty array instead of throwing to prevent build failures
+    postsCache = [];
     return [];
   }
 }

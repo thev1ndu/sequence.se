@@ -330,7 +330,7 @@ function WaitlistForm({
       <div className="flex items-center justify-center w-full mb-4">
         <div className="inline-flex items-center gap-3 rounded-full backdrop-blur-sm">
           <div
-            className="flex items-center px-3 py-0.7 border border-white/[0.07] transition-colors duration-700"
+            className="flex items-center px-3 py-0.7 border border-white/[0.07] transition-colors duration-700 rounded-md"
             style={{ backgroundColor: bgColor }}
           >
             <span

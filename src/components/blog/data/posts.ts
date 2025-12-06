@@ -115,8 +115,21 @@ function getMDXData(dir: string) {
 
 export function getAllPosts() {
   try {
+    // Use absolute path resolution for better Vercel compatibility
     const contentDir = path.join(process.cwd(), "src/components/blog/content");
+    
+    // Ensure directory exists before reading
+    if (!fs.existsSync(contentDir)) {
+      console.warn(`Blog content directory does not exist: ${contentDir}`);
+      return [];
+    }
+    
     const posts = getMDXData(contentDir);
+    
+    if (posts.length === 0) {
+      console.warn("No blog posts found in directory:", contentDir);
+      return [];
+    }
     
     return posts.sort((a, b) => {
       if (a.metadata.pinned && !b.metadata.pinned) return -1;
@@ -130,6 +143,7 @@ export function getAllPosts() {
     });
   } catch (error) {
     console.error("Error getting all posts:", error);
+    // Return empty array instead of throwing to prevent build failures
     return [];
   }
 }

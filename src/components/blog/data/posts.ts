@@ -116,23 +116,16 @@ function getMDXData(dir: string) {
     .filter((post): post is Post => post !== null);
 }
 
-// Cache posts to avoid multiple file system reads during build
-let postsCache: Post[] | null = null;
-
 export function getAllPosts(): Post[] {
-  // Return cached posts if available (useful during build)
-  if (postsCache !== null) {
-    return postsCache;
-  }
-
   try {
     // Use absolute path resolution for better Vercel compatibility
     const contentDir = path.join(process.cwd(), "src/components/blog/content");
     
     // Ensure directory exists before reading
     if (!fs.existsSync(contentDir)) {
-      console.warn(`Blog content directory does not exist: ${contentDir}`);
-      postsCache = [];
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(`Blog content directory does not exist: ${contentDir}`);
+      }
       return [];
     }
     
@@ -143,11 +136,10 @@ export function getAllPosts(): Post[] {
       if (process.env.NODE_ENV !== 'production') {
         console.warn("No blog posts found in directory:", contentDir);
       }
-      postsCache = [];
       return [];
     }
     
-    const sortedPosts = posts.sort((a, b) => {
+    return posts.sort((a, b) => {
       if (a.metadata.pinned && !b.metadata.pinned) return -1;
       if (!a.metadata.pinned && b.metadata.pinned) return 1;
 
@@ -157,14 +149,9 @@ export function getAllPosts(): Post[] {
         new Date(a.metadata.createdAt).getTime()
       );
     });
-
-    // Cache the sorted posts
-    postsCache = sortedPosts;
-    return sortedPosts;
   } catch (error) {
     console.error("Error getting all posts:", error);
     // Return empty array instead of throwing to prevent build failures
-    postsCache = [];
     return [];
   }
 }

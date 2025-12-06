@@ -68,7 +68,6 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['motion', 'lucide-react', '@radix-ui/react-accordion', '@radix-ui/react-navigation-menu', 'react-markdown', 'cobe'],
-    webpackMemoryOptimizations: true,
   },
 
   // Production optimizations

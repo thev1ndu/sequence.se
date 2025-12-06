@@ -3,6 +3,7 @@
   "devCommand": "pnpm dev",
   "installCommand": "corepack enable && corepack prepare pnpm@10.10.0 --activate && pnpm install --frozen-lockfile",
   "framework": "nextjs",
-  "nodeVersion": "22.x"
+  "nodeVersion": "22.x",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD ."
 }
 

@@ -1,13 +1,12 @@
 import type { NextConfig } from "next";
-import path from "path";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   transpilePackages: ["next-mdx-remote"],
-  allowedDevOrigins: ["chanhdai-macbook.local"],
-  turbopack: {
-    root: path.join(__dirname, "."),
-  },
+  // Turbopack config removed for Vercel compatibility
+  // turbopack: {
+  //   root: path.join(__dirname, "."),
+  // },
   devIndicators: false,
   images: {
     remotePatterns: [

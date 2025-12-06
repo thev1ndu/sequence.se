@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/sections/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SQ3AssistantWidget } from "@/components/sq3-assistant/Widget";
 import { siteConfig } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -96,6 +97,7 @@ export default function RootLayout({
             <Navbar />
             {children}
           </div>
+          <SQ3AssistantWidget />
         </ThemeProvider>
       </body>
     </html>

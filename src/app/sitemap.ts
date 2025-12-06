@@ -10,20 +10,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts()
   
   // Create sitemap entries for blog pages
-  const blogPages = [
+  const blogEntries: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/blog`,
       lastModified: now,
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'weekly',
       priority: 1,
     },
     ...posts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: post.metadata.updatedAt ? new Date(post.metadata.updatedAt) : now,
+      lastModified: new Date(post.metadata.updatedAt || post.metadata.createdAt),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
   ]
 
-  return blogPages
+  return blogEntries
 }
+

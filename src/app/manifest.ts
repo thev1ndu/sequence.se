@@ -3,10 +3,10 @@ import { siteConfig } from '@/lib/site'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: siteConfig.name,
-    short_name: 'Sequence3',
-    description: siteConfig.description,
-    start_url: '/',
+    name: 'Blog',
+    short_name: 'Blog',
+    description: 'A collection of articles on development, design, and ideas.',
+    start_url: '/blog',
     display: 'standalone',
     background_color: '#000000',
     theme_color: '#000000',
@@ -40,8 +40,8 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ['business', 'productivity', 'communication'],
     lang: 'en',
     dir: 'ltr',
-    scope: '/',
-    id: 'sequence3',
+    scope: '/blog',
+    id: 'blog',
   }
 }
 

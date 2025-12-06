@@ -52,22 +52,20 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.youtube.com" />
         
-        {/* Hidden SEO meta tags for SQ3 keyword */}
-        <meta name="keywords" content="sq3, SQ3, sq3 ai, SQ3 AI, sq3 platform, SQ3 platform, sq3 software, SQ3 software, sq3 chatbot, SQ3 chatbot, sq3 assistant, SQ3 assistant, sq3 inbox, SQ3 inbox, sq3 unified inbox, SQ3 unified inbox, sq3 ai assistant, SQ3 AI assistant, sq3 conversation workspace, SQ3 conversation workspace, sq3 customer service, SQ3 customer service, sq3 sequence3, Sequence3 sq3" />
-        <meta property="og:keywords" content="sq3, SQ3, sq3 ai, sq3 platform, sq3 unified inbox, Sequence3 sq3" />
+        {/* Blog SEO meta tags */}
+        <meta name="keywords" content="blog, articles, development, design, ideas, tutorials, tech blog" />
         
-        {/* OpenGraph image - ensure thumbnail.webp is used */}
+        {/* OpenGraph image */}
         <meta property="og:image" content={`${siteConfig.url}/thumbnail.webp`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/webp" />
-        <meta property="og:image:alt" content={siteConfig.name} />
+        <meta property="og:image:alt" content="Blog" />
         
         {/* Twitter Card image */}
         <meta name="twitter:image" content={`${siteConfig.url}/thumbnail.webp`} />
-        <meta name="twitter:image:alt" content={siteConfig.name} />
+        <meta name="twitter:image:alt" content="Blog" />
       </head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-CSR99VFXE5"

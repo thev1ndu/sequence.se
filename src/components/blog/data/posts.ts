@@ -86,8 +86,8 @@ function readMDXFile(filePath: string) {
     if (!fs.existsSync(filePath)) {
       throw new Error(`File not found: ${filePath}`);
     }
-    const rawContent = fs.readFileSync(filePath, "utf-8");
-    return parseFrontmatter(rawContent);
+  const rawContent = fs.readFileSync(filePath, "utf-8");
+  return parseFrontmatter(rawContent);
   } catch (error) {
     console.error(`Error reading MDX file ${filePath}:`, error);
     throw error;
@@ -100,14 +100,14 @@ function getMDXData(dir: string) {
   return mdxFiles
     .map<Post | null>((file) => {
       try {
-        const { metadata, content } = readMDXFile(path.join(dir, file));
-        const slug = path.basename(file, path.extname(file));
+    const { metadata, content } = readMDXFile(path.join(dir, file));
+    const slug = path.basename(file, path.extname(file));
 
-        return {
-          metadata,
-          slug,
-          content,
-        };
+    return {
+      metadata,
+      slug,
+      content,
+    };
       } catch (error) {
         console.error(`Error processing file ${file}:`, error);
         return null;
@@ -153,7 +153,7 @@ export function getAllPosts(): Post[] {
     console.error("Error getting all posts:", error);
     // Return empty array instead of throwing to prevent build failures
     return [];
-  }
+    }
 }
 
 export function getPostBySlug(slug: string) {

@@ -60,35 +60,65 @@ function parseFrontmatter(fileContent: string) {
 }
 
 function getMDXFiles(dir: string) {
-  return fs.readdirSync(dir).filter(
-    (file) => path.extname(file) === ".mdx" && !file.toUpperCase().includes("TEMPLATE")
-  );
+  try {
+    if (!fs.existsSync(dir)) {
+      console.warn(`Blog content directory not found: ${dir}`);
+      return [];
+    }
+    return fs.readdirSync(dir).filter(
+      (file) => {
+        const ext = path.extname(file).toLowerCase();
+        const fileName = file.toUpperCase();
+        return ext === ".mdx" && !fileName.includes("TEMPLATE");
+      }
+    );
+  } catch (error) {
+    console.error(`Error reading blog directory ${dir}:`, error);
+    return [];
+  }
 }
 
 function readMDXFile(filePath: string) {
-  const rawContent = fs.readFileSync(filePath, "utf-8");
-  return parseFrontmatter(rawContent);
+  try {
+    if (!fs.existsSync(filePath)) {
+      throw new Error(`File not found: ${filePath}`);
+    }
+    const rawContent = fs.readFileSync(filePath, "utf-8");
+    return parseFrontmatter(rawContent);
+  } catch (error) {
+    console.error(`Error reading MDX file ${filePath}:`, error);
+    throw error;
+  }
 }
 
 function getMDXData(dir: string) {
   const mdxFiles = getMDXFiles(dir);
 
-  return mdxFiles.map<Post>((file) => {
-    const { metadata, content } = readMDXFile(path.join(dir, file));
+  return mdxFiles
+    .map<Post | null>((file) => {
+      try {
+        const { metadata, content } = readMDXFile(path.join(dir, file));
+        const slug = path.basename(file, path.extname(file));
 
-    const slug = path.basename(file, path.extname(file));
-
-    return {
-      metadata,
-      slug,
-      content,
-    };
-  });
+        return {
+          metadata,
+          slug,
+          content,
+        };
+      } catch (error) {
+        console.error(`Error processing file ${file}:`, error);
+        return null;
+      }
+    })
+    .filter((post): post is Post => post !== null);
 }
 
 export function getAllPosts() {
-  return getMDXData(path.join(process.cwd(), "src/components/blog/content")).sort(
-    (a, b) => {
+  try {
+    const contentDir = path.join(process.cwd(), "src/components/blog/content");
+    const posts = getMDXData(contentDir);
+    
+    return posts.sort((a, b) => {
       if (a.metadata.pinned && !b.metadata.pinned) return -1;
       if (!a.metadata.pinned && b.metadata.pinned) return 1;
 
@@ -97,8 +127,11 @@ export function getAllPosts() {
         new Date(b.metadata.createdAt).getTime() -
         new Date(a.metadata.createdAt).getTime()
       );
-    }
-  );
+    });
+  } catch (error) {
+    console.error("Error getting all posts:", error);
+    return [];
+  }
 }
 
 export function getPostBySlug(slug: string) {

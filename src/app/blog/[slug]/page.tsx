@@ -25,10 +25,15 @@ import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  try {
+    const posts = getAllPosts();
+    return posts.map((post) => ({
+      slug: post.slug,
+    }));
+  } catch (error) {
+    console.error("Error generating static params for blog posts:", error);
+    return [];
+  }
 }
 
 export async function generateMetadata({

@@ -1,6 +1,9 @@
-import { redirect } from "next/navigation";
+import { NotFound as PageNotFound } from "@/components/not-found";
+
+export const metadata = {
+  title: "Page Not Found",
+};
 
 export default function NotFound() {
-  redirect("/");
+  return <PageNotFound className="h-screen" />;
 }
-

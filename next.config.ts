@@ -1,83 +1,65 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
-  // SEO optimizations
-  compress: true,
-  poweredByHeader: false,
-  
-  // Image optimization
-  images: {
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
-    qualities: [75, 85],
+  reactStrictMode: true,
+  transpilePackages: ["next-mdx-remote"],
+  allowedDevOrigins: ["chanhdai-macbook.local"],
+  turbopack: {
+    root: path.join(__dirname, "."),
   },
-
-  // Headers for SEO and security
-  async headers() {
+  devIndicators: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.chanhdai.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "i.postimg.cc",
+        port: "",
+      },
+    ],
+    qualities: [75, 100],
+  },
+  async rewrites() {
     return [
       {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload'
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY'
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
-          }
-        ],
+        source: "/blog/:slug.mdx",
+        destination: "/blog.mdx/:slug",
+      },
+      {
+        source: "/components/:slug.mdx",
+        destination: "/blog.mdx/:slug",
       },
     ];
   },
-
-  // Redirects for SEO
-  async redirects() {
-    return [];
-  },
-
-  // Experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['motion', 'lucide-react', '@radix-ui/react-accordion', '@radix-ui/react-navigation-menu', 'react-markdown', 'cobe'],
-    webpackMemoryOptimizations: true,
-  },
-
-  // Production optimizations
-  reactStrictMode: true,
-  
-  // Compiler optimizations
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-
-  // Performance optimizations
-  onDemandEntries: {
-    maxInactiveAge: 25 * 1000,
-    pagesBufferLength: 2,
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: "/(.*)",
+  //       headers: [
+  //         {
+  //           // Prevents MIME type sniffing, reducing the risk of malicious file uploads
+  //           key: "X-Content-Type-Options",
+  //           value: "nosniff",
+  //         },
+  //         {
+  //           // Protects against clickjacking attacks by preventing your site from being embedded in iframes.
+  //           key: "X-Frame-Options",
+  //           value: "DENY",
+  //         },
+  //         {
+  //           // Controls how much referrer information is included with requests, balancing security and functionality.
+  //           key: "Referrer-Policy",
+  //           value: "strict-origin-when-cross-origin",
+  //         },
+  //       ],
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;

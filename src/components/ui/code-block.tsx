@@ -39,11 +39,18 @@ function CodeBlockCode({
   ...props
 }: CodeBlockCodeProps) {
   const [highlightedHtml, setHighlightedHtml] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     async function highlight() {
-      const html = await codeToHtml(code, { lang: language, theme });
-      setHighlightedHtml(html);
+      try {
+        const html = await codeToHtml(code, { lang: language, theme });
+        setHighlightedHtml(html);
+      } catch (error) {
+        console.error("Error highlighting code:", error);
+        setHighlightedHtml(null);
+      }
     }
     highlight();
   }, [code, language, theme]);
@@ -53,19 +60,25 @@ function CodeBlockCode({
     className
   );
 
-  // SSR fallback: render plain code if not hydrated yet
-  return highlightedHtml ? (
+  // SSR: always render plain code to avoid hydration mismatch
+  // Client: render highlighted code once ready
+  if (!isClient || !highlightedHtml) {
+    return (
+      <div className={classNames} {...props} suppressHydrationWarning>
+        <pre>
+          <code>{code}</code>
+        </pre>
+      </div>
+    );
+  }
+
+  return (
     <div
       className={classNames}
       dangerouslySetInnerHTML={{ __html: highlightedHtml }}
       {...props}
+      suppressHydrationWarning
     />
-  ) : (
-    <div className={classNames} {...props}>
-      <pre>
-        <code>{code}</code>
-      </pre>
-    </div>
   );
 }
 
@@ -87,3 +100,4 @@ function CodeBlockGroup({
 }
 
 export { CodeBlockGroup, CodeBlockCode, CodeBlock };
+

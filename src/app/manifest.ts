@@ -1,47 +1,33 @@
-import { MetadataRoute } from 'next'
-import { siteConfig } from '@/lib/site'
+import type { MetadataRoute } from "next";
+
+import { SITE_INFO } from "@/config/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: siteConfig.name,
-    short_name: 'Sequence3',
-    description: siteConfig.description,
-    start_url: '/',
-    display: 'standalone',
-    background_color: '#000000',
-    theme_color: '#000000',
-    orientation: 'portrait-primary',
+    short_name: SITE_INFO.name,
+    name: SITE_INFO.name,
+    description: SITE_INFO.description,
     icons: [
       {
-        src: '/purple.png',
-        sizes: '1149x1149',
-        type: 'image/png',
-        purpose: 'any',
+        // Local vector icon (serves as the PWA vector icon)
+        src: "/icons/icon-vector.svg",
+        type: "image/svg+xml",
+        sizes: "any",
+        purpose: "any",
       },
       {
-        src: '/purple.png',
-        sizes: '1149x1149',
-        type: 'image/png',
-        purpose: 'maskable',
-      },
-      {
-        src: '/Q.svg',
-        sizes: 'any',
-        type: 'image/svg+xml',
-        purpose: 'any',
-      },
-      {
-        src: '/purple.svg',
-        sizes: 'any',
-        type: 'image/svg+xml',
-        purpose: 'any',
+        // Provide a maskable SVG (same artwork) for platforms that prefer maskable icons
+        src: "/icons/maskable-icon.svg",
+        type: "image/svg+xml",
+        sizes: "512x512",
+        purpose: "maskable",
       },
     ],
-    categories: ['business', 'productivity', 'communication'],
-    lang: 'en',
-    dir: 'ltr',
-    scope: '/',
-    id: 'sequence3',
-  }
+    id: "/?utm_source=pwa",
+    start_url: "/?utm_source=pwa",
+    display: "standalone",
+    scope: "/",
+    // screenshots intentionally omitted to avoid showing site screenshots in
+    // the platform install prompt. Kept out to match user preference.
+  };
 }
-

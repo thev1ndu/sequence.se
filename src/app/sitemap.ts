@@ -1,23 +1,19 @@
-import { MetadataRoute } from 'next'
-import { siteConfig } from '@/lib/site'
+import dayjs from "dayjs";
+import type { MetadataRoute } from "next";
+
+import { SITE_INFO } from "@/config/site";
+import { getAllPosts } from "@/features/blog/data/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url
-  const now = new Date()
+  const posts = getAllPosts().map((post) => ({
+    url: `${SITE_INFO.url}/blog/${post.slug}`,
+    lastModified: dayjs(post.metadata.updatedAt).toISOString(),
+  }));
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/login`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ]
+  const routes = ["/blog"].map((route) => ({
+    url: `${SITE_INFO.url}${route}`,
+    lastModified: dayjs().toISOString(),
+  }));
+
+  return [...routes, ...posts];
 }
-

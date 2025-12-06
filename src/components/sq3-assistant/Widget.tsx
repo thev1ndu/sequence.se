@@ -216,7 +216,7 @@ export function SQ3AssistantWidget() {
                     <ResponseStream
                       textStream="Thinking..."
                       mode="typewriter"
-                      speed={50}
+                      speed={120}
                     />
                   </MessageContent>
                 </Message>

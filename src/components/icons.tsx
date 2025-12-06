@@ -2476,4 +2476,91 @@ export const Icons = {
       </defs>
     </svg>
   ),
+  markdown: ({ className }: { className?: string }) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("size-4", className)}
+    >
+      <path
+        d="M14.85 3H5.15C4.52 3 4 3.52 4 4.15v15.7c0 .63.52 1.15 1.15 1.15h9.7c.63 0 1.15-.52 1.15-1.15V4.15c0-.63-.52-1.15-1.15-1.15zM7 11h2v6H7v-6zm4-2h2v8h-2V9zm4-3h2v11h-2V6z"
+        fill="currentColor"
+      />
+    </svg>
+  ),
+  x: ({ className }: { className?: string }) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("size-4", className)}
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  ),
+  linkedin: ({ className }: { className?: string }) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("size-4", className)}
+    >
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  ),
+  openai: ({ className }: { className?: string }) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("size-4", className)}
+    >
+      <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-1.9 6.046 6.046 0 0 0-6.51-3.9A5.985 5.985 0 0 0 4.981 4.18a6.056 6.056 0 0 0-3.9 6.511 5.98 5.98 0 0 0 1.661 3.857 5.98 5.98 0 0 0 .433 7.134 5.957 5.957 0 0 0 3.9 1.229 6.075 6.075 0 0 0 5.771-4.2 5.99 5.99 0 0 0 3.7.2 6.075 6.075 0 0 0 5.142-4.582 5.8 5.8 0 0 0 .1-2.607zm-4.006 4.884a4.475 4.475 0 0 1-2.876 1.866 4.478 4.478 0 0 1-3.508-.727 4.515 4.515 0 0 1-1.4-3.508 4.49 4.49 0 0 1 1.4-3.509 4.515 4.515 0 0 1 3.508-.728 4.49 4.49 0 0 1 3.508 1.729 4.525 4.525 0 0 1 1.061 3.6 4.485 4.485 0 0 1-.593 2.267z" />
+    </svg>
+  ),
+  claude: ({ className }: { className?: string }) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("size-4", className)}
+    >
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+    </svg>
+  ),
+  scira: ({ className }: { className?: string }) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("size-4", className)}
+    >
+      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+    </svg>
+  ),
+  v0: ({ className }: { className?: string }) => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("size-4", className)}
+    >
+      <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l8 4v8.64l-8 4-8-4V8.18l8-4z" />
+    </svg>
+  ),
 };

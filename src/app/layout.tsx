@@ -1,9 +1,11 @@
+import { HydrationFix } from "@/components/hydration-fix";
 import { Navbar } from "@/components/sections/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import { Toaster } from "sonner";
 import "./globals.css";
 import { metadata as seoMetadata } from "./metadata";
 
@@ -81,7 +83,7 @@ export default function RootLayout({
       </Script>
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-background`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-background overflow-x-hidden`}
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -90,13 +92,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="max-w-7xl mx-auto border-x relative">
-            <div className="block w-px h-full border-l border-border absolute top-0 left-6 z-10"></div>
-            <div className="block w-px h-full border-r border-border absolute top-0 right-6 z-10"></div>
+          <div className="max-w-7xl mx-auto border-x relative" suppressHydrationWarning>
+            <div className="block w-px h-full border-l border-border absolute top-0 left-6 z-10" suppressHydrationWarning></div>
+            <div className="block w-px h-full border-r border-border absolute top-0 right-6 z-10" suppressHydrationWarning></div>
             <Navbar />
             {children}
           </div>
         </ThemeProvider>
+        <Toaster />
+        <HydrationFix />
       </body>
     </html>
   );

@@ -113,7 +113,7 @@ export function Navbar() {
           )}
         >
           <div className="flex h-[56px] items-center justify-between p-4">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" prefetch={true} className="flex items-center gap-3">
               {/* <Icons.logo className="size-7 md:size-10" /> */}
               <Image 
                 src="/purple.svg" 
@@ -177,7 +177,7 @@ export function Navbar() {
               {/* Mobile menu content */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
-                  <Link href="/" className="flex items-center gap-3">
+                  <Link href="/" prefetch={true} className="flex items-center gap-3">
                     {/* <Icons.logo className="size-7 md:size-10" /> */}
                     <Image 
                       src="/purple.svg" 

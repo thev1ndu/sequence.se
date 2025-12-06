@@ -1,0 +1,147 @@
+---
+title: Your Blog Post Title Here
+description: A brief, compelling description of your blog post that will appear in previews and search results. Keep it concise and engaging.
+image: https://i.postimg.cc/your-image-url.jpg
+pinned: false
+new: false
+category: blog
+icon: book
+createdAt: 2025-01-15
+updatedAt: 2025-01-15
+---
+
+# Your Blog Post Title Here
+
+Your opening paragraph should hook the reader and provide context for what they're about to read. This is where you introduce the main topic or story.
+
+![Your Image Alt Text](https://i.postimg.cc/your-image-url.jpg)
+
+## Section Heading
+
+Here's where you dive into the main content. Use clear headings to organize your thoughts and make the content scannable.
+
+### Subsection
+
+You can use subsections to break down complex topics into digestible chunks.
+
+**Bold text** for emphasis, and *italic text* for subtle emphasis.
+
+### Using Lists
+
+You can create ordered lists:
+
+1. First item
+2. Second item
+3. Third item
+
+Or unordered lists:
+
+- Bullet point one
+- Bullet point two
+- Bullet point three
+
+### Code Examples
+
+You can include inline code like `const example = "code"` or code blocks:
+
+```javascript
+function example() {
+  console.log("This is a code block");
+  return true;
+}
+```
+
+### Blockquotes
+
+> This is a blockquote. Use it to highlight important quotes, testimonials, or key insights.
+
+### Using FramedImage Component
+
+For images with theme-specific display (dark/light mode):
+
+<FramedImage
+  className="hidden [html.dark_&]:block"
+  src="https://i.postimg.cc/your-dark-image.jpg"
+  alt="Dark theme image description"
+/>
+
+<FramedImage
+  className="hidden [html.light_&]:block"
+  src="https://i.postimg.cc/your-light-image.jpg"
+  alt="Light theme image description"
+/>
+
+### Embedding YouTube Videos
+
+To embed a YouTube video, use an iframe inside a responsive container:
+
+<div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+    <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="Video Title" 
+        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} 
+        frameBorder="0" 
+        allowFullScreen
+    ></iframe>
+</div>
+
+### Links
+
+You can add [links to external resources](https://example.com) or internal pages.
+
+### Horizontal Rule
+
+Use horizontal rules to separate major sections:
+
+---
+
+## Another Major Section
+
+Continue your content here. Remember to:
+
+- Keep paragraphs concise
+- Use headings to organize content
+- Include relevant images
+- Break up text with lists and blockquotes
+- Make it scannable and easy to read
+
+## Conclusion
+
+Wrap up your post with a strong conclusion that summarizes key points and provides a call to action or next steps for the reader.
+
+---
+
+## Frontmatter Reference
+
+Here's what each frontmatter field does:
+
+- **title**: The main title of your blog post (required)
+- **description**: SEO description and preview text (required)
+- **image**: URL to the featured/social image (optional, recommended: 1200x630px)
+- **pinned**: Set to `true` to pin the post to the top of the blog list (optional, default: false)
+- **new**: Set to `true` to show a "New" badge (optional, default: false)
+- **category**: Category identifier for filtering (optional, default: "blog")
+- **icon**: Icon name for visual representation (optional)
+- **createdAt**: Publication date in format: YYYY-MM-DD or "MMM D, YYYY" (required)
+- **updatedAt**: Last update date in format: YYYY-MM-DD or "MMM D, YYYY" (optional, defaults to createdAt)
+
+## Date Format Examples
+
+You can use any of these date formats:
+- `2025-01-15` (ISO format)
+- `Jan 15, 2025`
+- `January 15, 2025`
+- `15 Jan 2025`
+- `2025/01/15`
+
+## Tips for Writing
+
+1. **Start with a hook**: Your first paragraph should grab attention
+2. **Use clear headings**: Make your content scannable
+3. **Include visuals**: Images break up text and add interest
+4. **Write in your voice**: Be authentic and conversational
+5. **Edit thoroughly**: Check for typos and clarity
+6. **Add value**: Make sure readers learn something or feel something
+
+Good luck with your blog post! 🚀
+

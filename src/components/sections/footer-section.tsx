@@ -53,7 +53,7 @@ export function FooterSection() {
     <footer id="footer" className="w-full pb-0">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between p-10">
         <div className="flex flex-col items-start justify-start gap-y-5 max-w-xs mx-0">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" prefetch={true} className="flex items-center gap-2">
             {/* <Icons.logo className="size-8" /> */}
             <Image
               src="/purple.svg"

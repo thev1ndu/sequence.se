@@ -996,7 +996,7 @@ export const siteConfig = {
       links: [
         { id: 5, title: "About", url: "#" },
         { id: 6, title: "Contact", url: "#" },
-        { id: 7, title: "Blog", url: "#" },
+        { id: 7, title: "Blog", url: "/blog" },
         { id: 8, title: "Docs", url: "https://sq3.us/docs" },
       ],
     },

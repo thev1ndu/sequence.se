@@ -28,6 +28,9 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
+  --color-edge: var(--edge);
+  --color-info: var(--info);
+  --color-code: var(--code);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
@@ -66,6 +69,12 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   --exitToLeft: exitToLeft 250ms ease;
   --exitToRight: exitToRight 250ms ease;
   --animate-elliptical-orbit: elliptical-orbit 20s linear infinite;
+  --animate-collapsible-fade-down:
+    collapsible-down var(--tw-duration, 200ms) ease-out,
+    fade-in var(--tw-duration, 200ms) ease-out;
+  --animate-collapsible-fade-up:
+    collapsible-up var(--tw-duration, 200ms) ease-out,
+    fade-out var(--tw-duration, 200ms) ease-out;
   @keyframes orbit {
     0% {
       transform: rotate(calc(var(--angle) * 1deg))
@@ -223,7 +232,43 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
     to {
       transform: rotate(calc(var(--angle, 0)deg + 360deg)) translate(var(--h-radius, 160px), 0) rotate(calc((var(--angle, 0)deg + 360deg) * -1));
     }
-  }  
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes collapsible-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+
+  @keyframes collapsible-up {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 
 :root {
@@ -244,6 +289,8 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
+  --edge: color-mix(in oklab, var(--border) 64%, var(--background));
+  --info: oklch(0.67 0.17 244.98);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -260,6 +307,7 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --code: oklch(0.97 0 0);
 }
 
 .dark {
@@ -280,6 +328,8 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
+  --edge: color-mix(in oklab, var(--border) 64%, var(--background));
+  --info: oklch(0.67 0.17 244.98);
   --input: oklch(0.269 0 0);
   --ring: oklch(0.439 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -295,6 +345,15 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+  --code: oklch(0.269 0 0);
+}
+
+@utility screen-line-before {
+  @apply relative before:absolute before:top-0 before:-left-[100vw] before:-z-1 before:h-px before:w-[200vw] before:bg-edge;
+}
+
+@utility screen-line-after {
+  @apply relative after:absolute after:bottom-0 after:-left-[100vw] after:-z-1 after:h-px after:w-[200vw] after:bg-edge;
 }
 
 @layer base {
@@ -307,6 +366,82 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Enhanced prose styling for blog posts */
+.prose {
+  @apply text-foreground/90;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-foreground font-bold mt-8 mb-4;
+  scroll-margin-top: 2rem;
+}
+
+.prose h1 {
+  @apply text-4xl;
+}
+
+.prose h2 {
+  @apply text-3xl border-b border-border pb-2;
+}
+
+.prose h3 {
+  @apply text-2xl;
+}
+
+.prose h4 {
+  @apply text-xl;
+}
+
+.prose p {
+  @apply leading-relaxed mb-6;
+}
+
+.prose ul,
+.prose ol {
+  @apply my-6 space-y-2;
+}
+
+.prose li {
+  @apply leading-relaxed;
+}
+
+.prose strong {
+  @apply font-semibold text-foreground;
+}
+
+.prose em {
+  @apply italic;
+}
+
+.prose code {
+  @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply my-6;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary pl-6 my-6 italic text-muted-foreground;
+}
+
+.prose a {
+  @apply text-primary hover:text-primary/80 underline-offset-4 hover:underline transition-colors;
+}
+
+.prose img {
+  @apply my-8 rounded-xl border border-border;
+}
+
+.prose iframe {
+  @apply w-full rounded-xl my-8;
 }
 
 /* Custom select arrow for TEAM SIZE in waitlist form */

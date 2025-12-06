@@ -6,13 +6,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { BlogPosting as PageSchema, WithContext } from "schema-dts";
 
-import { InlineTOC } from "@/components/inline-toc";
-import { MDX } from "@/components/mdx";
+import { InlineTOC } from "@/components/blog/components/inline-toc";
+import { MDX } from "@/components/blog/components/mdx";
 import { Button } from "@/components/ui/button";
-import { Prose } from "@/components/ui/typography";
-import { HomePrefetch } from "@/components/blog/components/home-prefetch";
+import { Prose } from "@/components/blog/components/typography";
 import { PostKeyboardShortcuts } from "@/components/blog/components/post-keyboard-shortcuts";
-import { PostPrefetch } from "@/components/blog/components/post-prefetch";
 import { LLMCopyButtonWithViewOptions } from "@/components/blog/components/post-page-actions";
 import { PostShareMenu } from "@/components/blog/components/post-share-menu";
 import {
@@ -126,8 +124,6 @@ export default async function Page({
         }}
       />
 
-      <HomePrefetch />
-      <PostPrefetch basePath="/blog" previous={previous} next={next} />
       <PostKeyboardShortcuts basePath="/blog" previous={previous} next={next} />
 
       <div className="flex items-center justify-between p-2 pl-4">

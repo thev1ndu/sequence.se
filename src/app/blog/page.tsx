@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { PostItem } from "@/components/blog/components/post-item";
-import { HomePrefetch } from "@/components/blog/components/home-prefetch";
 import { getAllPosts } from "@/components/blog/data/posts";
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ export default async function Page() {
 
   return (
     <div className="overflow-x-hidden">
-      <HomePrefetch />
       <div className="screen-line-after px-4">
         <h1 className="text-3xl font-semibold">Blog</h1>
       </div>

@@ -13,6 +13,7 @@ import { Prose } from "@/components/blog/components/typography";
 import { PostKeyboardShortcuts } from "@/components/blog/components/post-keyboard-shortcuts";
 import { LLMCopyButtonWithViewOptions } from "@/components/blog/components/post-page-actions";
 import { PostShareMenu } from "@/components/blog/components/post-share-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
   findNeighbour,
   getAllPosts,
@@ -139,6 +140,8 @@ export default async function Page({
         </Button>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
+          
           <LLMCopyButtonWithViewOptions
             markdownUrl={`/api/blog/${slug}`}
             isComponent={post.metadata.category === "components"}

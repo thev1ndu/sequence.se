@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { PostItem } from "@/components/blog/components/post-item";
 import { getAllPosts } from "@/components/blog/data/posts";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -13,8 +14,9 @@ export default async function Page() {
 
   return (
     <div className="overflow-x-hidden">
-      <div className="screen-line-after px-4">
+      <div className="screen-line-after px-4 flex items-center justify-between">
         <h1 className="text-3xl font-semibold">Blog</h1>
+        <ThemeToggle />
       </div>
 
       <div className="screen-line-after p-4">

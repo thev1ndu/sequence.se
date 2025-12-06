@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useScroll, type Variants } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -114,7 +115,13 @@ export function Navbar() {
           <div className="flex h-[56px] items-center justify-between p-4">
             <Link href="/" className="flex items-center gap-3">
               {/* <Icons.logo className="size-7 md:size-10" /> */}
-              <img src="./purple.svg" alt="Sequence3 logo" className="size-6 md:size-9" />
+              <Image 
+                src="/purple.svg" 
+                alt="Sequence3 logo" 
+                width={36} 
+                height={36} 
+                className="size-6 md:size-9" 
+              />
               <p className="text-lg font-semibold text-primary">Sequence3</p>
             </Link>
 
@@ -172,7 +179,13 @@ export function Navbar() {
                 <div className="flex items-center justify-between">
                   <Link href="/" className="flex items-center gap-3">
                     {/* <Icons.logo className="size-7 md:size-10" /> */}
-                    <img src="./Q.svg" alt="Sequence3 logo" className="size-6 md:size-7" />
+                    <Image 
+                      src="/purple.svg" 
+                      alt="Sequence3 logo" 
+                      width={28} 
+                      height={28} 
+                      className="size-6 md:size-7" 
+                    />
                     <p className="text-lg font-semibold text-primary">
                       Sequence3
                     </p>

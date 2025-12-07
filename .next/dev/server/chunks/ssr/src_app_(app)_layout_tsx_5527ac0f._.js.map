@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/hasaldharmagunwardana/Downloads/My%20Project/portfolio/src/app/%28app%29/layout.tsx"],"sourcesContent":["export default function AppLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <main className=\"max-w-screen overflow-x-hidden px-2\" suppressHydrationWarning>\n      {children}\n    </main>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS,UAAU,EAAE,QAAQ,EAAiC;IAC3E,qBACE,8OAAC;QAAK,WAAU;QAAsC,wBAAwB;kBAC3E;;;;;;AAGP","debugId":null}}]
+}

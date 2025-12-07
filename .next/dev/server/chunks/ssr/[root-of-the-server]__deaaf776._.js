@@ -169,10 +169,6 @@ const META_THEME_COLORS = {
 };
 const MAIN_NAV = [
     {
-        title: "Portfolio",
-        href: "/"
-    },
-    {
         title: "Blog",
         href: "/blog"
     }

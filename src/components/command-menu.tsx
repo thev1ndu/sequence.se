@@ -3,18 +3,11 @@
 import { useCommandState } from "cmdk";
 import type { LucideProps } from "lucide-react";
 import {
-  BriefcaseBusinessIcon,
-  CircleUserIcon,
   CornerDownLeftIcon,
-  DownloadIcon,
-  LetterTextIcon,
-  MessageCircleMoreIcon,
   MoonStarIcon,
   RssIcon,
   SunMediumIcon,
   TextIcon,
-  TriangleDashedIcon,
-  TypeIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -37,9 +30,8 @@ import { useSound } from "@/hooks/use-sound";
 import { cn } from "@/lib/utils";
 import { copyText } from "@/utils/copy";
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark";
-import { getWordmarkSVG } from "./chanhdai-wordmark";
-import { ComponentIcon, Icons } from "./icons";
+import { ChanhDaiMark } from "./chanhdai-mark";
+import { Icons } from "./icons";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
@@ -59,51 +51,6 @@ const MENU_LINKS: CommandLinkItem[] = [
     title: "Blog",
     href: "/blog",
     icon: RssIcon,
-  },
-];
-
-const DAIFOLIO_LINKS: CommandLinkItem[] = [
-  {
-    title: "About",
-    href: "/#about",
-    icon: LetterTextIcon,
-  },
-  {
-    title: "Tech Stack",
-    href: "/#stack",
-    icon: Icons.ts,
-  },
-  {
-    title: "Education",
-    href: "/#education",
-    icon: BriefcaseBusinessIcon,
-  },
-  {
-    title: "Projects",
-    href: "/#projects",
-    icon: Icons.project,
-  },
-  {
-    title: "Honors & Awards",
-    href: "/#awards",
-    icon: Icons.award,
-  },
-  {
-    title: "Certifications",
-    href: "/#certs",
-    icon: Icons.certificate,
-  },
-  {
-    title: "Download vCard",
-    href: "/vcard",
-    icon: CircleUserIcon,
-  },
-  {
-    title: "Download CV (EN)",
-    href: "https://drive.google.com/uc?export=download&id=1mHTs6fdXmnr0MxHwqaONN57R-JepQA_c",
-    icon: DownloadIcon,
-    openInNewTab: true,
-    tooltip: "Download CV",
   },
 ];
 
@@ -185,15 +132,11 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
     [playClick, setTheme]
   );
 
-  const { componentLinks, blogLinks } = useMemo(
-    () => ({
-      componentLinks: posts
-        .filter((post) => post.metadata?.category === "components")
-        .map(postToCommandLinkItem),
-      blogLinks: posts
+  const blogLinks = useMemo(
+    () =>
+      posts
         .filter((post) => post.metadata?.category !== "components")
         .map(postToCommandLinkItem),
-    }),
     [posts]
   );
 
@@ -239,23 +182,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
           <CommandLinkGroup
             heading="Menu"
             links={MENU_LINKS}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandSeparator />
-
-          <CommandLinkGroup
-            heading="Daifolio"
-            links={DAIFOLIO_LINKS}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandSeparator />
-
-          <CommandLinkGroup
-            heading="Components"
-            links={componentLinks}
-            fallbackIcon={Icons.react}
             onLinkSelect={handleOpenLink}
           />
 
@@ -373,16 +299,9 @@ type CommandMetaMap = Map<
 function buildCommandMetaMap() {
   const commandMetaMap: CommandMetaMap = new Map();
 
-  commandMetaMap.set("Download vCard", { commandKind: "command" });
-
   commandMetaMap.set("Light", { commandKind: "command" });
   commandMetaMap.set("Dark", { commandKind: "command" });
   commandMetaMap.set("Auto", { commandKind: "command" });
-
-  // Add the CV download command so the footer action label shows correctly
-  commandMetaMap.set("Download CV (EN)", { commandKind: "command" });
-
-  // Brand-related copy/download commands removed from the command menu.
 
   SOCIAL_LINK_ITEMS.forEach((item) => {
     commandMetaMap.set(item.title, {
@@ -443,18 +362,9 @@ function CommandMenuKbd({ className, ...props }: React.ComponentProps<"kbd">) {
 }
 
 function postToCommandLinkItem(post: Post): CommandLinkItem {
-  const isComponent = post.metadata?.category === "components";
-
-  const IconComponent = isComponent
-    ? (props: LucideProps) => (
-        <ComponentIcon {...props} variant={post.metadata.icon} />
-      )
-    : undefined;
-
   return {
     title: post.metadata.title,
-    href: isComponent ? `/components/${post.slug}` : `/blog/${post.slug}`,
-    keywords: isComponent ? ["component"] : undefined,
-    icon: IconComponent,
+    href: `/blog/${post.slug}`,
+    icon: undefined,
   };
 }

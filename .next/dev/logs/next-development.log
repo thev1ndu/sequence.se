@@ -9,3 +9,1208 @@
 [00:00:41.269] Server  LOG      ✓ Compiled in 503ms
 [00:00:41.705] Server  DEBUG   NavItemGitHub: skipping GitHub API fetch in dev (no token)
 [00:06:40.696] Browser LOG     %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {"metrics":[{"href":"http://localhost:1408/","id":"v3-1764663145034-8397712595097","route":"/","type":"TTFB","value":14637}],"scriptVersion":"0.1.3","sdkName":"@vercel/speed-insights/next","sdkVersion":"1.2.0","speed":"4g"}
+[00:07:16.972] Server  LOG      ✓ Compiled in 4s
+[00:07:17.835] Server  DEBUG   NavItemGitHub: skipping GitHub API fetch in dev (no token)
+[00:07:18.467] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:18.629] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:07:18.629] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:07:18.629] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765134665099}
+[00:07:18.629] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:07:45.703] Server  DEBUG   NavItemGitHub: skipping GitHub API fetch in dev (no token)
+[00:07:47.716] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:48.000] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <MenuProvider scope={{Menu:[...], ...}} open={false} onOpenChange={function useCallbackRef.useMemo} content={null} ...>
+      <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} isUsingKeyboardRef={{current:false}} ...>
+        <DropdownMenuTrigger asChild={true}>
+          <DropdownMenuTrigger data-slot="dropdown-m..." asChild={true}>
+            <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+              <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                <Primitive.div asChild={true} ref={function}>
+                  <Primitive.div.Slot ref={function}>
+                    <Primitive.div.SlotClone ref={function}>
+                      <Primitive.button type="button" id="radix-_R_2..." aria-haspopup="menu" aria-expanded={false} ...>
+                        <Primitive.button.Slot type="button" id="radix-_R_2..." aria-haspopup="menu" ...>
+                          <Primitive.button.SlotClone type="button" id="radix-_R_2..." aria-haspopup="menu" ...>
+                            <Button variant="ghost" className="group/togg..." size="icon" type="button" ...>
+                              <button
+                                data-slot="dropdown-menu-trigger"
+                                className={"items-center justify-center rounded-full text-sm font-medium whitespace-n..."}
+                                type="button"
++                               id="radix-_R_2mabn8qlb_"
+-                               id="radix-_R_lgqbn8qlb_"
+                                aria-haspopup="menu"
+                                aria-expanded={false}
+                                aria-controls={undefined}
+                                data-state="closed"
+                                data-disabled={undefined}
+                                disabled={false}
+                                onPointerDown={function handleEvent}
+                                onKeyDown={function handleEvent}
+                                ref={function}
+                              >
+        ...
+
+[00:07:48.067] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:07:48.067] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:07:48.067] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765134694535}
+[00:07:48.067] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:08:21.780] Browser LOG     %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {"metrics":[{"href":"http://localhost:1408/blog","id":"v3-1765134694536-7174510928108","route":"/blog","type":"FCP","value":2004},{"href":"http://localhost:1408/blog","id":"v3-1765134694536-2124831966388","route":"/blog","type":"TTFB","value":1249},{"attribution":{"eventTarget":"div.relative.select-none.[&_img]:aspect-1200/630.[&_img]:rounded-xl>img"},"href":"http://localhost:1408/blog","id":"v3-1765134694536-1190095703357","route":"/blog","type":"LCP","value":2004},{"attribution":{"eventTarget":"body>script>nextjs-portal","eventType":"pointerdown"},"href":"http://localhost:1408/blog","id":"v3-1765134694536-9031017026950","route":"/blog","type":"FID","value":3.6},{"attribution":{"eventTarget":"body>script>nextjs-portal","eventType":"pointerdown"},"href":"http://localhost:1408/blog","id":"v3-1765134694536-8374270716359","route":"/blog","type":"INP","value":64},{"attribution":{},"href":"http://localhost:1408/blog","id":"v3-1765134694536-8508939739754","route":"/blog","type":"CLS","value":0}],"scriptVersion":"0.1.3","sdkName":"@vercel/speed-insights/next","sdkVersion":"1.2.0","speed":"4g"}
+[00:08:23.988] Server  DEBUG   NavItemGitHub: skipping GitHub API fetch in dev (no token)
+[00:08:24.179] Server  DEBUG   NavItemGitHub: skipping GitHub API fetch in dev (no token)
+[00:08:25.163] Server  LOG      ✓ Compiled in 1419ms
+[00:08:40.809] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:40.994] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:08:40.994] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:08:40.994] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765134747471}
+[00:08:40.994] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:08:51.661] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.663] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.664] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.665] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.666] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.666] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.670] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.671] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.676] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.677] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.678] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.679] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.680] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.680] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.681] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.682] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.683] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.690] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.692] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.701] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.703] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.704] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.709] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.710] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.711] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.711] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.712] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.713] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.713] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.743] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.744] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.745] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.745] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.746] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.747] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.747] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.785] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.786] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:51.820] Server  LOG      ✓ Compiled in 377ms
+[00:08:51.933] Browser ERROR   ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:08:52.053] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.054] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.054] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.055] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.070] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.071] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.072] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.073] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.075] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.076] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.076] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.077] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.078] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.079] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.080] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.081] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.082] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.082] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.084] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.085] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.087] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.087] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.087] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.088] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.113] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.115] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.115] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.116] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.187] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.188] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.189] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.189] Server  ERROR    ⨯ ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:08:52.304] Server  LOG      ✓ Compiled in 419ms
+[00:08:52.406] Browser ERROR   ./src/app/(app)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/site-footer'
+> 1 | import { SiteFooter } from "@/components/site-footer";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { SiteHeader } from "@/components/site-header";
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+
+Import map: aliased to relative './src/components/site-footer' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:08:52.406] Browser ERROR   ./src/app/(app)/layout.tsx:2:1
+Module not found: Can't resolve '@/components/site-header'
+  1 | import { SiteFooter } from "@/components/site-footer";
+> 2 | import { SiteHeader } from "@/components/site-header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export default function AppLayout({ children }: { children: React.ReactNode }) {
+  5 |   return (
+
+Import map: aliased to relative './src/components/site-header' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:08:55.172] Server  LOG      ✓ Compiled in 298ms
+[00:08:58.592] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:58.842] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:08:58.843] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:08:58.843] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765134765314}
+[00:08:58.843] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:27.785] Browser LOG     %c[Vercel Speed Insights]%c [vitals] color: rgb(120, 120, 120) color: inherit {"metrics":[{"href":"http://localhost:1408/blog","id":"v3-1765134765315-1046748986602","route":"/blog","type":"FCP","value":2632},{"href":"http://localhost:1408/blog","id":"v3-1765134765315-3566846651780","route":"/blog","type":"TTFB","value":2333},{"attribution":{"eventTarget":"div.relative.select-none.[&_img]:aspect-1200/630.[&_img]:rounded-xl>img"},"href":"http://localhost:1408/blog","id":"v3-1765134765315-9053577241232","route":"/blog","type":"LCP","value":2632},{"attribution":{},"href":"http://localhost:1408/blog","id":"v3-1765134765315-7496583561311","route":"/blog","type":"CLS","value":0}],"scriptVersion":"0.1.3","sdkName":"@vercel/speed-insights/next","sdkVersion":"1.2.0","speed":"4g"}
+[00:14:13.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:13.701] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:13.701] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:13.701] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135080189}
+[00:14:13.701] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:16.409] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:16.636] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:16.636] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:16.636] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135083125}
+[00:14:16.636] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:26.364] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:26.488] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:26.488] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:26.488] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135092977}
+[00:14:26.488] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:30.297] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:30.518] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:30.518] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:30.518] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135097008}
+[00:14:30.518] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:40.488] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:40.718] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:40.718] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:40.718] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135107207}
+[00:14:40.718] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:41.813] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:42.022] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:42.022] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:42.023] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135108511}
+[00:14:42.023] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:42.916] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:43.178] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:43.178] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:43.178] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135109666}
+[00:14:43.178] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:43.778] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:43.968] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:43.968] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:43.968] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135110456}
+[00:14:43.968] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:44.523] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:44.643] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:44.644] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:44.644] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135111133}
+[00:14:44.644] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:47.935] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:48.146] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:48.146] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:48.146] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135114635}
+[00:14:48.146] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:48.889] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:49.130] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:14:49.130] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:14:49.130] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135115618}
+[00:14:49.130] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:16:14.533] Server  LOG      ✓ Compiled in 650ms
+[00:16:15.121] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:15.432] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:16:15.432] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/blog","route":"/blog"}
+[00:16:15.432] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:1408/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:1408/blog","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765135201922}
+[00:16:15.432] Browser LOG     %c[Vercel Speed Insights]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit

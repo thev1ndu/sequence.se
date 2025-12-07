@@ -138,7 +138,7 @@ export default async function Page({
         <div className="flex items-center gap-2">
           <LLMCopyButtonWithViewOptions
             markdownUrl={`${getPostUrl(post)}.mdx`}
-            isComponent={post.metadata.category === "components"}
+            isComponent={false}
           />
 
           <PostShareMenu url={getPostUrl(post)} />
@@ -193,6 +193,5 @@ export default async function Page({
 }
 
 function getPostUrl(post: Post) {
-  const isComponent = post.metadata.category === "components";
-  return isComponent ? `/components/${post.slug}` : `/blog/${post.slug}`;
+  return `/blog/${post.slug}`;
 }

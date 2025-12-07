@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///Users/hasaldharmagunwardana/Downloads/My%20Project/portfolio/src/app/%28app%29/page.tsx"],"sourcesContent":["import { redirect } from \"next/navigation\";\n\nexport default function Page() {\n  redirect(\"/blog\");\n}\n\n"],"names":[],"mappings":";;;;AAAA;AAAA;;AAEe,SAAS;IACtB,IAAA,iMAAQ,EAAC;AACX","debugId":null}}]
+}

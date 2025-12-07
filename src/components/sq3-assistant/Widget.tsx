@@ -29,9 +29,9 @@ import './widget.css';
 
 const SUGGESTED_QUESTIONS = [
   'What does Sequence3 do?',
-  'How does SQ3 handle multi-channel inboxes?',
-  'What are the key features of SQ3?',
-  'How does SQ3 AI assistant work?',
+  'How does Sequence3 handle multi-channel inboxes?',
+  'What are the key features of Sequence3?',
+  'How does Sequence3 AI assistant work?',
 ];
 
 interface ChatMessage {

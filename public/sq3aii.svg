@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" width="1149" height="1149" viewBox="0 0 1149 1149" fill="none">
+  <g clip-path="url(#clip0_74_279)">
+    <path d="M1141.79 551.669L1114.09 634.715C1110.94 644.182 1102.11 650.591 1092.13 650.673L734.06 653.401C726.216 653.46 718.878 649.579 714.504 643.076L679.977 591.663C674.497 583.502 674.721 572.765 680.542 564.839L931.444 222.999C939.053 212.639 953.611 210.369 963.995 217.942L1021.28 259.654C1031.57 267.145 1033.95 281.491 1026.65 291.91L887.91 489.86C876.903 505.559 888.475 527.103 907.643 526.585L1119.02 520.941C1135.21 520.506 1146.9 536.287 1141.79 551.657V551.669Z" style="fill: url(&quot;#gradient-0&quot;);"/>
+    <path d="M127.7 952.272L100.465 869.402C97.3255 859.853 100.653 849.375 108.709 843.378L393.514 631.658C399.806 626.977 408.026 625.778 415.387 628.447L473.609 649.556C482.852 652.907 489.014 661.703 488.99 671.535L488.332 1095.69C488.308 1108.57 477.866 1119 464.989 1119H394.138C381.437 1119 371.065 1108.84 370.806 1096.14L365.903 854.479C365.515 835.311 343.454 824.762 328.284 836.487L164.143 963.444C151.396 973.31 132.722 967.583 127.689 952.272H127.7Z" style="fill: url(&quot;#gradient-3&quot;);"/>
+    <path d="M707.013 34.8214L776.924 88.363C784.709 94.3251 787.943 104.521 785.003 113.87L680.131 448.431C677.791 455.91 671.84 461.719 664.314 463.883L604.799 480.993C595.344 483.71 585.208 480.217 579.434 472.244L331.541 129.522C324.051 119.173 326.285 104.721 336.539 97.1004L393.432 54.8716C403.71 47.2396 418.221 49.3211 425.947 59.5284L571.602 251.881C583.173 267.168 607.221 262.746 612.607 244.343L670.418 46.7927C675.027 31.0584 693.984 24.8493 707.002 34.8214H707.013Z" style="fill: url(&quot;#gradient-1&quot;);"/>
+    <path d="M86.1063 282.997L154.547 232.195C162.65 226.174 173.704 226.056 181.947 231.889L470.539 436.224C476.925 440.752 480.629 448.172 480.382 456.004L478.453 517.919C478.148 527.75 471.715 536.334 462.354 539.38L59.8589 670.594C47.6407 674.58 34.5053 667.936 30.4717 655.741L8.18729 588.476C4.18903 576.387 10.6098 563.322 22.6281 559.113L250.647 479.218C268.65 472.903 271.896 448.831 256.197 437.988L86.7531 320.945C73.5941 311.855 73.2649 292.534 86.1063 282.997Z" style="fill: url(&quot;#gradient-2&quot;);"/>
+  </g>
+  <defs fill="#4f39f6">
+    <clipPath id="clip0_74_279" fill="#4f39f6">
+      <rect width="1136" height="1089" fill="white" transform="translate(7 30)"/>
+    </clipPath>
+    <style bx:fonts="Akatab">@import url(https://fonts.googleapis.com/css2?family=Akatab%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800%3B0%2C900&amp;display=swap);</style>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="909.51" y1="213.467" x2="909.51" y2="653.402" id="gradient-0" fill="#000000">
+      <stop offset="0" style="stop-color: rgb(30.98% 22.353% 96.471%)" fill="#000000"/>
+      <stop offset="1" style="stop-color: #1c9e65" fill="#000000"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="556.594" y1="29.996" x2="556.594" y2="481.904" id="gradient-1" fill="#000000">
+      <stop offset="0" style="stop-color: rgb(30.98% 22.353% 96.471%)" fill="#000000"/>
+      <stop offset="1" style="stop-color: #1c9e65" fill="#000000"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="243.697" y1="227.595" x2="243.697" y2="671.751" id="gradient-2" fill="#000000">
+      <stop offset="0" style="stop-color: rgb(30.98% 22.353% 96.471%)" fill="#000000"/>
+      <stop offset="1" style="stop-color: #1c9e65" fill="#000000"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="294.143" y1="627.049" x2="294.143" y2="1119" id="gradient-3" fill="#000000">
+      <stop offset="0" style="stop-color: rgb(30.98% 22.353% 96.471%)" fill="#000000"/>
+      <stop offset="1" style="stop-color: #1c9e65" fill="#000000"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="916.75" y1="694.305" x2="916.75" y2="1254.619" id="gradient-4" fill="#000000">
+      <stop offset="0" style="stop-color: #24ff3f" fill="#000000"/>
+      <stop offset="1" style="stop-color: #9595d9" fill="#000000"/>
+    </linearGradient>
+  </defs>
+  <text style="fill: rgb(46, 255, 148); font-family: Akatab; font-size: 409px; font-weight: 500; paint-order: stroke markers; stroke: url(&quot;#gradient-4&quot;); stroke-linecap: round; stroke-linejoin: round; stroke-width: 12px; white-space: pre;" x="703.456" y="1113.74">.ai</text>
+</svg>

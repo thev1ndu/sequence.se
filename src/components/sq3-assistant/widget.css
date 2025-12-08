@@ -142,6 +142,7 @@
   letter-spacing: 0.05em; 
   margin-left: 0.4vh;
   text-transform: uppercase;
+  visibility: hidden;
 }
 
 /* Rounded-full Chat Container */

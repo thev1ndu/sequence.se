@@ -224,7 +224,7 @@ export function SQ3AssistantWidget() {
                 height={24}
                 className="sq3-widget-logo"
               />
-              <span className="sq3-widget-title-text">Sequence3.ai <span className="sq3-widget-beta">Beta</span></span>
+              <span className="sq3-widget-title-text">Sequence3.ai</span>
             </div>
           </div>
 

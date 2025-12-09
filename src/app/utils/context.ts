@@ -44,7 +44,6 @@ export const getContext = async (
     if (match) {
       const name = match[2];
       // Expand query to include variations that might appear in documents
-      // e.g., "who is hasal" -> "hasal hasal dharmagunawardana team member sequence3"
       enhancedMessage = `${message} ${name} ${name} team member sequence3 sq3`;
       console.log('Enhanced person query:', {
         original: message,

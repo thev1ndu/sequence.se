@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
     // Make context retrieval optional - if Pinecone fails, continue without context
     let context = '';
     const namespace = process.env.PINECONE_NAMESPACE || '';
-    
+
     if (process.env.PINECONE_INDEX) {
       try {
         // Retry logic with exponential backoff for connection errors
@@ -73,14 +73,14 @@ export async function POST(req: NextRequest) {
             const contextResult = await getContext(lastMessage.content, namespace, 6000, 0.0); // Increased maxTokens for more context
             return typeof contextResult === 'string' ? contextResult : '';
           } catch (error: any) {
-            const isConnectionError = error.message?.includes('failed to reach Pinecone') || 
-                                     error.message?.includes('ConnectionError') ||
-                                     error.message?.includes('network') ||
-                                     error.message?.includes('timeout');
-            
+            const isConnectionError = error.message?.includes('failed to reach Pinecone') ||
+              error.message?.includes('ConnectionError') ||
+              error.message?.includes('network') ||
+              error.message?.includes('timeout');
+
             // Retry up to 3 times for connection errors, 1 time for other errors
             const maxRetries = isConnectionError ? 3 : 1;
-            
+
             if (retryCount < maxRetries) {
               // Exponential backoff: 1s, 2s, 4s
               const delay = Math.min(1000 * Math.pow(2, retryCount), 4000);
@@ -105,7 +105,7 @@ export async function POST(req: NextRequest) {
     }
 
     const hasContext = context.trim().length > 0;
-    
+
     console.log('Context retrieval complete:', {
       hasContext: hasContext,
       contextLength: context.length,

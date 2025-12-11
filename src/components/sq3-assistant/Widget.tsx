@@ -225,6 +225,7 @@ export function SQ3AssistantWidget() {
                 className="sq3-widget-logo"
               />
               <span className="sq3-widget-title-text">Sequence3.ai</span>
+              {/* <span className="sq3-widget-beta">Beta</span> */}
             </div>
           </div>
 
@@ -235,12 +236,12 @@ export function SQ3AssistantWidget() {
             <ConversationContent>
               {messages.length === 0 ? (
                 <ConversationEmptyState>
-                  <div className="sq3-widget-empty-content">
-                    <p className="sq3-widget-empty-text">
+                  {/* <div className="sq3-widget-empty-content"> */}
+                    <p className="text-sm text-muted-foreground justify-center">
                       {/* Hey! 👋 I'm Sequence3.ai<br /> */}
                       Ask me anything about how Sequence3 can help grow your business!
                     </p>
-                  </div>
+                  {/* </div> */}
                 </ConversationEmptyState>
               ) : (
                 messages.map((message) => (

@@ -18,44 +18,52 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // Dashboard auth protection
-  if (request.nextUrl.pathname.startsWith('/dashboard')) {
-    // Skip auth check for login page
-    if (request.nextUrl.pathname === '/dashboard/login') {
-      return NextResponse.next();
-    }
-
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-    if (!supabaseUrl || !supabaseAnonKey) {
-      console.error('Missing Supabase credentials');
-      return NextResponse.next();
-    }
-
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-    // Get access token from cookie
-    const accessToken = request.cookies.get('sb-access-token')?.value;
-    const refreshToken = request.cookies.get('sb-refresh-token')?.value;
-
-    if (!accessToken) {
-      const loginUrl = new URL('/dashboard/login', request.url);
-      loginUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
-      return NextResponse.redirect(loginUrl);
-    }
-
-    // Verify session
-    const { data: { user }, error } = await supabase.auth.getUser(accessToken);
-
-    if (error || !user) {
-      const loginUrl = new URL('/dashboard/login', request.url);
-      loginUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
-      return NextResponse.redirect(loginUrl);
-    }
+  // Non-dashboard routes: skip auth, just set pathname header and continue
+  if (!request.nextUrl.pathname.startsWith('/dashboard')) {
+    const response = NextResponse.next();
+    response.headers.set('x-pathname', request.nextUrl.pathname);
+    return response;
   }
 
-  // Set pathname header for layout to use
+  // Dashboard login page: skip auth check
+  if (request.nextUrl.pathname === '/dashboard/login') {
+    const response = NextResponse.next();
+    response.headers.set('x-pathname', request.nextUrl.pathname);
+    return response;
+  }
+
+  // Dashboard routes: require authentication
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.error('Missing Supabase credentials');
+    const response = NextResponse.next();
+    response.headers.set('x-pathname', request.nextUrl.pathname);
+    return response;
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+  // Get access token from cookie
+  const accessToken = request.cookies.get('sb-access-token')?.value;
+
+  if (!accessToken) {
+    const loginUrl = new URL('/dashboard/login', request.url);
+    loginUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
+    return NextResponse.redirect(loginUrl);
+  }
+
+  // Verify session
+  const { data: { user }, error } = await supabase.auth.getUser(accessToken);
+
+  if (error || !user) {
+    const loginUrl = new URL('/dashboard/login', request.url);
+    loginUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
+    return NextResponse.redirect(loginUrl);
+  }
+
+  // Authenticated user: set pathname header and continue
   const response = NextResponse.next();
   response.headers.set('x-pathname', request.nextUrl.pathname);
   return response;

@@ -3,7 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Globe, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
+import { HeaderStatus } from "./header-status";
 import { AppSidebar } from "@/components/app-sidebar";
 import { InactivityHandler } from "@/components/inactivity-handler";
 import {
@@ -88,9 +91,26 @@ export default function DashboardLayout({
                   </React.Fragment>
                 ))}
               </BreadcrumbList>
+
             </Breadcrumb>
+            
+            <div className="ml-auto flex items-center gap-2">
+              <HeaderStatus />
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="gap-2 rounded-md h-8 px-3 text-xs" 
+                asChild
+              >
+                <Link href="https://sq3.io" target="_blank">
+                  <Globe className="size-3.5" />
+                  <span className="hidden sm:inline">View Website</span>
+                  <ExternalLink className="size-3 lg:ml-0.5 text-muted-foreground" />
+                </Link>
+              </Button>
+            </div>
           </header>
-          <div className="flex flex-1 flex-col p-6">{children}</div>
+          <div className="flex flex-1 flex-col p-4 md:p-6">{children}</div>
         </SidebarInset>
       </SidebarProvider>
     </InactivityHandler>

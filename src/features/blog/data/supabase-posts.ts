@@ -8,6 +8,7 @@ export interface DBPost {
   excerpt: string | null;
   cover_image: string | null;
   is_published: boolean;
+  is_pinned: boolean;
   created_at: string;
   updated_at: string;
 }
@@ -35,6 +36,7 @@ function transformPost(dbPost: DBPost): Post {
       image: dbPost.cover_image || undefined,
       createdAt: dbPost.created_at,
       updatedAt: dbPost.updated_at || dbPost.created_at,
+      pinned: dbPost.is_pinned || false,
     },
     slug: dbPost.slug,
     content: dbPost.content,
@@ -46,6 +48,7 @@ export async function getAllPostsFromDB(): Promise<Post[]> {
     .from("posts")
     .select("*")
     .eq("is_published", true)
+    .order("is_pinned", { ascending: false })
     .order("created_at", { ascending: false });
 
   if (error) {

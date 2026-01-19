@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PutObjectCommand } from "@aws-sdk/client-s3";
+import { PutObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
 import { nanoid } from "nanoid";
 
 import { r2 } from "@/lib/r2";
@@ -64,4 +64,48 @@ export async function POST(request: NextRequest) {
   }
 }
 
+export async function DELETE(request: NextRequest) {
+  try {
+    const { url } = await request.json();
+    
+    if (!url) {
+      return NextResponse.json(
+        { error: "No URL provided" },
+        { status: 400 }
+      );
+    }
 
+    const bucketName = process.env.R2_BUCKET_NAME;
+    if (!bucketName) {
+      return NextResponse.json(
+        { error: "R2 bucket not configured" },
+        { status: 500 }
+      );
+    }
+
+    // Extract key from URL (e.g., "uploads/abc123.jpg")
+    const publicDomain = process.env.NEXT_PUBLIC_R2_DOMAIN || '';
+    let key = url;
+    
+    if (publicDomain && url.startsWith(publicDomain)) {
+      key = url.replace(publicDomain + '/', '');
+    } else if (url.includes('/uploads/')) {
+      key = 'uploads/' + url.split('/uploads/').pop();
+    }
+
+    const command = new DeleteObjectCommand({
+      Bucket: bucketName,
+      Key: key,
+    });
+
+    await r2.send(command);
+
+    return NextResponse.json({ success: true, deletedKey: key });
+  } catch (error) {
+    console.error("Error deleting file:", error);
+    return NextResponse.json(
+      { error: "Failed to delete file" },
+      { status: 500 }
+    );
+  }
+}

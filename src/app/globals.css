@@ -3,6 +3,7 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   pointer-events: none;
 }
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 
 @custom-variant dark (&:where(.dark, .dark *));

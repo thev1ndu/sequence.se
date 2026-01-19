@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
+import { Toaster } from "sonner";
 import "./globals.css";
 import { metadata as seoMetadata } from "./metadata";
 
@@ -87,6 +88,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <MainSiteWrapper>{children}</MainSiteWrapper>
+          <Toaster 
+            theme="dark"
+            richColors 
+            position="bottom-right"
+            closeButton
+          />
         </ThemeProvider>
       </body>
     </html>

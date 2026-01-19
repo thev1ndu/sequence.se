@@ -73,7 +73,7 @@ export function LoginForm({
         <span className="text-xl font-semibold tracking-tight">Sequence3</span>
       </div>
 
-      <Card className="border-border bg-card">
+      <Card className="border-border bg-muted/40">
         <CardHeader className="text-center">
           <CardTitle className="text-lg">Login to your account</CardTitle>
           <CardDescription>

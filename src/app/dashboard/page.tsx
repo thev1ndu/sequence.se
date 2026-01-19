@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { PlusIcon, Loader2, ImageIcon, Calendar, Edit } from "lucide-react";
+import { PlusIcon, Loader2, ImageIcon, Calendar, Edit, Pin } from "lucide-react";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/lib/supabase";
@@ -12,6 +13,7 @@ interface Post {
   title: string;
   slug: string;
   is_published: boolean;
+  is_pinned: boolean;
   created_at: string;
   cover_image: string | null;
 }
@@ -29,7 +31,8 @@ export default function DashboardPage() {
       setLoading(true);
       const { data, error } = await supabase
         .from("posts")
-        .select("id, title, slug, is_published, created_at, cover_image")
+        .select("id, title, slug, is_published, is_pinned, created_at, cover_image")
+        .order("is_pinned", { ascending: false })
         .order("created_at", { ascending: false });
 
       if (error) {
@@ -41,6 +44,46 @@ export default function DashboardPage() {
       console.error("Error:", error);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function togglePin(postId: string, currentPinned: boolean, e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    try {
+      const { error } = await supabase
+        .from("posts")
+        .update({ is_pinned: !currentPinned })
+        .eq("id", postId);
+
+      if (error) throw error;
+
+      // Update local state
+      setPosts(posts.map(post => 
+        post.id === postId 
+          ? { ...post, is_pinned: !currentPinned }
+          : post
+      ));
+
+      // Find post title for the message
+      const post = posts.find(p => p.id === postId);
+      const postTitle = post?.title || "Post";
+
+      if (!currentPinned) {
+        toast.success(`"${postTitle}" pinned to top`, {
+          description: "This post will now appear first in your blog.",
+        });
+      } else {
+        toast.info(`"${postTitle}" unpinned`, {
+          description: "Post returned to normal chronological order.",
+        });
+      }
+    } catch (error) {
+      console.error("Error toggling pin:", error);
+      toast.error("Failed to update pin status", {
+        description: "Please try again.",
+      });
     }
   }
 
@@ -76,7 +119,7 @@ export default function DashboardPage() {
             <Link
               key={post.id}
               href={`/dashboard/posts/${post.slug || 'edit'}`} // Go to edit page
-              className="group relative flex flex-col rounded-xl border border-border bg-card overflow-hidden hover:shadow-lg hover:border-primary/50 transition-all duration-300"
+              className="group relative flex flex-col rounded-xl border border-border bg-muted/40 overflow-hidden hover:shadow-lg hover:border-primary/50 transition-all duration-300"
             >
               {/* Cover Image Area */}
               <div className="relative aspect-video w-full bg-muted overflow-hidden">
@@ -92,8 +135,14 @@ export default function DashboardPage() {
                   </div>
                 )}
                 
-                {/* Status Badge */}
-                <div className="absolute top-2 right-2">
+                {/* Status Badges */}
+                <div className="absolute top-2 right-2 flex items-center gap-1.5">
+                  {post.is_pinned && (
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium shadow-sm backdrop-blur-md bg-blue-500/90 text-white">
+                      <Pin className="h-3 w-3 mr-1" />
+                      Pinned
+                    </span>
+                  )}
                    <span
                       className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium shadow-sm backdrop-blur-md ${
                         post.is_published
@@ -117,9 +166,22 @@ export default function DashboardPage() {
                     <Calendar className="h-3.5 w-3.5" />
                     <span>{new Date(post.created_at).toLocaleDateString()}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Edit className="h-3.5 w-3.5" />
-                    <span>Edit</span>
+                  <div className="flex items-center gap-2">
+                    <span className="flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium bg-primary/10 text-primary">
+                      <Edit className="h-3 w-3" />
+                      Edit
+                    </span>
+                    <button
+                      onClick={(e) => togglePin(post.id, post.is_pinned, e)}
+                      className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-all ${
+                        post.is_pinned
+                          ? "bg-blue-500/20 text-blue-400 hover:bg-blue-500/30"
+                          : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                      }`}
+                    >
+                      <Pin className={`h-3 w-3 ${post.is_pinned ? "fill-current" : ""}`} />
+                      {post.is_pinned ? "Unpin" : "Pin"}
+                    </button>
                   </div>
                 </div>
               </div>

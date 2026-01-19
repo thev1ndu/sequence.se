@@ -83,7 +83,7 @@ export function BlogPostClient({ post, children }: BlogPostClientProps) {
 
           {/* Article content */}
           <div className="px-6 md:px-10 py-10 md:py-14 max-w-3xl mx-auto">
-            <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:mt-6 prose-headings:mb-4 prose-p:my-4 prose-img:rounded-lg prose-img:my-6 prose-blockquote:my-4 prose-ul:my-4 prose-ol:my-4 prose-hr:my-8 prose-a:text-primary prose-strong:text-foreground">
+            <div>
               {children}
             </div>
           </div>

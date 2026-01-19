@@ -18,6 +18,7 @@ import {
   AlertCircle,
   Loader2
 } from "lucide-react";
+import { toast } from "sonner";
 import { User } from "@supabase/supabase-js";
 import dayjs from "dayjs";
 
@@ -52,13 +53,65 @@ export default function SettingsPage() {
   const [status, setStatus] = React.useState<SystemStatus | null>(null);
   const [loadingStatus, setLoadingStatus] = React.useState(true);
 
-  // Prevent hydration mismatch
+  // Password Change State
+  const [currentPassword, setCurrentPassword] = React.useState("");
+  const [newPassword, setNewPassword] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
+  const [isUpdating, setIsUpdating] = React.useState(false);
+
+  const handleUpdatePassword = async () => {
+    if (!currentPassword || !newPassword || !confirmPassword) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      toast.error("New passwords do not match");
+      return;
+    }
+
+    if (newPassword.length < 6) {
+      toast.error("Password must be at least 6 characters");
+      return;
+    }
+
+    setIsUpdating(true);
+    try {
+      // 1. Re-authenticate
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email: user?.email || "",
+        password: currentPassword,
+      });
+
+      if (signInError) {
+        throw new Error("Incorrect current password");
+      }
+
+      // 2. Update password
+      const { error: updateError } = await supabase.auth.updateUser({
+        password: newPassword,
+      });
+
+      if (updateError) {
+        throw updateError;
+      }
+
+      toast.success("Password updated successfully");
+      setCurrentPassword("");
+      setNewPassword("");
+      setConfirmPassword("");
+    } catch (error: any) {
+      toast.error(error.message || "Failed to update password");
+    } finally {
+      setIsUpdating(false);
+    }
+  };
+
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
     setMounted(true);
     
-    // Fetch User
     const getUser = async () => {
       const { data: { user } } = await supabase.auth.getUser();
       setUser(user);
@@ -66,7 +119,6 @@ export default function SettingsPage() {
     };
     getUser();
 
-    // Fetch System Status
     const checkStatus = async () => {
       const start = performance.now();
       try {
@@ -106,7 +158,6 @@ export default function SettingsPage() {
       <Separator className="my-6" />
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
-        {/* Account Information */}
         <Card className="xl:col-span-2 shadow-sm bg-muted/40">
           <CardHeader>
             <CardTitle>Account Information</CardTitle>
@@ -143,7 +194,6 @@ export default function SettingsPage() {
           </CardContent>
         </Card>
 
-        {/* Appearance */}
         <Card className="shadow-sm bg-muted/40">
           <CardHeader>
             <CardTitle>Appearance</CardTitle>
@@ -152,7 +202,7 @@ export default function SettingsPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-2">
               <ThemeButton 
                 isActive={theme === 'light'} 
                 onClick={() => setTheme('light')} 
@@ -176,7 +226,6 @@ export default function SettingsPage() {
         </Card>
       </div>
 
-      {/* System Status */}
       <Card className="shadow-sm bg-muted/40">
         <CardHeader className="flex flex-row items-center justify-between">
           <div className="space-y-0.5">
@@ -221,7 +270,6 @@ export default function SettingsPage() {
         </CardContent>
       </Card>
 
-      {/* Change Password */}
       <Card className="shadow-sm relative overflow-hidden bg-muted/40">
         <CardHeader>
           <CardTitle>Change Password</CardTitle>
@@ -234,15 +282,30 @@ export default function SettingsPage() {
           <div className="grid gap-6 md:grid-cols-3">
             <div className="space-y-2">
               <Label htmlFor="current-pw">Current Password</Label>
-              <PasswordInput id="current-pw" placeholder="Enter current password" />
+              <PasswordInput 
+                id="current-pw" 
+                placeholder="Enter current password"
+                value={currentPassword}
+                onChange={(e) => setCurrentPassword(e.target.value)}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="new-pw">New Password</Label>
-              <PasswordInput id="new-pw" placeholder="Enter new password" />
+              <PasswordInput 
+                id="new-pw" 
+                placeholder="Enter new password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="confirm-pw">Confirm New Password</Label>
-              <PasswordInput id="confirm-pw" placeholder="Confirm new password" />
+              <PasswordInput 
+                id="confirm-pw" 
+                placeholder="Confirm new password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
             </div>
           </div>
 
@@ -251,17 +314,19 @@ export default function SettingsPage() {
           <div className="text-xs text-muted-foreground">
             Requirements: 6+ characters • One uppercase letter • One lowercase letter • One number
           </div>
-          <Button>Update Password</Button>
+          <Button onClick={handleUpdatePassword} disabled={isUpdating}>
+            {isUpdating && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            Update Password
+          </Button>
         </CardFooter>
       </Card>
       
-      {/* Footer spacer */}
 
     </div>
   );
 }
 
-// --- Specific Components ---
+
 
 function ThemeButton({ isActive, onClick, icon: Icon, label }: { isActive: boolean; onClick: () => void; icon: any; label: string }) {
   return (
@@ -292,9 +357,8 @@ function StatusCard({ icon: Icon, title, subtitle, metric, status = "online" }: 
   return (
     <div className={cn(
       "relative overflow-hidden rounded-xl border p-4 transition-all hover:bg-muted/50",
-      // Gray Theme adaptation: Dark background (from card default), but keep green border/text if online
       isOnline ? "border-emerald-500/20" : isError ? "border-red-500/20" : "border-border",
-      "bg-muted/40" // Ensure it matches standard card gray, removing the green tint
+      "bg-muted/40" 
     )}>
       <div className="flex items-start gap-4">
         <div className={cn(
@@ -322,7 +386,19 @@ function StatusCard({ icon: Icon, title, subtitle, metric, status = "online" }: 
   );
 }
 
-function PasswordInput({ id, placeholder, className }: { id?: string; placeholder: string; className?: string }) {
+function PasswordInput({ 
+  id, 
+  placeholder, 
+  className,
+  value,
+  onChange
+}: { 
+  id?: string; 
+  placeholder: string; 
+  className?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}) {
   const [showPassword, setShowPassword] = React.useState(false);
   
   return (
@@ -332,6 +408,8 @@ function PasswordInput({ id, placeholder, className }: { id?: string; placeholde
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}
         className={cn("pr-10 bg-muted/40 border-input/50 focus-visible:ring-1", className)}
+        value={value}
+        onChange={onChange}
       />
       <button
         type="button"

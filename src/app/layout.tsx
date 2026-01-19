@@ -2,28 +2,20 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { MainSiteWrapper } from "@/components/main-site-wrapper";
 import { siteConfig } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Toaster } from "sonner";
 import "./globals.css";
 import { metadata as seoMetadata } from "./metadata";
 
-const inter = Inter({
-  variable: "--font-inter",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  adjustFontFallback: true,
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
-  preload: false,
-  fallback: ['ui-monospace', 'monospace'],
-  adjustFontFallback: true,
 });
 
 export const viewport: Viewport = {
@@ -78,7 +70,7 @@ export default function RootLayout({
       </Script>
 
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-background`}
         suppressHydrationWarning
       >
         <ThemeProvider

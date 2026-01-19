@@ -27,7 +27,7 @@ export interface Post {
   content: string;
 }
 
-// Transform DB post to the format expected by the blog components
+
 function transformPost(dbPost: DBPost): Post {
   return {
     metadata: {

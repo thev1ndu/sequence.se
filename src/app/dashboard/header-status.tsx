@@ -14,8 +14,9 @@ export function HeaderStatus() {
         const res = await getSystemStatus();
         if (!mounted) return;
         
-        // Check if both systems are online
-        const allOnline = 
+        if (!mounted) return;
+        
+        const allOnline =  
           res.database.status === "online" && 
           res.storage.status === "online";
           
@@ -27,13 +28,12 @@ export function HeaderStatus() {
     };
     check();
     
-    // Cleanup
     return () => { mounted = false; };
   }, []);
 
   return (
     <div className={cn(
-      "flex items-center gap-2 rounded-md px-3 py-1.5 text-xs font-medium border transition-all duration-300",
+      "flex items-center gap-2 rounded-md px-3 h-8 text-xs font-medium border transition-all duration-300",
       status === "loading" && "bg-muted/50 border-border text-muted-foreground",
       status === "online" && "bg-emerald-500/10 text-emerald-500 border-emerald-500/20",
       status === "issue" && "bg-yellow-500/10 text-yellow-500 border-yellow-500/20"

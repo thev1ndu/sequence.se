@@ -11,10 +11,9 @@ export async function getSystemStatus() {
     api: { status: "online", latency: 0, message: "Next.js Environment" },
   };
 
-  // Check Database
   const dbStart = performance.now();
   try {
-    const { count, error } = await supabase.from("posts").select("*", { count: "exact", head: true });
+    const { error } = await supabase.from("posts").select("id").limit(1);
     const dbEnd = performance.now();
     status.database.latency = Math.round(dbEnd - dbStart);
     
@@ -27,17 +26,13 @@ export async function getSystemStatus() {
     console.error("DB Health Check Failed:", error);
   }
 
-  // Check Storage (R2)
   const storageStart = performance.now();
   try {
-    // Check if R2_BUCKET_NAME is set
-    const bucketName = process.env.R2_BUCKET_NAME;
-    if (!bucketName) {
-        throw new Error("R2_BUCKET_NAME env var is missing");
+    if (!process.env.R2_BUCKET_NAME) {
+      throw new Error("R2_BUCKET_NAME is not set");
     }
 
-    // HeadBucket is better for checking access to a specific bucket
-    await r2.send(new HeadBucketCommand({ Bucket: bucketName }));
+    await r2.send(new HeadBucketCommand({ Bucket: process.env.R2_BUCKET_NAME }));
     
     const storageEnd = performance.now();
     status.storage.latency = Math.round(storageEnd - storageStart);

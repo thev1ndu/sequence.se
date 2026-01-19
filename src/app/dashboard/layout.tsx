@@ -36,12 +36,10 @@ export default function DashboardLayout({
 }) {
   const pathname = usePathname();
 
-  // Don't show sidebar for login page
   if (pathname === "/dashboard/login") {
     return <>{children}</>;
   }
 
-  // Get breadcrumb items based on current path
   const getBreadcrumbs = (): BreadcrumbItem[] => {
     if (pathname === "/dashboard") {
       return [{ label: "Posts" }];

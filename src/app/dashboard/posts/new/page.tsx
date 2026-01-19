@@ -31,7 +31,7 @@ export default function NewPostPage() {
   const [lastSaved, setLastSaved] = React.useState<Date | null>(null);
   const [isSaving, setIsSaving] = React.useState(false);
 
-  // Auto-generate slug from title if not manually edited
+
   const [isSlugManuallyEdited, setIsSlugManuallyEdited] = React.useState(false);
 
   React.useEffect(() => {
@@ -44,9 +44,9 @@ export default function NewPostPage() {
     }
   }, [title, isSlugManuallyEdited]);
 
-  // Database Auto-Save Logic
+
   const saveToDb = React.useCallback(async (silent = true) => {
-    if (!title) return; // Don't save empty posts without at least a title
+    if (!title) return;
 
     try {
       if (!silent) setIsSaving(true);
@@ -57,16 +57,12 @@ export default function NewPostPage() {
         content,
         excerpt,
         cover_image: coverImage,
-        // If we are just auto-saving, we keep it as draft (unless explicitly published later)
-        // But if user toggled "Publish", we save that state? 
-        // Typically auto-save shouldn't accidentally publish. 
-        // We track is_published state, but maybe auto-save always saves what's in the form.
+
         is_published: isPublished, 
         updated_at: new Date().toISOString(),
       };
 
       if (postId) {
-        // Update existing draft
         const { error } = await supabase
           .from("posts")
           .update(postData)
@@ -74,7 +70,6 @@ export default function NewPostPage() {
         
         if (error) throw error;
       } else {
-        // Create new draft
         const { data, error } = await supabase
           .from("posts")
           .insert([postData])
@@ -88,16 +83,15 @@ export default function NewPostPage() {
       setLastSaved(new Date());
     } catch (err: any) {
       console.error("Auto-save failed:", err);
-      // Don't show error for silent auto-saves usually, but maybe helpful for debugging
     } finally {
       if (!silent) setIsSaving(false);
     }
   }, [title, slug, content, excerpt, coverImage, isPublished, postId]);
 
-  // Debounced Auto-Save Effect
+
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      if (title) { // Only auto-save if there is at least a title
+      if (title) {
         saveToDb(true);
       }
     }, AUTO_SAVE_DELAY);
@@ -110,17 +104,12 @@ export default function NewPostPage() {
     setLoading(true);
     setError(null);
 
-    // Final save/publish
     await saveToDb(false);
     
-    // We already saved it above, so just check for errors in state?
-    // Actually saveToDb handles the DB interacting.
-    // If we want to guarantee "Post" button explicitly PUBLISHES:
-    // We should ensure isPublished is sent as true if that's what we want,
-    // but the Switch controls that state.
+
     
     setLoading(false);
-    router.refresh(); // Refresh dashboard to show new status
+    router.refresh();
     router.push("/dashboard");
   };
 
@@ -134,7 +123,6 @@ export default function NewPostPage() {
 
   return (
     <div className="w-full">
-      {/* Header with back button */}
       <div className="flex items-start gap-4 mb-8">
         <Link
           href="/dashboard"
@@ -147,21 +135,30 @@ export default function NewPostPage() {
             <div>
               <h1 className="text-2xl font-semibold tracking-tight">Create New Post</h1>
               <p className="text-muted-foreground">Add a new post to your blog</p>
+              <div className="mt-1 h-8 px-3 rounded-md border border-border bg-muted/20 flex items-center w-fit sm:hidden">
+                {isSaving && <span className="text-xs text-muted-foreground animate-pulse">Saving...</span>}
+                {lastSaved && !isSaving && (
+                  <p className="text-xs text-muted-foreground">
+                    Saved {lastSaved.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}
+                  </p>
+                )}
+              </div>
             </div>
             <div className="flex items-center gap-4">
-              {isSaving && <span className="text-xs text-muted-foreground animate-pulse">Saving...</span>}
-              {lastSaved && !isSaving && (
-                <p className="text-xs text-muted-foreground">
-                  Saved {lastSaved.toLocaleTimeString()}
-                </p>
-              )}
+              <div className="hidden sm:flex items-center mr-4">
+                {isSaving && <span className="text-xs text-muted-foreground animate-pulse">Saving...</span>}
+                {lastSaved && !isSaving && (
+                  <p className="text-xs text-muted-foreground">
+                    Saved {lastSaved.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6 pb-6">
-        {/* Post Details Section */}
         <div className="rounded-xl border border-border bg-muted/30 overflow-hidden">
           <div className="flex items-center gap-2 px-6 py-4 border-b border-border">
             <FileText className="size-4 text-muted-foreground" />
@@ -213,7 +210,6 @@ export default function NewPostPage() {
           </div>
         </div>
 
-        {/* Cover Image Section */}
         <div className="rounded-xl border border-border bg-muted/30 overflow-hidden">
           <div className="flex items-center gap-2 px-6 py-4 border-b border-border">
             <ImageIcon className="size-4 text-muted-foreground" />
@@ -227,7 +223,6 @@ export default function NewPostPage() {
           </div>
         </div>
 
-        {/* Content Section */}
         <div className="rounded-xl border border-border bg-muted/30 overflow-hidden">
           <div className="flex items-center justify-between px-6 py-4 border-b border-border">
             <div className="flex items-center gap-2">
@@ -250,15 +245,12 @@ export default function NewPostPage() {
                   remarkPlugins={[remarkGfm]}
                   components={{
                     p: ({ children, node }) => {
-                      // Check if the paragraph contains ONLY a YouTube link (as a direct child)
-                      // We use the HAST node to check the structure before React renders it
                       if (node?.children?.length === 1) {
                         const child = node.children[0] as any;
                         if (child?.tagName === 'a' && child?.properties?.href) {
                           const href = child.properties.href;
                           const isYoutube = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/.test(href);
                           if (isYoutube) {
-                            // Render as div instead of p to allow block children (the video card)
                             return <div className="my-6">{children}</div>;
                           }
                         }
@@ -266,7 +258,6 @@ export default function NewPostPage() {
                       return <p className="leading-7 [&:not(:first-child)]:mt-6">{children}</p>;
                     },
                     a: ({ href, children }) => {
-                      // Check if it's a YouTube link
                       const youtubeMatch = href?.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
                       if (youtubeMatch) {
                         const videoId = youtubeMatch[1];
@@ -325,9 +316,8 @@ export default function NewPostPage() {
           </div>
         )}
 
-        {/* Bottom Action Bar */}
         <div className="rounded-xl border border-border bg-muted/30 p-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-0">
             <div className="flex items-center gap-3">
               <Switch
                 id="published"
@@ -343,13 +333,13 @@ export default function NewPostPage() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-3 sm:justify-end w-full sm:w-auto">
               <Button
                 type="button"
                 variant="outline"
                 size="sm"
-                 // Just go back, dont save unless auto-save happened
                 onClick={() => router.push("/dashboard")}
+                className="w-full sm:w-auto"
               >
                 Cancel
               </Button>
@@ -358,10 +348,11 @@ export default function NewPostPage() {
                 variant="outline"
                 size="sm"
                 onClick={handleSaveAndExit}
+                className="w-full sm:w-auto"
               >
                 Save & Exit
               </Button>
-              <Button type="submit" disabled={loading} size="sm">
+              <Button type="submit" disabled={loading} size="sm" className="w-full sm:w-auto col-span-2 sm:col-span-1">
                 {loading ? "Posting..." : "Post"}
               </Button>
             </div>

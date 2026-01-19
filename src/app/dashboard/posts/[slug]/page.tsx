@@ -39,7 +39,7 @@ export default function EditPostPage() {
   const [isPublished, setIsPublished] = React.useState(false);
   const [isPinned, setIsPinned] = React.useState(false);
   
-  const [loading, setLoading] = React.useState(true); // Start loading
+  const [loading, setLoading] = React.useState(true);
   const [isSaving, setIsSaving] = React.useState(false);
   const [lastSaved, setLastSaved] = React.useState<Date | null>(null);
   const [error, setError] = React.useState<string | null>(null);
@@ -51,7 +51,7 @@ export default function EditPostPage() {
   const contentTextareaRef = React.useRef<HTMLTextAreaElement>(null);
   const previousContentRef = React.useRef<string>("");
   
-  // Helper to extract R2 image URLs from content
+
   const extractR2ImageUrls = (text: string): string[] => {
     const r2Domain = process.env.NEXT_PUBLIC_R2_DOMAIN || 'r3.sequence3.se';
     const regex = /!\[[^\]]*\]\((https?:\/\/[^)]+)\)/g;
@@ -65,18 +65,18 @@ export default function EditPostPage() {
     return urls;
   };
 
-  // Handle content change with image cleanup
+
   const handleContentChange = async (newContent: string) => {
     const oldContent = previousContentRef.current;
     setContent(newContent);
     previousContentRef.current = newContent;
     
-    // Find removed R2 images
+
     const oldImages = extractR2ImageUrls(oldContent);
     const newImages = extractR2ImageUrls(newContent);
     const removedImages = oldImages.filter(url => !newImages.includes(url));
     
-    // Delete removed images from R2
+
     for (const url of removedImages) {
       try {
         await fetch('/api/upload', {
@@ -94,7 +94,7 @@ export default function EditPostPage() {
     }
   };
 
-  // Fetch Post Data on Mount
+
   React.useEffect(() => {
     async function fetchPost() {
       if (!slugParam) return;
@@ -126,7 +126,7 @@ export default function EditPostPage() {
     fetchPost();
   }, [slugParam]);
 
-  // Database Save Logic (Update Only)
+
   const saveToDb = React.useCallback(async (silent = true) => {
     if (!postId || !title) return;
 
@@ -153,7 +153,7 @@ export default function EditPostPage() {
 
       setLastSaved(new Date());
       
-      // Show toast only for non-silent saves
+
       if (!silent) {
         if (isPublished) {
           toast.success("Post published!", {
@@ -177,10 +177,9 @@ export default function EditPostPage() {
     }
   }, [postId, title, slug, content, excerpt, coverImage, isPublished, isPinned]);
 
-  // Auto-Save Effect
+
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      // Only auto-save if we have leaded the post and have a valid ID
       if (postId && !loading) { 
         saveToDb(true);
       }
@@ -210,7 +209,6 @@ export default function EditPostPage() {
     try {
       setIsDeleting(true);
 
-      // Delete cover image from R2 if it exists
       if (coverImage) {
         try {
           await fetch("/api/delete-image", {
@@ -220,11 +218,11 @@ export default function EditPostPage() {
           });
         } catch (imgError) {
           console.error("Failed to delete image from R2:", imgError);
-          // Continue with post deletion even if image deletion fails
+
         }
       }
 
-      // Delete post from Supabase
+
       const { error: deleteError } = await supabase
         .from("posts")
         .delete()
@@ -279,18 +277,28 @@ export default function EditPostPage() {
           <ArrowLeft className="size-5" />
         </Link>
         <div className="flex-1">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-0">
+          <div className="flex flex-row items-center justify-between gap-4">
             <div>
               <h1 className="text-2xl font-semibold tracking-tight">Edit Post</h1>
               <p className="text-muted-foreground">Make changes to your blog post</p>
+              <div className="mt-1 h-8 px-3 rounded-md border border-border bg-muted/20 flex items-center w-fit sm:hidden">
+                {isSaving && <span className="text-xs text-muted-foreground animate-pulse">Saving...</span>}
+                {lastSaved && !isSaving && (
+                  <p className="text-xs text-muted-foreground">
+                    Saved {lastSaved.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}
+                  </p>
+                )}
+              </div>
             </div>
-            <div className="flex items-center gap-4">
-              {isSaving && <span className="text-xs text-muted-foreground animate-pulse">Saving...</span>}
-              {lastSaved && !isSaving && (
-                <p className="text-xs text-muted-foreground">
-                  Saved {lastSaved.toLocaleTimeString()}
-                </p>
-              )}
+            <div className="flex items-center justify-end">
+              <div className="hidden sm:flex items-center mr-4">
+                {isSaving && <span className="text-xs text-muted-foreground animate-pulse">Saving...</span>}
+                {lastSaved && !isSaving && (
+                  <p className="text-xs text-muted-foreground">
+                    Saved {lastSaved.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}
+                  </p>
+                )}
+              </div>
               <Button
                 type="button"
                 variant="destructive"
@@ -312,7 +320,6 @@ export default function EditPostPage() {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6 pb-6">
-        {/* Post Details Section */}
         <div className="rounded-xl border border-border bg-muted/30 overflow-hidden">
           <div className="flex items-center gap-2 px-6 py-4 border-b border-border">
             <FileText className="size-4 text-muted-foreground" />
@@ -358,7 +365,6 @@ export default function EditPostPage() {
           </div>
         </div>
 
-        {/* Cover Image Section */}
         <div className="rounded-xl border border-border bg-muted/30 overflow-hidden">
           <div className="flex items-center gap-2 px-6 py-4 border-b border-border">
             <ImageIcon className="size-4 text-muted-foreground" />
@@ -372,7 +378,6 @@ export default function EditPostPage() {
           </div>
         </div>
 
-        {/* Content Section */}
         <div className="rounded-xl border border-border bg-muted/30 overflow-hidden">
           <div className="flex items-center justify-between px-6 py-4 border-b border-border">
             <div className="flex items-center gap-2">
@@ -403,7 +408,6 @@ export default function EditPostPage() {
                       
                       const { publicUrl } = await response.json();
                       
-                      // Insert at cursor position or end
                       const textarea = contentTextareaRef.current;
                       const imageMarkdown = `\n![${file.name}](${publicUrl})\n`;
                       
@@ -412,8 +416,6 @@ export default function EditPostPage() {
                         const end = textarea.selectionEnd;
                         const newContent = content.substring(0, start) + imageMarkdown + content.substring(end);
                         setContent(newContent);
-                        
-                        // Set cursor after inserted image
                         setTimeout(() => {
                           textarea.focus();
                           textarea.setSelectionRange(start + imageMarkdown.length, start + imageMarkdown.length);
@@ -432,7 +434,7 @@ export default function EditPostPage() {
                       });
                     } finally {
                       setIsUploadingImage(false);
-                      e.target.value = ""; // Reset input
+                      e.target.value = "";
                     }
                   }}
                   disabled={isUploadingImage || showPreview}
@@ -575,11 +577,11 @@ export default function EditPostPage() {
                     return;
                   }
                   
-                  // Handle text paste - detect code snippets
+
                   const text = e.clipboardData.getData('text/plain');
                   if (!text || text.length < 10) return; // Too short to be code
                   
-                  // Code detection heuristics
+
                   const codePatterns = [
                     /^(import|export|from|const|let|var|function|class|interface|type|async|await|return|if|else|for|while|switch|case|try|catch|throw|new)\s/m,
                     /^(def |class |import |from |print\(|if __name__|async def)/m,
@@ -602,7 +604,7 @@ export default function EditPostPage() {
                   if (looksLikeCode && (hasMultipleLines || hasIndentation)) {
                     e.preventDefault();
                     
-                    // Try to detect language
+
                     let language = '';
                     if (/^(import|export|const|let|var|function|async|await|=\>|interface|type\s)/.test(text)) {
                       language = text.includes('interface ') || text.includes('type ') ? 'typescript' : 'javascript';
@@ -655,7 +657,7 @@ export default function EditPostPage() {
           </div>
         </div>
 
-        {/* Bottom Action Bar */}
+
         <div className="rounded-xl border border-border bg-muted/30 p-4">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-0">
             <div className="flex items-center gap-6">
@@ -675,12 +677,13 @@ export default function EditPostPage() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
+            <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-3 sm:justify-end w-full sm:w-auto">
               <Button
                 type="button"
                 variant="outline"
                 size="sm"
                 onClick={() => router.push("/dashboard")}
+                className="w-full sm:w-auto"
               >
                 Cancel
               </Button>
@@ -689,10 +692,11 @@ export default function EditPostPage() {
                 variant="outline"
                 size="sm"
                 onClick={handleSaveAndExit}
+                className="w-full sm:w-auto"
               >
                 Save & Exit
               </Button>
-              <Button type="submit" size="sm">
+              <Button type="submit" size="sm" className="w-full sm:w-auto col-span-2 sm:col-span-1">
                 Save Changes
               </Button>
             </div>
@@ -701,7 +705,7 @@ export default function EditPostPage() {
       </form>
     </div>
 
-      {/* Delete Confirmation Dialog */}
+
       <Dialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
         <DialogContent showCloseButton={false}>
           <DialogHeader>

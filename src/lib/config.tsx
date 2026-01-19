@@ -111,7 +111,7 @@ export const siteConfig = {
   name: "Sequence3",
   description: "AI-powered unified inbox for SMEs. Manage conversations, automate replies, and stay in control with explainable AI.",
   cta: "Join Waitlist",
-  url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_APP_URL || "https://sq3.io",
   
   keywords: [
     "Sequence3",

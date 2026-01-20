@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+export const revalidate = 0;
+
+
 import { SectionHeader } from "@/components/section-header";
 import { PostItem } from "@/features/blog/components/post-item";
 import { getAllPostsFromDB } from "@/features/blog/data/supabase-posts";

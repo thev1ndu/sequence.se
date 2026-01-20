@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+
+export const revalidate = 0;
+
 import { notFound } from "next/navigation";
 import { MarkdownRenderer } from "@/features/blog/components/markdown-renderer";
 

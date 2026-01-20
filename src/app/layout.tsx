@@ -68,6 +68,32 @@ export default function RootLayout({
           gtag('config', 'G-CSR99VFXE5');
         `}
       </Script>
+      <Script id="console-signature" strategy="afterInteractive">
+        {`
+          console.log(
+            "%c\\n" +
+            "/**\\n" +
+            " *\\n" +
+            " *    ███████╗███████╗ ██████╗ ██╗   ██╗███████╗███╗   ██╗ ██████╗███████╗██████╗ \\n" +
+            " *    ██╔════╝██╔════╝██╔═══██╗██║   ██║██╔════╝████╗  ██║██╔════╝██╔════╝╚════██╗\\n" +
+            " *    ███████╗█████╗  ██║   ██║██║   ██║█████╗  ██╔██╗ ██║██║     █████╗   █████╔╝\\n" +
+            " *    ╚════██║██╔══╝  ██║▄▄ ██║██║   ██║██╔══╝  ██║╚██╗██║██║     ██╔══╝   ╚═══██╗\\n" +
+            " *    ███████║███████╗╚██████╔╝╚██████╔╝███████╗██║ ╚████║╚██████╗███████╗██████╔╝\\n" +
+            " *    ╚══════╝╚══════╝ ╚══▀▀═╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═════╝ \\n" +
+            " *\\n" +
+            " *    Property of Sequence3\\n" +
+            " *    Website: https://sq3.io\\n" +
+            " *\\n" +
+            " *    Connect with us:\\n" +
+            " *    https://www.linkedin.com/company/sequence3/\\n" +
+            " *\\n" +
+            " *    © " + new Date().getFullYear() + " Sequence3. All Rights Reserved.\\n" +
+            " *\\n" +
+            " */\\n",
+            "color: #3b82f6; font-family: monospace; font-size: 12px;"
+          );
+        `}
+      </Script>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-background`}

@@ -1,11 +1,16 @@
 import { Suspense } from "react";
+import { Loader2 } from "lucide-react";
 import { LoginForm } from "@/components/login-form";
 
 export default function Page() {
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10 bg-background">
       <div className="w-full max-w-sm">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="size-8 animate-spin text-primary" />
+          </div>
+        }>
           <LoginForm />
         </Suspense>
       </div>

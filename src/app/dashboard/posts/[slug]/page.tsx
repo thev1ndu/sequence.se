@@ -579,6 +579,37 @@ export default function EditPostPage() {
                   
 
                   const text = e.clipboardData.getData('text/plain');
+                  
+                  // Handle YouTube URL paste - convert to markdown link
+                  const youtubePatterns = [
+                    /^https?:\/\/(www\.)?youtube\.com\/watch\?v=[\w-]+/,
+                    /^https?:\/\/youtu\.be\/[\w-]+/,
+                    /^https?:\/\/(www\.)?youtube\.com\/embed\/[\w-]+/,
+                  ];
+                  
+                  const isYouTubeUrl = youtubePatterns.some(pattern => pattern.test(text.trim()));
+                  
+                  if (isYouTubeUrl) {
+                    e.preventDefault();
+                    const youtubeMarkdown = `[Watch on YouTube](${text.trim()})`;
+                    
+                    const textarea = contentTextareaRef.current;
+                    if (textarea) {
+                      const start = textarea.selectionStart;
+                      const end = textarea.selectionEnd;
+                      const newContent = content.substring(0, start) + youtubeMarkdown + content.substring(end);
+                      handleContentChange(newContent);
+                      
+                      setTimeout(() => {
+                        textarea.focus();
+                        textarea.setSelectionRange(start + youtubeMarkdown.length, start + youtubeMarkdown.length);
+                      }, 0);
+                    } else {
+                      handleContentChange(content + youtubeMarkdown);
+                    }
+                    return;
+                  }
+                  
                   if (!text || text.length < 10) return; // Too short to be code
                   
 

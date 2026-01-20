@@ -305,6 +305,33 @@ export default function NewPostPage() {
                 placeholder="Write your post content in Markdown..."
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
+                onPaste={(e) => {
+                  const text = e.clipboardData.getData('text/plain');
+                  
+                  // Handle YouTube URL paste - convert to markdown link
+                  const youtubePatterns = [
+                    /^https?:\/\/(www\.)?youtube\.com\/watch\?v=[\w-]+/,
+                    /^https?:\/\/youtu\.be\/[\w-]+/,
+                    /^https?:\/\/(www\.)?youtube\.com\/embed\/[\w-]+/,
+                  ];
+                  
+                  const isYouTubeUrl = youtubePatterns.some(pattern => pattern.test(text.trim()));
+                  
+                  if (isYouTubeUrl) {
+                    e.preventDefault();
+                    const textarea = e.currentTarget;
+                    const start = textarea.selectionStart;
+                    const end = textarea.selectionEnd;
+                    const youtubeMarkdown = `[Watch on YouTube](${text.trim()})`;
+                    const newContent = content.substring(0, start) + youtubeMarkdown + content.substring(end);
+                    setContent(newContent);
+                    
+                    setTimeout(() => {
+                      textarea.focus();
+                      textarea.setSelectionRange(start + youtubeMarkdown.length, start + youtubeMarkdown.length);
+                    }, 0);
+                  }
+                }}
               />
             )}
           </div>

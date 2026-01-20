@@ -35,6 +35,39 @@ function CodeBlock({ code, language }: { code: string; language: string }) {
   );
 }
 
+// Helper function to extract YouTube video ID from various URL formats
+function getYouTubeVideoId(text: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})/,
+    /(?:youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+    /(?:youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
+    /(?:youtube\.com\/v\/)([a-zA-Z0-9_-]{11})/,
+  ];
+  
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match) return match[1];
+  }
+  return null;
+}
+
+// YouTube embed component
+function YouTubeEmbed({ videoId, title }: { videoId: string; title?: string }) {
+  return (
+    <div className="not-prose w-full my-8">
+      <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-border bg-black">
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}`}
+          title={title || "YouTube video player"}
+          className="absolute top-0 left-0 w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  );
+}
+
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
   return (
     <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:tracking-tighter prose-headings:font-medium prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl">
@@ -42,15 +75,32 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         remarkPlugins={[remarkGfm]}
         components={{
           p: ({ children, node }) => {
+            // Check if paragraph contains only a YouTube URL (standalone link pasted)
+            const textContent = node?.children
+              ?.map((child: any) => {
+                if (child.type === 'text') return child.value;
+                if (child.type === 'element' && child.tagName === 'a') {
+                  return child.properties?.href || '';
+                }
+                return '';
+              })
+              .join('')
+              .trim();
+            
+            if (textContent) {
+              const videoId = getYouTubeVideoId(textContent);
+              if (videoId && textContent.match(/^https?:\/\/(www\.)?(youtube\.com|youtu\.be)/)) {
+                return <YouTubeEmbed videoId={videoId} />;
+              }
+            }
+
+            // Check for YouTube link in anchor tag
             if (node?.children?.length === 1) {
               const child = node.children[0] as any;
               if (child?.tagName === "a" && child?.properties?.href) {
-                const href = child.properties.href;
-                const isYoutube = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/.test(
-                  href
-                );
-                if (isYoutube) {
-                  return <div className="my-6">{children}</div>;
+                const videoId = getYouTubeVideoId(child.properties.href);
+                if (videoId) {
+                  return <YouTubeEmbed videoId={videoId} />;
                 }
               }
             }
@@ -75,24 +125,11 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
             );
           },
           a: ({ href, children }) => {
-            const youtubeMatch = href?.match(
-              /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/
-            );
-            if (youtubeMatch) {
-              const videoId = youtubeMatch[1];
-              return (
-                <div className="not-prose w-full my-8">
-                  <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-border bg-black">
-                    <iframe
-                      src={`https://www.youtube.com/embed/${videoId}`}
-                      title={String(children) || "YouTube video player"}
-                      className="absolute top-0 left-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
-              );
+            if (href) {
+              const videoId = getYouTubeVideoId(href);
+              if (videoId) {
+                return <YouTubeEmbed videoId={videoId} title={String(children)} />;
+              }
             }
             return (
               <a

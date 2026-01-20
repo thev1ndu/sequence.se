@@ -2,6 +2,7 @@
 
 import { siteConfig } from "@/lib/config";
 import { motion } from "motion/react";
+import { usePathname } from "next/navigation";
 import React, { useRef, useState } from "react";
 
 interface NavItem {
@@ -13,14 +14,32 @@ const navs: NavItem[] = siteConfig.nav.links;
 
 export function NavMenu() {
   const ref = useRef<HTMLUListElement>(null);
+  const pathname = usePathname();
   const [left, setLeft] = useState(0);
   const [width, setWidth] = useState(0);
   const [isReady, setIsReady] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [isManualScroll, setIsManualScroll] = useState(false);
 
+  // Check if we're on the blog page
+  const isOnBlogPage = pathname?.startsWith("/blog");
+
   React.useEffect(() => {
-    // Initialize with first nav item
+    // If on blog page, set Blog as active and position indicator
+    if (isOnBlogPage) {
+      const blogItem = ref.current?.querySelector(
+        `[href="/blog"]`
+      )?.parentElement;
+      if (blogItem) {
+        const rect = blogItem.getBoundingClientRect();
+        setLeft(blogItem.offsetLeft);
+        setWidth(rect.width);
+        setIsReady(true);
+      }
+      return;
+    }
+
+    // Initialize with first nav item for home page
     const firstItem = ref.current?.querySelector(
       `[href="#${navs[0].href.substring(1)}"]`
     )?.parentElement;
@@ -30,14 +49,19 @@ export function NavMenu() {
       setWidth(rect.width);
       setIsReady(true);
     }
-  }, []);
+  }, [isOnBlogPage]);
 
   React.useEffect(() => {
+    // Skip scroll handling on blog pages
+    if (isOnBlogPage) return;
+
     const handleScroll = () => {
       // Skip scroll handling during manual click scrolling
       if (isManualScroll) return;
 
-      const sections = navs.map((item) => item.href.substring(1));
+      const sections = navs
+        .filter((item) => item.href.startsWith("#"))
+        .map((item) => item.href.substring(1));
 
       // Find the section closest to viewport top
       let closestSection = sections[0];
@@ -70,12 +94,17 @@ export function NavMenu() {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isManualScroll]);
+  }, [isManualScroll, isOnBlogPage]);
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     item: NavItem
   ) => {
+    // If it's not an anchor link (doesn't start with #), allow normal navigation
+    if (!item.href.startsWith("#")) {
+      return; // Don't prevent default, let the browser navigate
+    }
+
     e.preventDefault();
 
     const targetId = item.href.substring(1);
@@ -117,20 +146,27 @@ export function NavMenu() {
         className="relative mx-auto flex w-fit rounded-full h-11 px-2 items-center justify-center"
         ref={ref}
       >
-        {navs.map((item) => (
-          <li
-            key={item.name}
-            className={`z-10 cursor-pointer h-full flex items-center justify-center px-4 py-2 text-sm font-medium uppercase transition-colors duration-200 ${
-              activeSection === item.href.substring(1)
-                ? "text-primary"
-                : "text-primary/60 hover:text-primary"
-            } tracking-tight`}
-          >
-            <a href={item.href} onClick={(e) => handleClick(e, item)}>
-              {item.name}
-            </a>
-          </li>
-        ))}
+        {navs.map((item) => {
+          // Determine if this nav item is active
+          const isActive = item.href.startsWith("#")
+            ? !isOnBlogPage && activeSection === item.href.substring(1)
+            : isOnBlogPage && pathname?.startsWith(item.href);
+
+          return (
+            <li
+              key={item.name}
+              className={`z-10 cursor-pointer h-full flex items-center justify-center px-4 py-2 text-sm font-medium uppercase transition-colors duration-200 ${
+                isActive
+                  ? "text-primary"
+                  : "text-primary/60 hover:text-primary"
+              } tracking-tight`}
+            >
+              <a href={item.href} onClick={(e) => handleClick(e, item)}>
+                {item.name}
+              </a>
+            </li>
+          );
+        })}
         {isReady && (
           <motion.li
             animate={{ left, width }}

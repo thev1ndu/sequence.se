@@ -111,7 +111,7 @@ export const siteConfig = {
   name: "Sequence3",
   description: "AI-powered unified inbox for SMEs. Manage conversations, automate replies, and stay in control with explainable AI.",
   cta: "Join Waitlist",
-  url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_APP_URL || "https://sq3.io",
   
   keywords: [
     "Sequence3",
@@ -150,6 +150,7 @@ export const siteConfig = {
       { id: 2, name: "Features", href: "#bento" },
       // { id: 3, name: "Features", href: "#features" },
       { id: 3, name: "Pricing", href: "#pricing" },
+      { id: 4, name: "Blog", href: "/blog" },
     ],
   },
   hero: {
@@ -996,7 +997,7 @@ export const siteConfig = {
       links: [
         { id: 5, title: "About", url: "#" },
         { id: 6, title: "Contact", url: "#" },
-        { id: 7, title: "Blog", url: "#" },
+        { id: 7, title: "Blog", url: "/blog" },
         { id: 8, title: "Docs", url: "https://sq3.us/docs" },
       ],
     },

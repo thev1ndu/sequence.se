@@ -3,6 +3,7 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   pointer-events: none;
 }
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -218,12 +219,16 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
 
   @keyframes elliptical-orbit {
     from {
-      transform: rotate(var(--angle, 0)deg) translate(var(--h-radius, 160px), 0) rotate(calc(var(--angle, 0)deg * -1));
+      transform: rotate(var(--angle, 0) deg)
+        translate(var(--h-radius, 160px), 0)
+        rotate(calc(var(--angle, 0) deg * -1));
     }
     to {
-      transform: rotate(calc(var(--angle, 0)deg + 360deg)) translate(var(--h-radius, 160px), 0) rotate(calc((var(--angle, 0)deg + 360deg) * -1));
+      transform: rotate(calc(var(--angle, 0) deg + 360deg))
+        translate(var(--h-radius, 160px), 0)
+        rotate(calc((var(--angle, 0) deg + 360deg) * -1));
     }
-  }  
+  }
 }
 
 :root {
@@ -235,7 +240,7 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: #4F39F6;
+  --secondary: #4f39f6;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -271,13 +276,13 @@ body[data-nav-hidden="true"] [data-nav="primary"] {
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: #4F39F6; /* #2B7FFF */
+  --secondary: #4f39f6; /* #2B7FFF */
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(27.39% 0.005 286.03);
-  --accent-foreground:oklch(98.46% 0.002 247.84)
-  --destructive: oklch(0.396 0.141 25.723);
+  --accent-foreground: oklch(98.46% 0.002 247.84)
+    --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);

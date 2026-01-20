@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useScroll, type Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const INITIAL_WIDTH = "70rem";
@@ -53,15 +54,22 @@ const drawerMenuVariants: Variants = {
 
 export function Navbar() {
   const { scrollY } = useScroll();
+  const pathname = usePathname();
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
+  // Check if we're on the blog page
+  const isOnBlogPage = pathname?.startsWith("/blog");
+
   useEffect(() => {
+    // Skip scroll handling on blog pages
+    if (isOnBlogPage) return;
+
     const handleScroll = () => {
-      const sections = siteConfig.nav.links.map((item) =>
-        item.href.substring(1)
-      );
+      const sections = siteConfig.nav.links
+        .filter((item) => item.href.startsWith("#"))
+        .map((item) => item.href.substring(1));
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -79,7 +87,7 @@ export function Navbar() {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isOnBlogPage]);
 
   useEffect(() => {
     const unsubscribe = scrollY.on("change", (latest) => {
@@ -204,32 +212,44 @@ export function Navbar() {
                   variants={drawerMenuContainerVariants}
                 >
                   <AnimatePresence>
-                    {siteConfig.nav.links.map((item) => (
-                      <motion.li
-                        key={item.id}
-                        className="p-2.5 border-b border-border uppercase last:border-b-0"
-                        variants={drawerMenuVariants}
-                      >
-                        <a
-                          href={item.href}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            const element = document.getElementById(
-                              item.href.substring(1)
-                            );
-                            element?.scrollIntoView({ behavior: "smooth" });
-                            setIsDrawerOpen(false);
-                          }}
-                          className={`underline-offset-4 hover:text-primary/80 transition-colors ${
-                            activeSection === item.href.substring(1)
-                              ? "text-primary font-medium"
-                              : "text-primary/60"
-                          }`}
+                    {siteConfig.nav.links.map((item) => {
+                      // Determine if this nav item is active
+                      const isActive = item.href.startsWith("#")
+                        ? !isOnBlogPage && activeSection === item.href.substring(1)
+                        : isOnBlogPage && pathname?.startsWith(item.href);
+
+                      return (
+                        <motion.li
+                          key={item.id}
+                          className="p-2.5 border-b border-border uppercase last:border-b-0"
+                          variants={drawerMenuVariants}
                         >
-                          {item.name}
-                        </a>
-                      </motion.li>
-                    ))}
+                          <a
+                            href={item.href}
+                            onClick={(e) => {
+                              // For non-anchor links, allow normal navigation
+                              if (!item.href.startsWith("#")) {
+                                setIsDrawerOpen(false);
+                                return;
+                              }
+                              e.preventDefault();
+                              const element = document.getElementById(
+                                item.href.substring(1)
+                              );
+                              element?.scrollIntoView({ behavior: "smooth" });
+                              setIsDrawerOpen(false);
+                            }}
+                            className={`underline-offset-4 hover:text-primary/80 transition-colors ${
+                              isActive
+                                ? "text-primary font-medium"
+                                : "text-primary/60"
+                            }`}
+                          >
+                            {item.name}
+                          </a>
+                        </motion.li>
+                      );
+                    })}
                   </AnimatePresence>
                 </motion.ul>
 

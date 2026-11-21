@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "load-rag-data": "tsx scripts/load-rag-data.ts",
-    "preinstall": "node preinstall.js"
+    "load-rag-data": "tsx scripts/load-rag-data.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.971.0",
